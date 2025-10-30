@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=8 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="PackedScene" uid="uid://d32ewpt2264wy" path="res://scenes/player.tscn" id="1_uhqny"]
+[ext_resource type="ArrayMesh" uid="uid://blg780xs5li1t" path="res://assets/Table.obj" id="2_k5jlv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,3 +43,12 @@ shape = SubResource("ConcavePolygonShape3D_uhqny")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 top_level = true
 linear_damp = 3.0
+
+[node name="Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7321496, -1.0894121, 2.9676535)
+mesh = ExtResource("2_k5jlv")
+
+[node name="Table2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8904026, -1.0822649, 2.9531693)
+mesh = ExtResource("2_k5jlv")
+skeleton = NodePath("../Table")
