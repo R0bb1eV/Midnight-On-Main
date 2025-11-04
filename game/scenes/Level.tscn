@@ -90,7 +90,7 @@ top_level = true
 linear_damp = 3.0
 
 [node name="GroundRay" type="RayCast3D" parent="Player"]
-target_position = Vector3(0, -0.8, 0)
+target_position = Vector3(0, -1.1, 0)
 collide_with_areas = true
 
 [node name="Table" type="MeshInstance3D" parent="."]
