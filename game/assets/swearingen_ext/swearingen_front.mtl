@@ -33,6 +33,36 @@ d 1.000000
 illum 3
 map_Kd textures/frontdoor.png
 
+newmtl Red_Concrete
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Red_Concrete.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Red_Concrete.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
 newmtl WALL
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
@@ -43,3 +73,201 @@ d 1.000000
 illum 2
 map_Kd C:/marble_03_color.jpg
 map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.005
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.006
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.008
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.009
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.010
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.011
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.012
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl WALL.013
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.700000 0.700000 0.700000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/marble_03_color.jpg
+map_Bump -bm 1.000000 C:/marble_03_normal.jpg
+
+newmtl windows
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 C:/window-3_diffuse.jpg
+map_Ns -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 C:/window-3_roughness.jpg
+map_Bump -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 -bm 2.000000 C:/window-3_normal.jpg
+
+newmtl windows.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 C:/window-3_diffuse.jpg
+map_Ns -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 C:/window-3_roughness.jpg
+map_Bump -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 -bm 2.000000 C:/window-3_normal.jpg
+
+newmtl windows.002
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 C:/window-3_diffuse.jpg
+map_Ns -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 C:/window-3_roughness.jpg
+map_Bump -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 -bm 2.000000 C:/window-3_normal.jpg
+
+newmtl windows.003
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 C:/window-3_diffuse.jpg
+map_Ns -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 C:/window-3_roughness.jpg
+map_Bump -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 -bm 2.000000 C:/window-3_normal.jpg
+
+newmtl windows.004
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 C:/window-3_diffuse.jpg
+map_Ns -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 C:/window-3_roughness.jpg
+map_Bump -o 0.53999996 0.22 0 -s 0.42000002 0.55 0.98 -bm 2.000000 C:/window-3_normal.jpg
+
+newmtl windows.005
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 C:/window-3_diffuse.jpg
+map_Ns -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 C:/window-3_roughness.jpg
+map_Bump -o 0.33999997 1.2199999 0 -s 0.02000007 -0.049999952 0.98 -bm 2.000000 C:/window-3_normal.jpg
