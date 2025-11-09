@@ -1,11 +1,11 @@
 [gd_scene load_steps=52 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://bep543oe0f4ct" path="res://assets/swearingen_ext/ground_pavers.png" id="1_qifjx"]
-[ext_resource type="PackedScene" uid="uid://d32ewpt2264wy" path="res://scenes/player.tscn" id="1_uhqny"]
 [ext_resource type="Texture2D" uid="uid://bf4dmlqq85fud" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="ArrayMesh" uid="uid://blg780xs5li1t" path="res://assets/Table.obj" id="2_k5jlv"]
 [ext_resource type="ArrayMesh" uid="uid://dkqf6bsq6h1yi" path="res://assets/swearingen_ext/swearingen_front.obj" id="3_6vs76"]
 [ext_resource type="Texture2D" uid="uid://cs7vr0omo1d0p" path="res://assets/swearingen_ext/swearingen_front_marble_03_color.jpg" id="6_2eouu"]
+[ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://character_rigging.tscn" id="6_dke22"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -174,7 +174,7 @@ size = Vector3(11.203987, 4.495331, 38.943848)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4qegb"]
 size = Vector3(7.4384155, 4.551758, 47.524536)
 
-[node name="Node3D" type="Node3D"]
+[node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_noarx")
@@ -183,35 +183,26 @@ environment = SubResource("Environment_noarx")
 transform = Transform3D(0.5169983, -0.78126806, 0.3497612, -0.814985, -0.32432196, 0.48022348, -0.26174805, -0.5333249, -0.8043957, 28.34378, 11.364424, -9.992622)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Pavement" type="MeshInstance3D" parent="."]
 transform = Transform3D(5.09, 0, 0, 0, 14.005, 0, 0, 0, 8.15, 0, 0, 2.909862)
 mesh = SubResource("PlaneMesh_4xowi")
 surface_material_override/0 = SubResource("StandardMaterial3D_dke22")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Pavement"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pavement/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_uhqny")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Baseplate" type="MeshInstance3D" parent="."]
 transform = Transform3D(25.908102, 0, 0, 0, 196.14, 0, 0, 0, 66.42249, 0.12540436, 1.1368683e-13, 9.983322)
 mesh = SubResource("PlaneMesh_4xowi")
-skeleton = NodePath("../MeshInstance3D")
+skeleton = NodePath("../Pavement")
 surface_material_override/0 = SubResource("StandardMaterial3D_4qegb")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Baseplate"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Baseplate/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_uhqny")
-
-[node name="Player" parent="." instance=ExtResource("1_uhqny")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-top_level = true
-linear_damp = 3.0
-
-[node name="GroundRay" type="RayCast3D" parent="Player"]
-target_position = Vector3(0, -1.1, 0)
-collide_with_areas = true
 
 [node name="Table" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7321496, -1.0894121, 2.9676535)
@@ -302,3 +293,5 @@ shape = SubResource("BoxShape3D_dke22")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Swearingen_Ext/Collisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9652328, 1.7758789, -1.092227)
 shape = SubResource("BoxShape3D_4qegb")
+
+[node name="Character_Rigging" parent="." instance=ExtResource("6_dke22")]

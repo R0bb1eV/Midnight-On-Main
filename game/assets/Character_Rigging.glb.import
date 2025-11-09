@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkibtmh7ba2ld"
+uid="uid://b27x3ts1xg551"
 path="res://.godot/imported/Character_Rigging.glb-6e0a7bcc8b56006c0cccd934e1bdaf5d.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Character_Rigging.glb-6e0a7bcc8b56006c0cccd93
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
