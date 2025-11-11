@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd4ubu1u4soyx"]
+
+[ext_resource type="Script" uid="uid://5wsfnuxyjpky" path="res://scenes/homework_enforcer.gd" id="1_sl375"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwcxk"]
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvcu8"]
+albedo_color = Color(1, 0.19215687, 0.08627451, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sl375"]
+material = SubResource("StandardMaterial3D_yvcu8")
+height = 1.5
+
+[node name="HomeworkEnforcer" type="CharacterBody3D"]
+script = ExtResource("1_sl375")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_dwcxk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_sl375")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
