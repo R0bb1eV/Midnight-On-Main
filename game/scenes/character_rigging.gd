@@ -6,7 +6,12 @@ extends CharacterBody3D
 @onready var anim_tree = $AnimationTree
 @onready var camera = $SpringArmPivot/SpringArm3D/Camera3D
 
-const BASE_SPEED = 3.0
+# --- Step-up tuning ---
+const STEP_HEIGHT := 0.45
+const STEP_FORWARD := 0.15
+const STEP_TRIES := 1
+
+const BASE_SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const LERP_VAL = 0.15
 var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -39,6 +44,28 @@ func _unhandled_input(event):
 		spring_arm_pivot.rotate_y(-event.relative.x * 0.005)
 		spring_arm.rotate_x(-event.relative.y * 0.005)
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
+		
+func _try_step_up(direction: Vector3) -> void:
+	# Only attempt on ground and when actually moving horizontally
+	if not is_on_floor():
+		return
+	var fwd := Vector3(direction.x, 0.0, direction.z).normalized()
+	if fwd == Vector3.ZERO:
+		return
+
+	# If nothing blocks forward, no step-up needed
+	if not test_move(global_transform, fwd * STEP_FORWARD):
+		return
+
+	# Try lifting in small increments until forward space clears
+	var inc := STEP_HEIGHT / float(STEP_TRIES)
+	for i in range(1, STEP_TRIES + 1):
+		var up_offset := Vector3.UP * (inc * i)
+		var lifted_xform := global_transform.translated(up_offset)
+		# If moving forward from this lifted pose is clear, accept the lift
+		if not test_move(lifted_xform, fwd * STEP_FORWARD):
+			global_translate(up_offset)
+			return
 
 func _physics_process(delta: float) -> void:
 	# --- Gravity ---
@@ -91,7 +118,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)
 		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)
-
+			
+	_try_step_up(direction)
+	
 	move_and_slide()
 
 	# --- Animation Blend ---

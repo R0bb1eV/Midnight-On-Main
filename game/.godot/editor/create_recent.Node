@@ -1,6 +1,7 @@
+StaticBody3D
+CollisionShape3D
 MeshInstance3D
 Node3D
-CollisionShape3D
 CollisionPolygon3D
 CSGBox3D
 NavigationRegion3D
@@ -9,6 +10,5 @@ CharacterBody3D
 AnimationTree
 Camera3D
 SpringArm3D
-StaticBody3D
 RayCast3D
 RigidBody3D

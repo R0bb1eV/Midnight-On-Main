@@ -40,7 +40,7 @@ func _set_next_patrol_point() -> void:
 		agent.target_position = node.global_position
 	current_patrol = (current_patrol + 1) % patrol_points.size()
 
-func _move_with_agent(delta: float, speed: float) -> void:
+func _move_with_agent(_delta: float, speed: float) -> void:
 	if agent.is_navigation_finished():
 		velocity = Vector3.ZERO
 	else:
