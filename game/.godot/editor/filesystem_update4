@@ -1,5 +1,2 @@
 res://scenes/Level.tscn
-res://homework_enforcer.tscn
-res://homework_enforcer.gd
-res://scenes/homework_enforcer.gd
-res://scenes/homework_enforcer.tscn
+res://scenes/character_rigging.tscn

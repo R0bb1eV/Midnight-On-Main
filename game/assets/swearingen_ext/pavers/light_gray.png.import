@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bep543oe0f4ct"
-path.s3tc="res://.godot/imported/ground_pavers.png-12ba1a05fec1f1636a118737691eed4e.s3tc.ctex"
+uid="uid://brnkg0wcjasqd"
+path.s3tc="res://.godot/imported/light_gray.png-9c22d2d30c285c7dd70b68a3b48c2c9e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/swearingen_ext/ground_pavers.png"
-dest_files=["res://.godot/imported/ground_pavers.png-12ba1a05fec1f1636a118737691eed4e.s3tc.ctex"]
+source_file="res://assets/swearingen_ext/pavers/light_gray.png"
+dest_files=["res://.godot/imported/light_gray.png-9c22d2d30c285c7dd70b68a3b48c2c9e.s3tc.ctex"]
 
 [params]
 

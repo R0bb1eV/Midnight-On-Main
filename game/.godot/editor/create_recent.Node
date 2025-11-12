@@ -1,13 +1,14 @@
+MeshInstance3D
 Node3D
+CollisionShape3D
+CollisionPolygon3D
+CSGBox3D
 NavigationRegion3D
 NavigationAgent3D
-MeshInstance3D
-CollisionShape3D
 CharacterBody3D
 AnimationTree
 Camera3D
 SpringArm3D
 StaticBody3D
 RayCast3D
-CollisionPolygon3D
 RigidBody3D
