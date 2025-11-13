@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1763040551
+::res://::1763067089
 Book.obj::Mesh::7307340581199633739::1763011065::1763011066::1::::<><><>0<>0<>319c55ac0b6e4fc1dccb66fb25ec8f76<>res://.godot/imported/Book.obj-d9fb57af24d17d607dd1cad0ffa744a3.mesh<*>res://.godot/imported/Book.obj-d9fb57af24d17d607dd1cad0ffa744a3.mesh::
 icon.svg::CompressedTexture2D::5168514202933295906::1763006485::1763011039::1::::<><><>0<>0<>9c11aed934b58be398860f86f14a897f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1763058082
@@ -17,7 +17,7 @@ WoodenChair.obj::Mesh::1069020669286696525::1763006485::1763011050::1::::<><><>0
 Book_2.0.glb::PackedScene::4727656628029794789::1763045566::1763045570::1::::<><><>0<>0<>aa4632c56da8f4ae848c3f1e78987295<>res://.godot/imported/Book_2.0.glb-909497e8d8b5991d6a8b80b5450a59c2.scn::uid://vipfqdn47r5b::::res://assets/book_object/Book_2_paper_texture.png<>uid://cql8tnriw2cbo::::res://assets/book_object/Book_2_textbook_logo_new.png
 Book_2_paper_texture.png::CompressedTexture2D::1491401267930887921::1763045567::1763045570::1::::<><><>0<>0<>d271ecac22aca96b693b4d7f7172eca3<>res://.godot/imported/Book_2_paper_texture.png-7f298dc40294e18ffdfa5d829e1cc880.s3tc.ctex::
 Book_2_textbook_logo_new.png::CompressedTexture2D::5920609321194037424::1763045568::1763045571::1::::<><><>0<>0<>ce18264360fdf10fb6d9c90af255f168<>res://.godot/imported/Book_2_textbook_logo_new.png-c5a5c7dd7b5e5e711379f462def47449.s3tc.ctex::
-::res://assets/locker_object/::1763058094
+::res://assets/locker_object/::1763058099
 Locker_2.0.glb::PackedScene::1105509203723036646::1763058072::1763058099::1::::<><><>0<>0<>c007a7e4c0085e9cf28b7927083b4aa8<>res://.godot/imported/Locker_2.0.glb-7e7798f9206ad40ade2aa9f30931a015.scn::
 ::res://assets/swearingen_ext/::1763011048
 grass.png::CompressedTexture2D::9047237577167767342::1763006485::1763011041::1::::<><><>0<>0<>07800fca7c1625eff9b2ebe2fd018200<>res://.godot/imported/grass.png-d537b73a87d98bb5e03acc7db8741757.s3tc.ctex::
@@ -38,10 +38,10 @@ square_tile.png::CompressedTexture2D::6474937422652135644::1763006485::176301104
 ::res://assets/swearingen_int/::1763011048
 swearingen3.obj::Mesh::9154860191855035395::1763006485::1763011048::1::::<><><>0<>0<>7940a7ca40340541f17e3bf8495a673f<>res://.godot/imported/swearingen3.obj-5f3974632216ac612c1d2c156543e985.mesh<*>res://.godot/imported/swearingen3.obj-5f3974632216ac612c1d2c156543e985.mesh::
 transparent_picture.png::CompressedTexture2D::9042653081434643205::1763006485::1763011040::1::::<><><>0<>0<>f776f1b40d9c0bd0b8cea22eb219c8c2<>res://.godot/imported/transparent_picture.png-de3baaab7c63bfd5edfa1f5456608cc8.s3tc.ctex::
-::res://scenes/::1763046909
+::res://scenes/::1763058203
 character_rigging.gd::GDScript::7969086832817308972::1763006486::0::1::::<>CharacterBody3D<><>0<>0<><>::
 character_rigging.tscn::PackedScene::3759151293089685109::1763006486::0::1::::<><><>0<>0<><>::uid://b27x3ts1xg551::::res://assets/Character_Rigging.glb<>uid://dlsjxwnh3ga57::::res://scenes/character_rigging.gd
 homework_enforcer.gd::GDScript::2152184169346705872::1763006486::0::1::::<>CharacterBody3D<><>0<>0<><>::
 homework_enforcer.tscn::PackedScene::2658071386704270303::1763006486::0::1::::<><><>0<>0<><>::uid://5wsfnuxyjpky::::res://scenes/homework_enforcer.gd
-Level.tscn::PackedScene::8527678529382244364::1763046909::0::1::::<><><>0<>0<><>::uid://d15sxfldby5cc::::res://assets/swearingen_ext/grass.png<>uid://blg780xs5li1t::::res://assets/Table.obj<>uid://dkqf6bsq6h1yi::::res://assets/swearingen_ext/swearingen_front.obj<>uid://bswg5fp0bicmn::::res://assets/swearingen_ext/pavers/pavers.obj<>uid://n23p28yljxpm::::res://assets/swearingen_ext/pavers/dark_gray.png<>uid://cs7vr0omo1d0p::::res://assets/swearingen_ext/swearingen_front_marble_03_color.jpg<>uid://bts7w4rauw7rd::::res://scenes/character_rigging.tscn<>uid://cyirjj81vk07y::::res://assets/swearingen_ext/pavers/square_tile.png<>uid://bd4ubu1u4soyx::::res://scenes/homework_enforcer.tscn<>uid://bk4wn0fhyohvr::::res://assets/swearingen_ext/pavers/dark_red.png<>uid://brnkg0wcjasqd::::res://assets/swearingen_ext/pavers/light_gray.png<>uid://b8md2w6jfx2l2::::res://assets/book_object/Book_2.0.glb
+Level.tscn::PackedScene::8527678529382244364::1763058202::0::1::::<><><>0<>0<><>::uid://d15sxfldby5cc::::res://assets/swearingen_ext/grass.png<>uid://blg780xs5li1t::::res://assets/Table.obj<>uid://dkqf6bsq6h1yi::::res://assets/swearingen_ext/swearingen_front.obj<>uid://bswg5fp0bicmn::::res://assets/swearingen_ext/pavers/pavers.obj<>uid://n23p28yljxpm::::res://assets/swearingen_ext/pavers/dark_gray.png<>uid://cs7vr0omo1d0p::::res://assets/swearingen_ext/swearingen_front_marble_03_color.jpg<>uid://bts7w4rauw7rd::::res://scenes/character_rigging.tscn<>uid://cyirjj81vk07y::::res://assets/swearingen_ext/pavers/square_tile.png<>uid://bd4ubu1u4soyx::::res://scenes/homework_enforcer.tscn<>uid://bk4wn0fhyohvr::::res://assets/swearingen_ext/pavers/dark_red.png<>uid://brnkg0wcjasqd::::res://assets/swearingen_ext/pavers/light_gray.png<>uid://b8md2w6jfx2l2::::res://assets/book_object/Book_2.0.glb<>uid://p0rts1quxqfe::::res://assets/locker_object/Locker_2.0.glb
 main.gd::GDScript::3887363492216288528::1763006486::0::1::::<>RefCounted<><>0<>0<><>::
