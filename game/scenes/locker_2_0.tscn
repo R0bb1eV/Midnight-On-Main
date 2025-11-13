@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://02psxs48mkek"]
+
+[ext_resource type="PackedScene" uid="uid://p0rts1quxqfe" path="res://assets/locker_object/Locker_2.0.glb" id="1_ajmx0"]
+
+[node name="Locker_2_0" instance=ExtResource("1_ajmx0")]
