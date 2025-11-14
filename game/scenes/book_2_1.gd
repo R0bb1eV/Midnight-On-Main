@@ -30,4 +30,11 @@ func _process(delta):
 
 func pick_up():
 	print("[DEBUG] Book collected:", name)
+	
+	Global.books_collected += 1
+	var label = get_tree().root.get_node("World/CanvasLayer/Label")
+	if label:
+		print("Works")
+		label.text = "Books: %d / %d" % [Global.books_collected, Global.total_books]
+
 	queue_free()  # Remove the book from the scene

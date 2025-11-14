@@ -1,14 +1,14 @@
+Label
+Label3D
+CanvasLayer
 CollisionShape3D
 StaticBody3D
-Label3D
 Area3D
 RigidBody3D
 Marker3D
-Label
 VBoxContainer
 Panel
 Control
 MeshInstance3D
 Node3D
 CollisionPolygon3D
-CSGBox3D
