@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyk7fgdhpx3lw"]
+
+[ext_resource type="PackedScene" uid="uid://c22l8s7jx16xr" path="res://scenes/book_2_0.tscn" id="1_ui3wp"]
+[ext_resource type="Script" uid="uid://dyst8vq1m2knr" path="res://scenes/book_2_1.gd" id="2_ssubb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssubb"]
+size = Vector3(1.9494629, 1.1666603, 2.0045319)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5huf4"]
+size = Vector3(1.99469, 0.6029663, 1.4658203)
+
+[node name="Book_2_0" instance=ExtResource("1_ui3wp")]
+script = ExtResource("2_ssubb")
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.010131836, 0.19385147, 0.03529358)
+shape = SubResource("BoxShape3D_ssubb")
+
+[node name="Label3D" type="Label3D" parent="." index="4"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009613037, -0.0009441078, 0.05029297)
+shape = SubResource("BoxShape3D_5huf4")

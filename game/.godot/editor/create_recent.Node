@@ -1,6 +1,8 @@
-StaticBody3D
-RigidBody3D
 CollisionShape3D
+StaticBody3D
+Label3D
+Area3D
+RigidBody3D
 Marker3D
 Label
 VBoxContainer
@@ -10,5 +12,3 @@ MeshInstance3D
 Node3D
 CollisionPolygon3D
 CSGBox3D
-NavigationRegion3D
-NavigationAgent3D

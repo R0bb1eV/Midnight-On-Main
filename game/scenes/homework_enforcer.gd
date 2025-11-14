@@ -24,10 +24,10 @@ func _physics_process(delta: float) -> void:
 
 	if chasing:
 		agent.target_position = player.global_position
-		print("chase")
+		#print("chase")
 		_move_with_agent(delta, chase_speed)
 	else:
-		print("patrol")
+		#print("patrol")
 		if agent.is_navigation_finished():
 			_set_next_patrol_point()
 		_move_with_agent(delta, move_speed)

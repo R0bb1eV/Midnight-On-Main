@@ -1,0 +1,33 @@
+extends Node3D
+
+# Player is in range flag
+var player_in_range := false
+
+func _ready():
+	# Connect signals
+	$Area3D.body_entered.connect(_on_body_entered)
+	$Area3D.body_exited.connect(_on_body_exited)
+	
+	# Check for overlapping bodies at start (handles player starting inside)
+	for body in $Area3D.get_overlapping_bodies():
+		_on_body_entered(body)
+
+func _on_body_entered(body):
+	print("[DEBUG] Body entered Area3D:", body.name)
+	if body.is_in_group("player"):
+		player_in_range = true
+		print("[DEBUG] Player entered book pickup range:", name)
+
+func _on_body_exited(body):
+	print("[DEBUG] Body exited Area3D:", body.name)
+	if body.is_in_group("player"):
+		player_in_range = false
+		print("[DEBUG] Player LEFT book pickup range:", name)
+
+func _process(delta):
+	if player_in_range and Input.is_action_just_pressed("interact"):
+		pick_up()
+
+func pick_up():
+	print("[DEBUG] Book collected:", name)
+	queue_free()  # Remove the book from the scene
