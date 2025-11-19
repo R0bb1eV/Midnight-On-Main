@@ -1,5 +1,6 @@
-CollisionShape3D
 StaticBody3D
+CollisionShape3D
+Node3D
 MeshInstance3D
 Label
 Label3D
@@ -10,5 +11,4 @@ Marker3D
 VBoxContainer
 Panel
 Control
-Node3D
 CollisionPolygon3D

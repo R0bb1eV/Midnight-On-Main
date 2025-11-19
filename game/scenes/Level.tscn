@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=15 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
-[ext_resource type="PackedScene" uid="uid://b2o64tt2ea82u" path="res://assets/swearingen_ext/swearingen_front.glb" id="2_faw0r"]
 [ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://scenes/character_rigging.tscn" id="6_dke22"]
 [ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="7_4qegb"]
+[ext_resource type="PackedScene" uid="uid://dd20mrs7kurc0" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
+[ext_resource type="PackedScene" uid="uid://bfevsxyulkj0u" path="res://scenes/swearingen_front.tscn" id="8_faw0r"]
 [ext_resource type="PackedScene" uid="uid://p0rts1quxqfe" path="res://assets/locker_object/Locker_2.0.glb" id="13_m0xki"]
 [ext_resource type="PackedScene" uid="uid://dyk7fgdhpx3lw" path="res://scenes/book_2_1.tscn" id="13_xe3hh"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
-[ext_resource type="PackedScene" uid="uid://bienplyps52ds" path="res://scenes/swearingen_walls.tscn" id="14_xe3hh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,10 +21,22 @@ background_mode = 2
 sky = SubResource("Sky_a202f")
 tonemap_mode = 2
 glow_enabled = true
+fog_light_color = Color(0.8627451, 0.7411765, 0.7019608, 1)
+fog_light_energy = 1.35
+fog_density = 0.0153
+volumetric_fog_density = 0.0819
+volumetric_fog_albedo = Color(0.8627451, 0.7411765, 0.7019608, 1)
+volumetric_fog_emission = Color(0.26050806, 0.21871446, 0.20523264, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2eouu"]
 albedo_texture = ExtResource("2_dke22")
 uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_faw0r"]
+size = Vector3(11.991913, 1, 38.965332)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2eouu"]
+size = Vector3(6.7456055, 4.518219, 50.7444)
 
 [node name="World" type="Node3D"]
 
@@ -33,10 +45,6 @@ uv1_triplanar = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="map"]
 environment = SubResource("Environment_noarx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="map"]
-transform = Transform3D(0.5169984, -0.7812681, 0.3497612, -0.8149851, -0.324322, 0.48022354, -0.2617481, -0.53332496, -0.80439574, 2002.6759, 11.364424, -959.5388)
-shadow_enabled = true
-
 [node name="CSGBox3D" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060791016, 0, -0.36898804)
 use_collision = true
@@ -44,13 +52,26 @@ collision_mask = 2
 size = Vector3(127.97119, 0, 137.55414)
 material = SubResource("StandardMaterial3D_2eouu")
 
-[node name="swearingen_front" parent="map" instance=ExtResource("2_faw0r")]
-transform = Transform3D(-2.425982e-08, 0, 0.555, 0, 0.555, 0, -0.555, 0, -2.425982e-08, 2.4525127, 0.015040994, 67.71227)
+[node name="swearingen_front" parent="map" instance=ExtResource("8_faw0r")]
+transform = Transform3D(-2.1200023e-08, 0, 0.485, 0, 0.485, 0, -0.485, 0, -2.1200023e-08, 5.5955696, 0.015040994, 30.507816)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/swearingen_front"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/swearingen_front/StaticBody3D"]
+transform = Transform3D(0.94721025, 0.32061297, -6.039613e-14, -0.32061297, 0.94721025, 0, 1.4210855e-13, 0, 1, 12.085876, 1.5867655, -0.0070791245)
+shape = SubResource("BoxShape3D_faw0r")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/swearingen_front/StaticBody3D"]
+transform = Transform3D(1, 0, -6.039613e-14, 0, 1, 0, 6.039613e-14, 0, 1, 2.8727837, 1.7591095, -0.07009983)
+shape = SubResource("BoxShape3D_2eouu")
+
+[node name="swearingen_int" parent="map" instance=ExtResource("8_2eouu")]
+transform = Transform3D(2.245064, 0, 2.245064, 0, 3.175, 0, -2.245064, 0, 2.245064, -72.894424, 0.10704517, 80.08949)
 
 [node name="HW_Enf_TEST_NOT WORKING" type="Node3D" parent="."]
 
 [node name="HomeworkEnforcer" parent="HW_Enf_TEST_NOT WORKING" instance=ExtResource("7_4qegb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.387938, 0, 9.407875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.387938, 0, -15.592125)
 patrol_points = Array[NodePath]([NodePath("../patrol1"), NodePath("../patrol2"), NodePath("../patrol3")])
 
 [node name="patrol1" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
@@ -63,46 +84,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.82552, 0, -25.630222)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.154572, 0, 1.1219025)
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -50.079872, 0, 49.099762)
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 2.4557018, 2.882759, 13.410027)
 
 [node name="Locker_2_0" parent="." instance=ExtResource("13_m0xki")]
-transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.025449991, 3.5902605)
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.025449991, -20.40974)
 
 [node name="Locker_2_1" parent="." instance=ExtResource("13_m0xki")]
-transform = Transform3D(-0.65, 0, -5.6824803e-08, 0, 0.65, 0, 5.6824803e-08, 0, -0.65, 5.179789, 0.02851516, 3.5767968)
+transform = Transform3D(-0.65, 0, -5.6824803e-08, 0, 0.65, 0, 5.6824803e-08, 0, -0.65, 5.179789, 0.02851516, -20.423203)
 
-[node name="Table1" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0380461, -1.0719706, 2.0398474)
+[node name="Tables" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0380461, -1.0719706, -21.960152)
 
-[node name="Table2" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7931283, -1.0932493, 2.0472686)
+[node name="Table1" parent="Tables" instance=ExtResource("14_p6oy6")]
 
-[node name="Table3" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9868107, -1.092915, -2.7630062)
+[node name="Table2" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8311744, -0.021278739, 0.007421255)
 
-[node name="Table4" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8443637, -1.0863742, -2.755585)
+[node name="Table3" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051235437, -0.020944476, -4.8028536)
 
-[node name="Table5" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9355752, -1.0953436, -7.56586)
+[node name="Table4" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8824098, -0.014403582, -4.795432)
 
-[node name="Table6" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8955991, -1.0888027, -7.5584383)
+[node name="Table5" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102470875, -0.023373008, -9.605707)
 
-[node name="Table7" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8843398, -1.0872555, -12.368713)
+[node name="Table6" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9336452, -0.016832113, -9.598286)
 
-[node name="Table8" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9468346, -1.0881689, -12.361292)
+[node name="Table7" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15370631, -0.015284896, -14.408561)
 
-[node name="Table9" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8331044, -1.0790398, -17.171566)
+[node name="Table8" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9848807, -0.016198277, -14.401139)
 
-[node name="Table10" parent="." instance=ExtResource("14_p6oy6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99807, -1.0945932, -17.164145)
+[node name="Table9" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20494175, -0.00706923, -19.211414)
+
+[node name="Table10" parent="Tables" instance=ExtResource("14_p6oy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.036116, -0.022622585, -19.20399)
 
 [node name="Book_2_0" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -2.0399761, 1.4207317, 2.3500233)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -2.0399761, 1.4207317, -21.649977)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -116,7 +139,4 @@ theme_override_font_sizes/font_size = 35
 text = "Books: 0 / 5"
 
 [node name="Book_2_1" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 1.730756, 1.4035897, 2.4145439)
-
-[node name="Node3D" parent="." instance=ExtResource("14_xe3hh")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -91.656906, -10, 18)
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 1.730756, 1.4035897, -21.585457)
