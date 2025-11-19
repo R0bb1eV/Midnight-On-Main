@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2uwp8i55m063"]
+
+[ext_resource type="AudioStream" uid="uid://dcsktnyyorm2w" path="res://assets/music/Corridor in B minor.wav" id="1_d2dya"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_d2dya")
+autoplay = true

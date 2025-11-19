@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=17 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://scenes/character_rigging.tscn" id="6_dke22"]
 [ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="7_4qegb"]
 [ext_resource type="PackedScene" uid="uid://dd20mrs7kurc0" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
 [ext_resource type="PackedScene" uid="uid://bfevsxyulkj0u" path="res://scenes/swearingen_front.tscn" id="8_faw0r"]
+[ext_resource type="PackedScene" uid="uid://lg62ores86w" path="res://assets/WoodenChair.glb" id="9_2eouu"]
+[ext_resource type="PackedScene" uid="uid://c2uwp8i55m063" path="res://scenes/audio_stream_player_2d.tscn" id="10_rccsh"]
 [ext_resource type="PackedScene" uid="uid://p0rts1quxqfe" path="res://assets/locker_object/Locker_2.0.glb" id="13_m0xki"]
 [ext_resource type="PackedScene" uid="uid://dyk7fgdhpx3lw" path="res://scenes/book_2_1.tscn" id="13_xe3hh"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
@@ -24,6 +26,7 @@ glow_enabled = true
 fog_light_color = Color(0.8627451, 0.7411765, 0.7019608, 1)
 fog_light_energy = 1.35
 fog_density = 0.0153
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.0819
 volumetric_fog_albedo = Color(0.8627451, 0.7411765, 0.7019608, 1)
 volumetric_fog_emission = Color(0.26050806, 0.21871446, 0.20523264, 1)
@@ -84,7 +87,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.82552, 0, -25.630222)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.154572, 0, 1.1219025)
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 2.4557018, 2.882759, 13.410027)
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 2.4557018, 2.882759, 50.410027)
 
 [node name="Locker_2_0" parent="." instance=ExtResource("13_m0xki")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.025449991, -20.40974)
@@ -140,3 +143,8 @@ text = "Books: 0 / 5"
 
 [node name="Book_2_1" parent="." instance=ExtResource("13_xe3hh")]
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 1.730756, 1.4035897, -21.585457)
+
+[node name="WoodenChair" parent="." instance=ExtResource("9_2eouu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -7)
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_rccsh")]
