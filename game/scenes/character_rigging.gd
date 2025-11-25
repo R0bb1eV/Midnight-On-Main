@@ -1,44 +1,96 @@
 extends CharacterBody3D
 
-@onready var armature = $Armature
-@onready var spring_arm_pivot = $SpringArmPivot
-@onready var spring_arm = $SpringArmPivot/SpringArm3D
-@onready var anim_tree = $AnimationTree
-@onready var camera = $SpringArmPivot/SpringArm3D/Camera3D
+# --- Node references ---
+@onready var armature: Node3D = $Armature
+@onready var anim_tree: AnimationTree = $AnimationTree
 
-const BASE_SPEED = 4.0
-const JUMP_VELOCITY = 4.5
-const LERP_VAL = 0.15
-var GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
+# Camera pivot + camera (assigned at runtime)
+var pivot_pitch: Node3D = null
+var camera: Camera3D = null
 
-var sprint_mult := 2.0
-var crouch_mult := 0.5
+# --- Movement ---
+const BASE_SPEED: float = 4.0
+const JUMP_VELOCITY: float = 4.5
+const LERP_VAL: float = 0.15
+var GRAVITY: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var sprint_stamina_max := 5.0
-var sprint_stamina := 5.0
-var sprint_drain_rate := 1.0
-var sprint_recovery_rate := 0.5
-var sprint_on_cooldown := false
-var is_sprinting := false
-var is_crouching := false
+# --- Sprint / Crouch ---
+var sprint_mult: float = 2.0
+var crouch_mult: float = 0.5
+var sprint_stamina_max: float = 5.0
+var sprint_stamina: float = 5.0
+var sprint_drain_rate: float = 1.0
+var sprint_recovery_rate: float = 0.5
+var sprint_on_cooldown: bool = false
+var is_sprinting: bool = false
+var is_crouching: bool = false
 
-# --- POV Change ---
-var default_fov := 70.0
-var sprint_fov := 80.0
-var crouch_fov := 62.0
-var fov_lerp_speed := 5.0
+# --- FOV ---
+var default_fov: float = 70.0
+var sprint_fov: float = 80.0
+var crouch_fov: float = 62.0
+var fov_lerp_speed: float = 5.0
+
+# --- Mouse look ---
+@export var mouse_sensitivity: float = 0.15
+@export var invert_y: bool = false
+@export var pitch_min_deg: float = -80.0
+@export var pitch_max_deg: float = 80.0
+@export var quit_when_cursor_visible: bool = true
+
 
 func _ready() -> void:
+	# Capture mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+	# Attempt to find camera in likely locations
+	var candidates = [
+		"PivotPitch/Camera3D",
+		"Camera3D",
+		"Armature/PivotPitch/Camera3D"
+	]
+	for path in candidates:
+		var c = get_node_or_null(path)
+		if c and c is Camera3D:
+			camera = c
+			pivot_pitch = camera.get_parent() if camera.get_parent() is Node3D else null
+			break
+
+	# Fallback: shallow search under root
+	if camera == null:
+		camera = _find_camera_in_subtree(self, 4)
+		if camera:
+			pivot_pitch = camera.get_parent() if camera.get_parent() is Node3D else null
+
+	if camera:
+		camera.current = true
+		camera.fov = default_fov
+		if pivot_pitch:
+			pivot_pitch.rotation_degrees.x = 0
+	else:
+		push_error("Camera3D not found. Update script with correct path.")
+
+
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
-		
 	if event is InputEventMouseMotion:
-		spring_arm_pivot.rotate_y(-event.relative.x * 0.005)
-		spring_arm.rotate_x(-event.relative.y * 0.005)
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
+		# --- Yaw: rotate character root ---
+		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
+
+		# --- Pitch: rotate only pivot_pitch ---
+		if pivot_pitch:
+			var sign = 1.0 if invert_y else -1.0
+			var delta_pitch = sign * event.relative.y * mouse_sensitivity
+			var new_pitch = pivot_pitch.rotation_degrees.x + delta_pitch
+			new_pitch = clamp(new_pitch, pitch_min_deg, pitch_max_deg)
+			pivot_pitch.rotation_degrees.x = new_pitch
+
+	if event is InputEventKey and Input.is_action_just_pressed("ui_cancel"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			if quit_when_cursor_visible:
+				get_tree().quit()
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _physics_process(delta: float) -> void:
 	# --- Gravity ---
@@ -49,12 +101,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# --- Input Direction ---
+	# --- Movement input ---
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	direction = direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
+	var raw = Vector3(input_dir.x, 0, input_dir.y)
+	var direction = (global_transform.basis * raw).normalized()
 
-	# --- Sprinting & Crouching Logic ---
+	# --- Sprint / crouch ---
 	if Input.is_action_pressed("run") and not sprint_on_cooldown and sprint_stamina > 0.0:
 		is_sprinting = true
 	else:
@@ -76,35 +128,48 @@ func _physics_process(delta: float) -> void:
 
 	is_crouching = Input.is_action_pressed("crouch")
 
-	# --- Determine Final Speed ---
+	# --- Determine final speed ---
 	var speed := BASE_SPEED
 	if is_sprinting:
 		speed *= sprint_mult
 	elif is_crouching:
 		speed *= crouch_mult
 
-	# --- Movement ---
-	if direction:
+	# --- Apply movement ---
+	if direction.length() > 0.01:
 		velocity.x = lerp(velocity.x, direction.x * speed, LERP_VAL)
 		velocity.z = lerp(velocity.z, direction.z * speed, LERP_VAL)
-		armature.rotation.y = lerp_angle(armature.rotation.y, atan2(-velocity.x, -velocity.z), LERP_VAL)
 	else:
 		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)
 		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)
 
 	move_and_slide()
 
-	# --- Animation Blend ---
-	anim_tree.set("parameters/BlendSpace1D/blend_position", velocity.length() / (BASE_SPEED * sprint_mult))
+	# --- Animation blend ---
+	if anim_tree:
+		anim_tree.set("parameters/BlendSpace1D/blend_position", velocity.length() / (BASE_SPEED * sprint_mult))
 
-	# --- Release Mouse ---
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+	# --- FOV lerp ---
 	var target_fov := default_fov
 	if is_sprinting:
 		target_fov = sprint_fov
 	elif is_crouching:
 		target_fov = crouch_fov
-		
-	camera.fov = lerp(camera.fov, target_fov, fov_lerp_speed * delta)
+
+	if camera:
+		camera.fov = lerp(camera.fov, target_fov, fov_lerp_speed * delta)
+
+
+# --- Helper: find Camera3D in subtree ---
+func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Camera3D:
+	if depth > max_depth:
+		return null
+	if root is Camera3D:
+		return root
+	for c in root.get_children():
+		var found = _find_camera_in_subtree(c, max_depth, depth + 1)
+		if found:
+			return found
+	return null
+	
+	

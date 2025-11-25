@@ -141,6 +141,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.154572, 0, 1.1219025)
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 2.4557018, 2.882759, 50.410027)
+mouse_sensitivity = null
+pitch_min_deg = null
+pitch_max_deg = null
+quit_when_cursor_visible = null
 
 [node name="Locker_2_0" parent="." instance=ExtResource("13_m0xki")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.025449991, -20.40974)
@@ -205,6 +209,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -7)
 [node name="filter" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="filter"]
+visible = false
 material = SubResource("ShaderMaterial_sv41r")
 anchors_preset = 15
 anchor_right = 1.0
