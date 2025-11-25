@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=20 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://scenes/character_rigging.tscn" id="6_dke22"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://lg62ores86w" path="res://assets/WoodenChair.glb" id="9_2eouu"]
 [ext_resource type="PackedScene" uid="uid://c2uwp8i55m063" path="res://scenes/audio_stream_player_2d.tscn" id="10_rccsh"]
 [ext_resource type="Shader" uid="uid://co5mrwx5cpfkx" path="res://vhs_shader.gdshader" id="11_ax7ne"]
+[ext_resource type="Script" uid="uid://csuye601ym70x" path="res://scenes/vhs_effect.gd" id="11_sv41r"]
 [ext_resource type="PackedScene" uid="uid://p0rts1quxqfe" path="res://assets/locker_object/Locker_2.0.glb" id="13_m0xki"]
 [ext_resource type="PackedScene" uid="uid://dyk7fgdhpx3lw" path="res://scenes/book_2_1.tscn" id="13_xe3hh"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
@@ -44,23 +45,6 @@ size = Vector3(6.7456055, 4.518219, 50.7444)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sv41r"]
 shader = ExtResource("11_ax7ne")
-shader_parameter/grain_strength = 0.1
-shader_parameter/grain_scale = 2.0
-shader_parameter/static_speed = 0.3
-shader_parameter/noise_intensity = 0.034000001615
-shader_parameter/vhs_line_strength = 0.0030000001425
-shader_parameter/vhs_line_density = 300.0
-shader_parameter/vhs_line_speed = 0.5
-shader_parameter/desaturate_amount = 0.03
-shader_parameter/color_shift_amount = 0.022000001045
-shader_parameter/chroma_shift = 0.0010000000475
-shader_parameter/jitter_strength = 0.0010000000475
-shader_parameter/jitter_speed = 0.0
-shader_parameter/red_strength = 0.0
-shader_parameter/red_decay = 0.33600001596
-shader_parameter/ghost_offset = 0.0
-shader_parameter/ghost_intensity = 0.0
-shader_parameter/effect_mix = 1.0
 
 [node name="World" type="Node3D"]
 
@@ -171,6 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -7)
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_rccsh")]
 
 [node name="filter" type="CanvasLayer" parent="."]
+script = ExtResource("11_sv41r")
 
 [node name="ColorRect" type="ColorRect" parent="filter"]
 material = SubResource("ShaderMaterial_sv41r")

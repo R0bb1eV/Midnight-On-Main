@@ -1,1 +1,5 @@
 res://scenes/Level.tscn
+res://vhs_shader.gdshader
+res://scenes/vhs_effect.gd
+res://scenes/grain.gd
+res://scenes/color_rect.gd

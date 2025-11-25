@@ -1,3 +1,5 @@
+ColorRect
+CanvasLayer
 AudioStreamPlayer2D
 StaticBody3D
 CollisionShape3D
@@ -5,11 +7,9 @@ Node3D
 MeshInstance3D
 Label
 Label3D
-CanvasLayer
 Area3D
 RigidBody3D
 Marker3D
 VBoxContainer
 Panel
 Control
-CollisionPolygon3D
