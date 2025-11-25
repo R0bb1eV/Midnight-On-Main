@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://7hyeih0id28c"]
+
+[ext_resource type="PackedScene" uid="uid://85wk1dmn0dp4" path="res://assets/swearingen_ext/foliage/dead_tree_rt_1.glb" id="1_00ci2"]
+[ext_resource type="PackedScene" uid="uid://cg2dqm8dt2565" path="res://assets/swearingen_ext/foliage/dead_tree_rt_2.glb" id="2_72c8c"]
+[ext_resource type="PackedScene" uid="uid://c5twacn6jh17" path="res://assets/swearingen_ext/foliage/small_tree_rt_1.glb" id="3_jyt8o"]
+[ext_resource type="PackedScene" uid="uid://cgc02yexu2qeh" path="res://assets/swearingen_ext/foliage/tree_rt_1.glb" id="4_y08jf"]
+[ext_resource type="PackedScene" uid="uid://wo06mkh65pdp" path="res://assets/swearingen_ext/foliage/tree_rt_2.glb" id="5_kg8iu"]
+[ext_resource type="PackedScene" uid="uid://c08u8s6vabwc8" path="res://assets/swearingen_ext/foliage/tree_rt_2_1.glb" id="6_5u1sj"]
+[ext_resource type="PackedScene" uid="uid://jbytbrmorpeb" path="res://assets/swearingen_ext/foliage/tree_rt_3.glb" id="7_repfc"]
+[ext_resource type="PackedScene" uid="uid://ddeg0kqhbnadl" path="res://assets/swearingen_ext/foliage/tree_rt_4.glb" id="8_ptwo3"]
+
+[node name="trees" type="Node3D"]
+
+[node name="dead_tree_rt_12" parent="." instance=ExtResource("1_00ci2")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, -2.8864326, 0, -11.52755)
+
+[node name="dead_tree_rt_22" parent="." instance=ExtResource("2_72c8c")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, -3.2544346, 0, -2.855564)
+
+[node name="small_tree_rt_12" parent="." instance=ExtResource("3_jyt8o")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, -3.2944412, 0, -7.6555557)
+
+[node name="tree_rt_12" parent="." instance=ExtResource("4_y08jf")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, 0.7055588, 0, -9.775558)
+
+[node name="tree_rt_22" parent="." instance=ExtResource("5_kg8iu")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, -4.6744328, 0, 11.944452)
+
+[node name="tree_rt_2_12" parent="." instance=ExtResource("6_5u1sj")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, 3.425562, 0, -7.335556)
+
+[node name="tree_rt_32" parent="." instance=ExtResource("7_repfc")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, 2.8655548, 0, -2.895565)
+
+[node name="tree_rt_42" parent="." instance=ExtResource("8_ptwo3")]
+transform = Transform3D(3.563818, 0, -3.563818, 0, 5.04, 0, 3.563818, 0, 3.563818, 3.4455643, 0, 5.6444397)
+
+[node name="small_tree_rt_13" parent="." instance=ExtResource("3_jyt8o")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, -2.2944412, 0, 2.3444443)
+
+[node name="tree_rt_13" parent="." instance=ExtResource("4_y08jf")]
+transform = Transform3D(5.04, 0, 0, 0, 5.04, 0, 0, 0, 5.04, -2.2944412, 0, 7.2244415)

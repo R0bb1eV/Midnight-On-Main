@@ -1,8 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=25 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
+[ext_resource type="PackedScene" uid="uid://b8ylrko2443yc" path="res://scenes/ext_foliage_barrier.tscn" id="4_sv41r"]
+[ext_resource type="PackedScene" uid="uid://7hyeih0id28c" path="res://scenes/trees.tscn" id="5_p6oy6"]
 [ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://scenes/character_rigging.tscn" id="6_dke22"]
+[ext_resource type="Texture2D" uid="uid://cu7ofdrqj67tj" path="res://assets/swearingen_ext/blindness.png" id="6_opqd1"]
 [ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="7_4qegb"]
+[ext_resource type="PackedScene" uid="uid://de6qiq7iv1eq2" path="res://scenes/barbs.tscn" id="7_xyj84"]
 [ext_resource type="PackedScene" uid="uid://dd20mrs7kurc0" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
 [ext_resource type="PackedScene" uid="uid://bfevsxyulkj0u" path="res://scenes/swearingen_front.tscn" id="8_faw0r"]
 [ext_resource type="PackedScene" uid="uid://lg62ores86w" path="res://assets/WoodenChair.glb" id="9_2eouu"]
@@ -41,6 +45,16 @@ size = Vector3(11.991913, 1, 38.965332)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2eouu"]
 size = Vector3(6.7456055, 4.518219, 50.7444)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gips2"]
+albedo_texture = ExtResource("6_opqd1")
+
+[sub_resource type="SphereMesh" id="SphereMesh_wsd7d"]
+material = SubResource("StandardMaterial3D_gips2")
+flip_faces = true
+radius = 35.036
+height = 38.628
+is_hemisphere = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sv41r"]
 shader = ExtResource("11_ax7ne")
@@ -109,7 +123,7 @@ size = Vector3(127.97119, 0, 137.55414)
 material = SubResource("StandardMaterial3D_2eouu")
 
 [node name="swearingen_front" parent="map" instance=ExtResource("8_faw0r")]
-transform = Transform3D(-2.1200023e-08, 0, 0.485, 0, 0.485, 0, -0.485, 0, -2.1200023e-08, 5.5955696, 0.015040994, 30.507816)
+transform = Transform3D(-2.1200023e-08, 0, 0.485, 0, 0.485, 0, -0.485, 0, -2.1200023e-08, -0.4044304, 0.015040994, 30.507816)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="map/swearingen_front"]
 
@@ -124,10 +138,55 @@ shape = SubResource("BoxShape3D_2eouu")
 [node name="swearingen_int" parent="map" instance=ExtResource("8_2eouu")]
 transform = Transform3D(2.245064, 0, 2.245064, 0, 3.175, 0, -2.245064, 0, 2.245064, -72.894424, 0.10704517, 80.08949)
 
+[node name="fence" parent="map" instance=ExtResource("4_sv41r")]
+transform = Transform3D(0.484, 0, 0, 0, 0.484, 0, 0, 0, 0.484, 3.1, 0.90000004, 21.2)
+
+[node name="foliage" type="Node3D" parent="map"]
+
+[node name="trees" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 13.3, 0, 17)
+
+[node name="trees2" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, 13.3, 0, 2)
+
+[node name="trees3" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, -14.7, 0, 17)
+
+[node name="trees4" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, -14.7, 0, 2)
+
+[node name="trees5" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(-2.3385594e-08, 0, -0.535, 0, 0.535, 0, 0.535, 0, -2.3385594e-08, -5.7, 0, -5)
+
+[node name="trees6" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(-0.37830216, 0, 0.37830216, 0, 0.535, 0, -0.37830216, 0, -0.37830216, 7.3, 0, -7)
+
+[node name="trees7" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(0.535, 0, 0, 0, 0.535, 0, 0, 0, 0.535, -24.7, 0, 9)
+
+[node name="trees8" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(-0.37830213, 0, -0.37830213, 0, 0.535, 0, 0.37830213, 0, -0.37830213, -29.7, 0, 18)
+
+[node name="trees9" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(0.13846819, 0, -0.5167703, 0, 0.535, 0, 0.5167703, 0, 0.13846819, -4.7, 0, -11)
+
+[node name="trees10" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(-0.535, 0, 4.6771188e-08, 0, 0.535, 0, -4.6771188e-08, 0, -0.535, 24.3, 0, 16)
+
+[node name="trees11" parent="map/foliage" instance=ExtResource("5_p6oy6")]
+transform = Transform3D(0.37830216, 0, 0.3783021, 0, 0.535, 0, -0.3783021, 0, 0.37830216, 21.3, 0, -2)
+
+[node name="blindness" type="MeshInstance3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -1, 17)
+mesh = SubResource("SphereMesh_wsd7d")
+
+[node name="barbs" parent="map" instance=ExtResource("7_xyj84")]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 1.6, 3.6, 25.3)
+
 [node name="HW_Enf_TEST_NOT WORKING" type="Node3D" parent="."]
 
 [node name="HomeworkEnforcer" parent="HW_Enf_TEST_NOT WORKING" instance=ExtResource("7_4qegb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.387938, 0, -15.592125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3879375, 0, -27.592125)
 patrol_points = Array[NodePath]([NodePath("../patrol1"), NodePath("../patrol2"), NodePath("../patrol3")])
 
 [node name="patrol1" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
@@ -140,7 +199,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.82552, 0, -25.630222)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.154572, 0, 1.1219025)
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 2.4557018, 2.882759, 50.410027)
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 2.4557018, 2.882759, 9.410027)
 mouse_sensitivity = null
 pitch_min_deg = null
 pitch_max_deg = null
@@ -202,7 +261,7 @@ text = "Books: 0 / 5"
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 1.730756, 1.4035897, -21.585457)
 
 [node name="WoodenChair" parent="." instance=ExtResource("9_2eouu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_rccsh")]
 

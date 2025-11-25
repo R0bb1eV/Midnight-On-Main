@@ -1,9 +1,0 @@
-res://scenes/Level.tscn
-res://vhs_shader.gdshader
-res://scenes/vhs_effect.gd
-res://scenes/grain.gd
-res://scenes/color_rect.gd
-res://scenes/default.gdshader
-res://shaders/vhs_shader.gdshader
-res://scenes/character_rigging.tscn
-res://scenes/character_rigging.gd

@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8ylrko2443yc"]
+
+[ext_resource type="PackedScene" uid="uid://dt8arodsk6lm7" path="res://assets/swearingen_ext/ext_obj/barb_fence.glb" id="1_1qeat"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qeat"]
+size = Vector3(2.1000001, 8.1, 46.100002)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="left" type="Node3D" parent="."]
+
+[node name="barb_fence" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -0.56604815)
+
+[node name="barb_fence2" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, 4.433952)
+
+[node name="barb_fence3" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -10.466049)
+
+[node name="barb_fence4" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -5.4660487)
+
+[node name="barb_fence5" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -20.366049)
+
+[node name="barb_fence6" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -15.366049)
+
+[node name="barb_fence7" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -30.26605)
+
+[node name="barb_fence8" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -25.26605)
+
+[node name="barb_fence9" parent="left" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -35.16605)
+
+[node name="left2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.899998, 0, 0)
+
+[node name="barb_fence" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -0.56604815)
+
+[node name="barb_fence2" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, 4.433952)
+
+[node name="barb_fence3" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -10.466049)
+
+[node name="barb_fence4" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -5.4660487)
+
+[node name="barb_fence5" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -20.366049)
+
+[node name="barb_fence6" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -15.366049)
+
+[node name="barb_fence7" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -30.26605)
+
+[node name="barb_fence8" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -25.26605)
+
+[node name="barb_fence9" parent="left2" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -35.16605)
+
+[node name="left3" type="Node3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.4, 0, -30.3)
+
+[node name="barb_fence" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -0.56604815)
+
+[node name="barb_fence2" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, 4.433952)
+
+[node name="barb_fence3" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.12, -23.52815, 0, -9.966049)
+
+[node name="barb_fence4" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52815, 0, -5.4660487)
+
+[node name="barb_fence5" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.528152, 0, -21.666046)
+
+[node name="barb_fence6" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.172, -23.52815, 0, -15.366047)
+
+[node name="barb_fence7" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.528152, 0, -31.566048)
+
+[node name="barb_fence8" parent="left3" instance=ExtResource("1_1qeat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.528154, 0, -26.566048)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.349999, 0, -21.65)
+shape = SubResource("BoxShape3D_1qeat")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.6500006, 1, -43.65)
+shape = SubResource("BoxShape3D_1qeat")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.650002, 0.54999983, -21.65)
+shape = SubResource("BoxShape3D_1qeat")
