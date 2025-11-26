@@ -1,14 +1,14 @@
-[gd_scene load_steps=32 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=33 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
-[ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
+[ext_resource type="Script" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
 [ext_resource type="PackedScene" uid="uid://b8ylrko2443yc" path="res://scenes/ext_foliage_barrier.tscn" id="4_sv41r"]
 [ext_resource type="PackedScene" uid="uid://7hyeih0id28c" path="res://scenes/trees.tscn" id="5_p6oy6"]
 [ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://scenes/character_rigging.tscn" id="6_dke22"]
 [ext_resource type="Texture2D" uid="uid://cu7ofdrqj67tj" path="res://assets/swearingen_ext/blindness.png" id="6_opqd1"]
 [ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="7_4qegb"]
 [ext_resource type="PackedScene" uid="uid://de6qiq7iv1eq2" path="res://scenes/barbs.tscn" id="7_xyj84"]
-[ext_resource type="PackedScene" uid="uid://dgi2c2j4h53dx" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
+[ext_resource type="PackedScene" uid="uid://dd20mrs7kurc0" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
 [ext_resource type="PackedScene" uid="uid://bfevsxyulkj0u" path="res://scenes/swearingen_front.tscn" id="8_faw0r"]
 [ext_resource type="PackedScene" uid="uid://lg62ores86w" path="res://assets/WoodenChair.glb" id="9_2eouu"]
 [ext_resource type="PackedScene" uid="uid://c2uwp8i55m063" path="res://scenes/audio_stream_player_2d.tscn" id="10_rccsh"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dsfqivph7t3km" path="res://assets/crosshair.png" id="13_xyj84"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
 [ext_resource type="Script" uid="uid://ckryll5jgn3y2" path="res://scenes/door_trigger.gd" id="16_opqd1"]
+[ext_resource type="Script" uid="uid://ce52g3f1o4doe" path="res://scenes/menu.gd" id="20_iw3v5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
 size = Vector3(3.3787537, 7.4921417, 8.122391)
@@ -462,9 +463,66 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.99100006
+offset_right = -3.0
+offset_bottom = -0.16802979
+script = ExtResource("20_iw3v5")
+
+[node name="Camera3D" type="Camera3D" parent="Menu"]
+transform = Transform3D(-0.9999198, 0, 0.012670806, 0.003899717, 0.95146024, 0.30774713, -0.012055768, 0.30777183, -0.9513838, 0.05275452, 17.342379, -6.16184)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Menu"]
+
+[node name="Label" type="Label" parent="Menu/CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.224
+anchor_top = 0.136
+anchor_right = 0.76600003
+anchor_bottom = 0.38000003
+offset_left = -35.048004
+offset_top = 5.871994
+offset_right = 41.567993
+offset_bottom = 5.7599792
+theme_override_colors/font_color = Color(0.47058824, 0.023529412, 0.023529412, 1)
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 110
+text = "Midnight on Main"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.379
+anchor_top = 0.65400004
+anchor_right = 0.62600005
+anchor_bottom = 0.952
+offset_left = 0.5289917
+offset_top = 0.13195801
+offset_right = -0.27404785
+offset_bottom = -0.184021
+theme_override_constants/separation = 18
+
+[node name="StartButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 29
+text = "Quit"
+
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_rccsh")]
 
 [connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]
 [connection signal="body_entered" from="teleport/DoorTrigger2" to="teleport/DoorTrigger2" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger2" to="teleport/DoorTrigger2" method="_on_body_exited"]
+[connection signal="pressed" from="Menu/VBoxContainer/StartButton" to="Menu" method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/QuitButton" to="Menu" method="_on_quit_pressed"]

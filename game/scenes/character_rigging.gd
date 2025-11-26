@@ -43,16 +43,20 @@ var fov_lerp_speed: float = 5.0
 # --- Stamina bar state ---
 var stamina_bar_empty: bool = false
 
+# --- Gameplay active flag ---
+var gameplay_active: bool = false
+
 
 func _ready() -> void:
-	# Capture mouse
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Only capture mouse if gameplay is active
+	if gameplay_active:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# Attempt to find camera
+	# --- Initialize camera ---
 	var candidates = [
 		"PivotPitch/Camera3D",
 		"Camera3D",
-		"Armature/PivotPitch/Camera3D"
+        "Armature/PivotPitch/Camera3D"
 	]
 	for path in candidates:
 		var c = get_node_or_null(path)
@@ -83,6 +87,9 @@ func _ready() -> void:
 
 
 func _unhandled_input(event):
+	if not gameplay_active:
+		return  # ignore all input until gameplay starts
+
 	if event is InputEventMouseMotion:
 		# Yaw
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
@@ -97,14 +104,15 @@ func _unhandled_input(event):
 
 	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			# Second escape quits
 			get_tree().quit()
 		else:
-			# First escape unlocks mouse
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _physics_process(delta: float) -> void:
+	if not gameplay_active:
+		return  # don't move or process physics until gameplay starts
+
 	# --- Gravity ---
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
@@ -186,7 +194,6 @@ func _physics_process(delta: float) -> void:
 		_update_stamina_bar_style()
 
 
-# --- Helper to update the stamina bar color using Theme + rounded StyleBox ---
 func _update_stamina_bar_style():
 	if not stamina_bar:
 		return
@@ -207,7 +214,6 @@ func _update_stamina_bar_style():
 	stamina_bar.theme = theme
 
 
-# --- Helper ---
 func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Camera3D:
 	if depth > max_depth:
 		return null
