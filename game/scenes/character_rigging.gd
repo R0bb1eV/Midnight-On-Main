@@ -171,5 +171,3 @@ func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Came
 		if found:
 			return found
 	return null
-	
-	
