@@ -1,0 +1,125 @@
+# Blender 4.5.3 LTS MTL File: 'swearingen_int.blend'
+# www.blender.org
+
+newmtl Concrete_floor
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/concrete_diffuse.jpg
+map_Ks C:/concrete_specular.jpg
+map_Bump -bm 1.000000 C:/concrete_normal_opengl.jpg
+
+newmtl Damaged_wall_with_reinforcement
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/wall02_basecolor_diffuse.jpg
+map_Bump -bm 1.000000 C:/wall02_normal_opengl.jpg
+
+newmtl Office_Ceiling
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl PBR_Stone_Wall_Plaster_Texture_4k
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/PBR_Stone_Wall_with_Plaster_Photo_Texture_4k_Albedo.jpg
+map_Ns C:/PBR_Stone_Wall_with_Plaster_Photo_Texture_4k_Roughness.jpg
+map_Bump -bm 1.000000 C:/PBR_Stone_Wall_with_Plaster_Photo_Texture_4k_Normal.jpg
+
+newmtl Plastered_Wall
+Ns 17.376032
+Ka 1.000000 1.000000 1.000000
+Kd 0.547320 0.547320 0.547320
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Stone_Smooth_Wall
+Ns 250.000000
+Ka 0.300000 0.300000 0.300000
+Kd 0.800000 0.800000 0.800000
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Stone_Smooth_Wall.001
+Ns 250.000000
+Ka 0.300000 0.300000 0.300000
+Kd 0.800000 0.800000 0.800000
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Stone_Smooth_Wall.004
+Ns 250.000000
+Ka 0.300000 0.300000 0.300000
+Kd 0.800000 0.800000 0.800000
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl flgrey
+Ns 0.999999
+Ka 1.000000 1.000000 1.000000
+Kd 0.500000 0.500000 0.500000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl wall_1_2.001
+Ns 0.999999
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl white
+Ns 60.000008
+Ka 1.000000 1.000000 1.000000
+Kd 0.070892 0.040172 0.000000
+Ks 0.300000 0.300000 0.300000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl yellowbrt
+Ns 60.000008
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.783700 0.000000
+Ks 0.300000 0.300000 0.300000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2

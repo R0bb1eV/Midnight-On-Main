@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=29 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="PackedScene" uid="uid://b8ylrko2443yc" path="res://scenes/ext_foliage_barrier.tscn" id="4_sv41r"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cu7ofdrqj67tj" path="res://assets/swearingen_ext/blindness.png" id="6_opqd1"]
 [ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="7_4qegb"]
 [ext_resource type="PackedScene" uid="uid://de6qiq7iv1eq2" path="res://scenes/barbs.tscn" id="7_xyj84"]
-[ext_resource type="PackedScene" uid="uid://dd20mrs7kurc0" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
+[ext_resource type="PackedScene" uid="uid://dgi2c2j4h53dx" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
 [ext_resource type="PackedScene" uid="uid://bfevsxyulkj0u" path="res://scenes/swearingen_front.tscn" id="8_faw0r"]
 [ext_resource type="PackedScene" uid="uid://lg62ores86w" path="res://assets/WoodenChair.glb" id="9_2eouu"]
 [ext_resource type="PackedScene" uid="uid://c2uwp8i55m063" path="res://scenes/audio_stream_player_2d.tscn" id="10_rccsh"]
@@ -15,7 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://p0rts1quxqfe" path="res://assets/locker_object/Locker_2.0.glb" id="13_m0xki"]
 [ext_resource type="FontFile" uid="uid://c0mmods3fkcwu" path="res://font/lycanthrope.ttf" id="13_opqd1"]
 [ext_resource type="PackedScene" uid="uid://dyk7fgdhpx3lw" path="res://scenes/book_2_1.tscn" id="13_xe3hh"]
+[ext_resource type="Texture2D" uid="uid://dsfqivph7t3km" path="res://assets/crosshair.png" id="13_xyj84"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
+[ext_resource type="Script" uid="uid://ckryll5jgn3y2" path="res://scenes/door_trigger.gd" id="16_opqd1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,12 +34,14 @@ glow_enabled = true
 fog_light_color = Color(0.8627451, 0.7411765, 0.7019608, 1)
 fog_light_energy = 1.35
 fog_density = 0.0153
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.0819
-volumetric_fog_albedo = Color(0.8627451, 0.7411765, 0.7019608, 1)
-volumetric_fog_emission = Color(0.26050806, 0.21871446, 0.20523264, 1)
+volumetric_fog_albedo = Color(0.84635025, 0.53849566, 0.4448008, 1)
+volumetric_fog_emission = Color(0.20498183, 0.17219684, 0.15908125, 1)
+volumetric_fog_emission_energy = 0.65
+volumetric_fog_length = 108.04
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2eouu"]
+albedo_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 albedo_texture = ExtResource("2_dke22")
 uv1_triplanar = true
 
@@ -56,6 +60,9 @@ flip_faces = true
 radius = 35.036
 height = 38.628
 is_hemisphere = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6oy6"]
+size = Vector3(1.3184204, 1.5766602, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sv41r"]
 shader = ExtResource("11_ax7ne")
@@ -109,6 +116,9 @@ shader_parameter/noir_mode = false
 shader_parameter/noir_contrast = 1.2
 shader_parameter/effect_mix = 1.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
+size = Vector3(3.3787537, 7.4921417, 8.122391)
+
 [node name="World" type="Node3D"]
 
 [node name="map" type="Node3D" parent="."]
@@ -135,9 +145,6 @@ shape = SubResource("BoxShape3D_faw0r")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="map/swearingen_front/StaticBody3D"]
 transform = Transform3D(1, 0, -6.039613e-14, 0, 1, 0, 6.039613e-14, 0, 1, 2.8727837, 1.7591095, -0.07009983)
 shape = SubResource("BoxShape3D_2eouu")
-
-[node name="swearingen_int" parent="map" instance=ExtResource("8_2eouu")]
-transform = Transform3D(2.245064, 0, 2.245064, 0, 3.175, 0, -2.245064, 0, 2.245064, -72.894424, 0.10704517, 80.08949)
 
 [node name="fence" parent="map" instance=ExtResource("4_sv41r")]
 transform = Transform3D(0.484, 0, 0, 0, 0.484, 0, 0, 0, 0.484, 3.1, 0.90000004, 21.2)
@@ -184,6 +191,15 @@ mesh = SubResource("SphereMesh_wsd7d")
 [node name="barbs" parent="map" instance=ExtResource("7_xyj84")]
 transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 1.6, 3.6, 25.3)
 
+[node name="swearingen_int" parent="map" instance=ExtResource("8_2eouu")]
+transform = Transform3D(3.45, 0, 0, 0, 3.45, 0, 0, 0, 3.45, -54.98082, 0, 60.411636)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/swearingen_int"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/swearingen_int/StaticBody3D"]
+transform = Transform3D(0.7064159, 0, -0.7077983, 0, 1.0000002, 0, 0.7077983, 0, 0.7064159, 20.940323, 0.28833032, 11.621496)
+shape = SubResource("BoxShape3D_p6oy6")
+
 [node name="HW_Enf_TEST_NOT WORKING" type="Node3D" parent="."]
 
 [node name="HomeworkEnforcer" parent="HW_Enf_TEST_NOT WORKING" instance=ExtResource("7_4qegb")]
@@ -200,7 +216,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.82552, 0, -25.630222)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.154572, 0, 1.1219025)
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 2.4557018, 0.17943096, 9.410027)
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -2.419732, -0.0446198, 11.072449)
 
 [node name="Locker_2_0" parent="." instance=ExtResource("13_m0xki")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.025449991, -20.40974)
@@ -243,42 +259,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.036116, -0.022622585, -19.2
 [node name="Book_2_0" parent="." instance=ExtResource("13_xe3hh")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -2.0399761, 1.4207317, -21.649977)
 
-[node name="Collectables" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="Collectables"]
+[node name="Label" type="Label" parent="UI"]
 anchors_preset = -1
 anchor_right = 0.15300001
 anchor_bottom = 0.076000005
-offset_right = -136.25601
-offset_bottom = -26.248005
-theme_override_fonts/font = ExtResource("13_opqd1")
+offset_right = 187.88
+offset_bottom = 45.959988
 theme_override_font_sizes/font_size = 35
 text = "Books: 0 / 5"
 
-[node name="Stamina" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="Stamina"]
+[node name="HoldPrompt" type="Control" parent="UI"]
 layout_mode = 3
-anchor_left = 0.86200005
-anchor_right = 1.003
-anchor_bottom = 0.056
-offset_left = -0.024047852
-offset_right = 0.5439453
-offset_bottom = -0.288002
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Stamina/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.117000006
-anchor_top = 0.16700001
-anchor_right = 0.96300006
-anchor_bottom = 0.83300006
-offset_left = -0.07100105
-offset_top = -3.0120006
-offset_right = 0.0309906
-offset_bottom = 0.011997223
-theme_override_fonts/font = ExtResource("13_opqd1")
-theme_override_font_sizes/font_size = 20
+[node name="Label" type="Label" parent="UI/HoldPrompt"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 27.0
+offset_right = 62.0
+offset_bottom = 50.0
+text = "Hold E to Enter"
+
+[node name="Progress" type="ProgressBar" parent="UI/HoldPrompt"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 54.0
+offset_right = 62.0
+offset_bottom = 58.0
+max_value = 1.0
+show_percentage = false
+
+[node name="crosshair" type="TextureRect" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.075, 0.075)
+pivot_offset = Vector2(257.265, 258.19)
+texture = ExtResource("13_xyj84")
 
 [node name="Book_2_1" parent="." instance=ExtResource("13_xe3hh")]
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 1.730756, 1.4035897, -21.585457)
@@ -291,7 +325,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24)
 [node name="filter" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="filter"]
-visible = false
 material = SubResource("ShaderMaterial_sv41r")
 anchors_preset = 15
 anchor_right = 1.0
@@ -299,3 +332,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="teleport" type="Node3D" parent="."]
+
+[node name="DoorTrigger" type="Area3D" parent="teleport"]
+transform = Transform3D(-2.1200023e-08, 0, 0.485, 0, 0.485, 0, -0.485, 0, -2.1200023e-08, -0.40443045, 3.6437225, 28.872478)
+script = ExtResource("16_opqd1")
+teleport_target_path = NodePath("../TeleportMarker")
+ui_hold_prompt_path = NodePath("../../UI/HoldPrompt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="teleport/DoorTrigger"]
+transform = Transform3D(1, 0, -6.039613e-14, 0, 1, 0, 6.039613e-14, 0, 1, -1.9019508, 0.15526247, 0.031196594)
+shape = SubResource("BoxShape3D_opqd1")
+
+[node name="TeleportMarker" type="Marker3D" parent="teleport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.303783, 0.20393848, 104.99082)
+
+[connection signal="body_entered" from="teleport/DoorTrigger" to="teleport/DoorTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="teleport/DoorTrigger" to="teleport/DoorTrigger" method="_on_body_exited"]
