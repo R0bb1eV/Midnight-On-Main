@@ -4,6 +4,9 @@ extends CharacterBody3D
 @onready var armature: Node3D = $Armature
 @onready var anim_tree: AnimationTree = $AnimationTree
 
+# --- UI (absolute path from scene root) ---
+@onready var stamina_bar: ProgressBar = $"/root/World/Stamina/Control/ProgressBar"
+
 # Camera pivot + camera (assigned at runtime)
 var pivot_pitch: Node3D = null
 var camera: Camera3D = null
@@ -36,14 +39,16 @@ var fov_lerp_speed: float = 5.0
 @export var invert_y: bool = false
 @export var pitch_min_deg: float = -80.0
 @export var pitch_max_deg: float = 80.0
-@export var quit_when_cursor_visible: bool = true
+
+# --- Stamina bar state ---
+var stamina_bar_empty: bool = false
 
 
 func _ready() -> void:
 	# Capture mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# Attempt to find camera in likely locations
+	# Attempt to find camera
 	var candidates = [
 		"PivotPitch/Camera3D",
 		"Camera3D",
@@ -56,7 +61,6 @@ func _ready() -> void:
 			pivot_pitch = camera.get_parent() if camera.get_parent() is Node3D else null
 			break
 
-	# Fallback: shallow search under root
 	if camera == null:
 		camera = _find_camera_in_subtree(self, 4)
 		if camera:
@@ -70,13 +74,20 @@ func _ready() -> void:
 	else:
 		push_error("Camera3D not found. Update script with correct path.")
 
+	# --- Initialize UI ---
+	if stamina_bar:
+		stamina_bar.min_value = 0
+		stamina_bar.max_value = 100
+		stamina_bar.value = 100
+		_update_stamina_bar_style()
+
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		# --- Yaw: rotate character root ---
+		# Yaw
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 
-		# --- Pitch: rotate only pivot_pitch ---
+		# Pitch
 		if pivot_pitch:
 			var sign = 1.0 if invert_y else -1.0
 			var delta_pitch = sign * event.relative.y * mouse_sensitivity
@@ -84,11 +95,12 @@ func _unhandled_input(event):
 			new_pitch = clamp(new_pitch, pitch_min_deg, pitch_max_deg)
 			pivot_pitch.rotation_degrees.x = new_pitch
 
-	if event is InputEventKey and Input.is_action_just_pressed("ui_cancel"):
+	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			if quit_when_cursor_visible:
-				get_tree().quit()
+			# Second escape quits
+			get_tree().quit()
 		else:
+			# First escape unlocks mouse
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
@@ -106,29 +118,29 @@ func _physics_process(delta: float) -> void:
 	var raw = Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (global_transform.basis * raw).normalized()
 
-	# --- Sprint / crouch ---
-	if Input.is_action_pressed("run") and not sprint_on_cooldown and sprint_stamina > 0.0:
+	# --- Sprint logic ---
+	if sprint_stamina <= 0:
+		sprint_stamina = 0
+		is_sprinting = false
+		sprint_on_cooldown = true
+
+	# Always recover stamina
+	sprint_stamina += sprint_recovery_rate * delta
+	if sprint_stamina >= sprint_stamina_max:
+		sprint_stamina = sprint_stamina_max
+		sprint_on_cooldown = false
+
+	# Allow sprint only if not on cooldown
+	if Input.is_action_pressed("run") and not sprint_on_cooldown and sprint_stamina > 0:
 		is_sprinting = true
+		sprint_stamina -= sprint_drain_rate * delta
 	else:
 		is_sprinting = false
 
-	if is_sprinting:
-		sprint_stamina -= sprint_drain_rate * delta
-		if sprint_stamina <= 0.0:
-			sprint_stamina = 0.0
-			is_sprinting = false
-			sprint_on_cooldown = true
-	else:
-		sprint_stamina += sprint_recovery_rate * delta
-		if sprint_stamina >= sprint_stamina_max:
-			sprint_stamina = sprint_stamina_max
-
-	if sprint_on_cooldown and sprint_stamina >= sprint_stamina_max * 0.5:
-		sprint_on_cooldown = false
-
+	# --- Crouch ---
 	is_crouching = Input.is_action_pressed("crouch")
 
-	# --- Determine final speed ---
+	# --- Final movement speed ---
 	var speed := BASE_SPEED
 	if is_sprinting:
 		speed *= sprint_mult
@@ -145,11 +157,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	# --- Animation blend ---
+	# --- Animation ---
 	if anim_tree:
 		anim_tree.set("parameters/BlendSpace1D/blend_position", velocity.length() / (BASE_SPEED * sprint_mult))
 
-	# --- FOV lerp ---
+	# --- FOV ---
 	var target_fov := default_fov
 	if is_sprinting:
 		target_fov = sprint_fov
@@ -159,8 +171,43 @@ func _physics_process(delta: float) -> void:
 	if camera:
 		camera.fov = lerp(camera.fov, target_fov, fov_lerp_speed * delta)
 
+	# --- UI Update ---
+	if stamina_bar:
+		var percent = (sprint_stamina / sprint_stamina_max) * 100.0
+		stamina_bar.value = percent
 
-# --- Helper: find Camera3D in subtree ---
+		# Track empty state
+		if sprint_stamina <= 0.05:
+			stamina_bar_empty = true
+		elif sprint_stamina >= sprint_stamina_max:
+			stamina_bar_empty = false
+
+		# Update bar color
+		_update_stamina_bar_style()
+
+
+# --- Helper to update the stamina bar color using Theme + rounded StyleBox ---
+func _update_stamina_bar_style():
+	if not stamina_bar:
+		return
+
+	var style := StyleBoxFlat.new()
+	style.corner_radius_top_left = 4
+	style.corner_radius_top_right = 4
+	style.corner_radius_bottom_left = 4
+	style.corner_radius_bottom_right = 4
+
+	if stamina_bar_empty:
+		style.bg_color = Color(0.5, 0, 0) 
+	else:
+		style.bg_color = Color(0, 0.5, 0)
+
+	var theme := Theme.new()
+	theme.set_stylebox("fill", "ProgressBar", style)
+	stamina_bar.theme = theme
+
+
+# --- Helper ---
 func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Camera3D:
 	if depth > max_depth:
 		return null
@@ -171,5 +218,3 @@ func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Came
 		if found:
 			return found
 	return null
-	
-	
