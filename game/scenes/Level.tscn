@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=37 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
@@ -41,9 +41,10 @@ background_mode = 2
 sky = SubResource("Sky_a202f")
 tonemap_mode = 2
 glow_enabled = true
+fog_mode = 1
 fog_light_color = Color(0.8627451, 0.7411765, 0.7019608, 1)
-fog_light_energy = 1.35
-fog_density = 0.0153
+fog_light_energy = 0.32
+fog_density = 1.0
 volumetric_fog_density = 0.0819
 volumetric_fog_albedo = Color(0.84635025, 0.53849566, 0.4448008, 1)
 volumetric_fog_emission = Color(0.20498183, 0.17219684, 0.15908125, 1)
@@ -125,6 +126,10 @@ shader_parameter/rgb_roll_speed = 0.0
 shader_parameter/noir_mode = false
 shader_parameter/noir_contrast = 1.2
 shader_parameter/effect_mix = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0akr6"]
+
+[sub_resource type="GDScript" id="GDScript_0akr6"]
 
 [node name="World" type="Node3D"]
 
@@ -489,22 +494,24 @@ offset_bottom = 5.7599792
 theme_override_colors/font_color = Color(0.47058824, 0.023529412, 0.023529412, 1)
 theme_override_fonts/font = ExtResource("13_opqd1")
 theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0akr6")
 text = "Midnight on Main"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = SubResource("GDScript_0akr6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.379
-anchor_top = 0.65400004
+anchor_top = 0.68100005
 anchor_right = 0.62600005
 anchor_bottom = 0.952
 offset_left = 0.5289917
-offset_top = 0.13195801
+offset_top = -0.20202637
 offset_right = -0.27404785
-offset_bottom = -0.184021
-theme_override_constants/separation = 18
+offset_bottom = 13.815979
+theme_override_constants/separation = 42
 
 [node name="StartButton" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2

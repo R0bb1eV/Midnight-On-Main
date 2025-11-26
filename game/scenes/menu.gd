@@ -23,8 +23,19 @@ var menu_active: bool = true
 # --- Gameplay music ---
 @onready var gameplay_music: AudioStreamPlayer2D = $"/root/World/AmbientMusic"
 
+# --- Camera motion settings ---
+var camera_base_transform: Transform3D
+@export var camera_move_radius: Vector2 = Vector2(0.25, 0.15) # x: horizontal, y: vertical
+@export var camera_tilt_angle: float = 2.0 # degrees
+@export var camera_speed: float = 0.4
+
+var camera_time: float = 0.0
 
 func _ready() -> void:
+	# Store menu camera starting transform
+	if menu_camera:
+		camera_base_transform = menu_camera.transform
+
 	# Find player
 	player = get_tree().current_scene.get_node("Character_Rigging") as CharacterBody3D
 	if not player:
@@ -48,7 +59,7 @@ func _ready() -> void:
 	$VBoxContainer/StartButton.pressed.connect(_on_start_pressed)
 	$VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
 
-	# Force menu camera active (deferred to next frame)
+	# Force menu camera active next frame
 	call_deferred("_activate_menu_camera")
 
 	# Hide gameplay UI at menu
@@ -64,6 +75,24 @@ func _ready() -> void:
 	# Play menu music
 	if menu_music:
 		menu_music.play()
+
+
+func _process(delta: float) -> void:
+	# Animate menu camera while active
+	if menu_active and menu_camera:
+		camera_time += delta * camera_speed
+
+		var offset = Vector3(
+			sin(camera_time) * camera_move_radius.x,
+			sin(camera_time * 0.7) * camera_move_radius.y,
+			0
+		)
+		var tilt = deg_to_rad(sin(camera_time * 0.5) * camera_tilt_angle)
+
+		var new_transform = camera_base_transform
+		new_transform.origin += offset
+		new_transform.basis = Basis(Vector3(1,0,0), tilt) * new_transform.basis
+		menu_camera.transform = new_transform
 
 
 # ----------------------
