@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=35 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
-[ext_resource type="Script" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
+[ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
 [ext_resource type="PackedScene" uid="uid://b8ylrko2443yc" path="res://scenes/ext_foliage_barrier.tscn" id="4_sv41r"]
 [ext_resource type="PackedScene" uid="uid://7hyeih0id28c" path="res://scenes/trees.tscn" id="5_p6oy6"]
 [ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://scenes/character_rigging.tscn" id="6_dke22"]
@@ -19,7 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://dsfqivph7t3km" path="res://assets/crosshair.png" id="13_xyj84"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
 [ext_resource type="Script" uid="uid://ckryll5jgn3y2" path="res://scenes/door_trigger.gd" id="16_opqd1"]
+[ext_resource type="AudioStream" uid="uid://bf3bhbfxwupop" path="res://music/Corridor in B Minor (Calm).wav" id="20_40jy2"]
 [ext_resource type="Script" uid="uid://ce52g3f1o4doe" path="res://scenes/menu.gd" id="20_iw3v5"]
+[ext_resource type="AudioStream" uid="uid://dcsktnyyorm2w" path="res://music/Corridor in B minor.wav" id="22_0akr6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
 size = Vector3(3.3787537, 7.4921417, 8.122391)
@@ -428,9 +430,7 @@ theme_override_font_sizes/font_size = 23
 text = "Collect 0 / 5 Books to Exit"
 horizontal_alignment = 1
 
-[node name="Stamina" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="Stamina"]
+[node name="Stam" type="Control" parent="UI"]
 layout_mode = 3
 anchor_left = 0.86200005
 anchor_right = 1.0
@@ -438,7 +438,7 @@ anchor_bottom = 0.051000003
 offset_left = -0.024047852
 offset_bottom = -0.048000336
 
-[node name="ProgressBar" type="ProgressBar" parent="Stamina/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="UI/Stam"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.057000004
@@ -518,7 +518,18 @@ theme_override_fonts/font = ExtResource("13_opqd1")
 theme_override_font_sizes/font_size = 29
 text = "Quit"
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_rccsh")]
+[node name="MenuMusic" type="AudioStreamPlayer" parent="Menu"]
+stream = ExtResource("20_40jy2")
+
+[node name="AmbientMusic" parent="." instance=ExtResource("10_rccsh")]
+stream = ExtResource("20_40jy2")
+volume_db = 10.0
+pitch_scale = 0.22
+autoplay = false
+
+[node name="ThemeMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_0akr6")
+volume_db = -15.0
 
 [connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]

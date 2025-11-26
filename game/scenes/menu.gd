@@ -17,6 +17,12 @@ var menu_active: bool = true
 # --- Menu CanvasLayer (title, etc) ---
 @onready var menu_canvas: CanvasLayer = $CanvasLayer
 
+# --- Menu music ---
+@onready var menu_music: AudioStreamPlayer = $MenuMusic
+
+# --- Gameplay music ---
+@onready var gameplay_music: AudioStreamPlayer2D = $"/root/World/AmbientMusic"
+
 
 func _ready() -> void:
 	# Find player
@@ -55,6 +61,10 @@ func _ready() -> void:
 	if menu_canvas:
 		menu_canvas.visible = true
 
+	# Play menu music
+	if menu_music:
+		menu_music.play()
+
 
 # ----------------------
 # Menu camera activation
@@ -78,12 +88,18 @@ func _on_start_pressed() -> void:
 	player.gameplay_active = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# Hide menu UI
+	# Hide menu UI and CanvasLayer
 	self.visible = false
-
-	# Hide menu CanvasLayer (title, etc)
 	if menu_canvas:
 		menu_canvas.visible = false
+
+	# Stop menu music immediately
+	if menu_music and menu_music.playing:
+		menu_music.stop()
+
+	# Start gameplay music immediately
+	if gameplay_music:
+		gameplay_music.play()
 
 	# Show gameplay UI
 	if gameplay_ui:

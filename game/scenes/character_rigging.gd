@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var anim_tree: AnimationTree = $AnimationTree
 
 # --- UI (absolute path from scene root) ---
-@onready var stamina_bar: ProgressBar = $"/root/World/Stamina/Control/ProgressBar"
+@onready var stamina_bar: ProgressBar = $"/root/World/UI/Stam/ProgressBar"
 
 # Camera pivot + camera (assigned at runtime)
 var pivot_pitch: Node3D = null

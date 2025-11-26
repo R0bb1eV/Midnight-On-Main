@@ -6,6 +6,10 @@ extends Area3D
 @export var ui_exit_hold_prompt_path: NodePath           # ExitHoldPrompt Control
 @export var ui_collect_prompt_path: NodePath             # CollectPrompt Control
 
+# --- Music nodes ---
+@onready var ambient_music: AudioStreamPlayer2D = $"/root/World/AmbientMusic"
+@onready var building_music: AudioStreamPlayer = $"/root/World/ThemeMusic"
+
 var player: CharacterBody3D = null
 var hold_timer: float = 0.0
 var is_holding: bool = false
@@ -21,6 +25,7 @@ var is_holding: bool = false
 @onready var collect_prompt: Control = get_node(ui_collect_prompt_path) as Control
 @onready var collect_label: Label = collect_prompt.get_node("Label_collect") as Label
 
+
 func _ready() -> void:
 	# Initial UI state
 	exit_hold_prompt.visible = false
@@ -28,8 +33,8 @@ func _ready() -> void:
 
 	exit_progress_bar.value = 0.0
 	exit_label.text = "Hold E to Exit"
-
 	collect_label.text = ""
+
 
 func _on_body_entered(body: Node) -> void:
 	if body is CharacterBody3D:
@@ -37,6 +42,7 @@ func _on_body_entered(body: Node) -> void:
 		hold_timer = 0.0
 		exit_progress_bar.value = 0.0
 		_update_prompts()
+
 
 func _on_body_exited(body: Node) -> void:
 	if body == player:
@@ -47,6 +53,7 @@ func _on_body_exited(body: Node) -> void:
 		exit_hold_prompt.visible = false
 		collect_prompt.visible = false
 
+
 func _process(delta: float) -> void:
 	if player == null:
 		return
@@ -56,7 +63,6 @@ func _process(delta: float) -> void:
 		_update_collect_prompt()
 		exit_hold_prompt.visible = false
 		collect_prompt.visible = true
-		# no hold logic while locked
 		is_holding = false
 		hold_timer = 0.0
 		exit_progress_bar.value = 0.0
@@ -70,8 +76,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("interact"):  # E
 		is_holding = true
 		hold_timer += delta
-		var t: float = clamp(hold_timer / hold_time_required, 0.0, 1.0)
-		exit_progress_bar.value = t
+		exit_progress_bar.value = clamp(hold_timer / hold_time_required, 0.0, 1.0)
 
 		if hold_timer >= hold_time_required:
 			_teleport_player()
@@ -81,10 +86,12 @@ func _process(delta: float) -> void:
 			hold_timer = 0.0
 			exit_progress_bar.value = 0.0
 
+
 func _teleport_player() -> void:
 	if player == null or teleport_target == null:
 		return
 
+	# Teleport player
 	player.global_transform.origin = teleport_target.global_transform.origin
 	player.velocity = Vector3.ZERO
 
@@ -96,6 +103,16 @@ func _teleport_player() -> void:
 	player = null
 	is_holding = false
 
+	# --- Music switch back to ambient ---
+	if ambient_music:
+		# Stop building music
+		if building_music and building_music.playing:
+			building_music.stop()
+		# Restart ambient music from the top
+		ambient_music.stop()
+		ambient_music.play()
+
+
 func _update_prompts() -> void:
 	if Global.books_collected < required_books:
 		_update_collect_prompt()
@@ -104,6 +121,7 @@ func _update_prompts() -> void:
 	else:
 		collect_prompt.visible = false
 		exit_hold_prompt.visible = true
+
 
 func _update_collect_prompt() -> void:
 	var current: int = Global.books_collected
