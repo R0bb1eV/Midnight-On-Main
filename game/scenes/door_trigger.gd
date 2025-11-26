@@ -11,7 +11,7 @@ var is_holding: bool = false
 @onready var teleport_target: Node3D = get_node(teleport_target_path) as Node3D
 @onready var hold_prompt: Control = get_node(ui_hold_prompt_path) as Control
 @onready var progress_bar: ProgressBar = hold_prompt.get_node("Progress") as ProgressBar
-@onready var label: Label = hold_prompt.get_node("Label") as Label
+@onready var label: Label = hold_prompt.get_node("Label_enter") as Label
 
 func _ready() -> void:
 	hold_prompt.visible = false

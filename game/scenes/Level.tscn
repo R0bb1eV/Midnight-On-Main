@@ -1,13 +1,14 @@
-[gd_scene load_steps=30 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=32 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
+[ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
 [ext_resource type="PackedScene" uid="uid://b8ylrko2443yc" path="res://scenes/ext_foliage_barrier.tscn" id="4_sv41r"]
 [ext_resource type="PackedScene" uid="uid://7hyeih0id28c" path="res://scenes/trees.tscn" id="5_p6oy6"]
 [ext_resource type="PackedScene" uid="uid://bts7w4rauw7rd" path="res://scenes/character_rigging.tscn" id="6_dke22"]
 [ext_resource type="Texture2D" uid="uid://cu7ofdrqj67tj" path="res://assets/swearingen_ext/blindness.png" id="6_opqd1"]
 [ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="7_4qegb"]
 [ext_resource type="PackedScene" uid="uid://de6qiq7iv1eq2" path="res://scenes/barbs.tscn" id="7_xyj84"]
-[ext_resource type="PackedScene" uid="uid://dd20mrs7kurc0" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
+[ext_resource type="PackedScene" uid="uid://dgi2c2j4h53dx" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
 [ext_resource type="PackedScene" uid="uid://bfevsxyulkj0u" path="res://scenes/swearingen_front.tscn" id="8_faw0r"]
 [ext_resource type="PackedScene" uid="uid://lg62ores86w" path="res://assets/WoodenChair.glb" id="9_2eouu"]
 [ext_resource type="PackedScene" uid="uid://c2uwp8i55m063" path="res://scenes/audio_stream_player_2d.tscn" id="10_rccsh"]
@@ -17,7 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://dyk7fgdhpx3lw" path="res://scenes/book_2_1.tscn" id="13_xe3hh"]
 [ext_resource type="Texture2D" uid="uid://dsfqivph7t3km" path="res://assets/crosshair.png" id="13_xyj84"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
-[ext_resource type="Script" path="res://scenes/door_trigger.gd" id="16_opqd1"]
+[ext_resource type="Script" uid="uid://ckryll5jgn3y2" path="res://scenes/door_trigger.gd" id="16_opqd1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
+size = Vector3(3.3787537, 7.4921417, 8.122391)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iw3v5"]
+size = Vector3(3.8013306, 3.71521, 2.2253418)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -116,10 +123,36 @@ shader_parameter/noir_mode = false
 shader_parameter/noir_contrast = 1.2
 shader_parameter/effect_mix = 1.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
-size = Vector3(3.3787537, 7.4921417, 8.122391)
-
 [node name="World" type="Node3D"]
+
+[node name="teleport" type="Node3D" parent="."]
+
+[node name="DoorTrigger1" type="Area3D" parent="teleport"]
+transform = Transform3D(-2.1200023e-08, 0, 0.485, 0, 0.485, 0, -0.485, 0, -2.1200023e-08, -0.40443045, 3.6437225, 28.872478)
+script = ExtResource("16_opqd1")
+teleport_target_path = NodePath("../TeleportMarker1")
+ui_hold_prompt_path = NodePath("../../UI/HoldPrompt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="teleport/DoorTrigger1"]
+transform = Transform3D(1, 0, -6.039613e-14, 0, 1, 0, 6.039613e-14, 0, 1, -1.9019508, 0.15526247, 0.031196594)
+shape = SubResource("BoxShape3D_opqd1")
+
+[node name="TeleportMarker1" type="Marker3D" parent="teleport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.303783, 0.20393848, 104.99082)
+
+[node name="DoorTrigger2" type="Area3D" parent="teleport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.171986, 1.4997392, 101.58657)
+script = ExtResource("2_wsd7d")
+teleport_target_path = NodePath("../TeleportMarker2")
+ui_exit_hold_prompt_path = NodePath("../../UI/HoldPrompt2")
+ui_collect_prompt_path = NodePath("../../UI/CollectPrompt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="teleport/DoorTrigger2"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -0.51216507, 0.28094482, 0.6695404)
+shape = SubResource("BoxShape3D_iw3v5")
+
+[node name="TeleportMarker2" type="Marker3D" parent="teleport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53307587, 1.9905734, 28.78651)
 
 [node name="map" type="Node3D" parent="."]
 
@@ -200,6 +233,9 @@ transform = Transform3D(3.45, 0, 0, 0, 3.45, 0, 0, 0, 3.45, -54.98082, 0, 60.411
 transform = Transform3D(0.7064159, 0, -0.7077983, 0, 1.0000002, 0, 0.7077983, 0, 0.7064159, 20.940323, 0.28833032, 11.621496)
 shape = SubResource("BoxShape3D_p6oy6")
 
+[node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -2.419732, -0.0446198, 11.072449)
+
 [node name="HW_Enf_TEST_NOT WORKING" type="Node3D" parent="."]
 
 [node name="HomeworkEnforcer" parent="HW_Enf_TEST_NOT WORKING" instance=ExtResource("7_4qegb")]
@@ -214,15 +250,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.82552, 0, -25.630222)
 
 [node name="patrol3" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.154572, 0, 1.1219025)
-
-[node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -2.419732, -0.0446198, 11.072449)
-
-[node name="Locker_2_0" parent="." instance=ExtResource("13_m0xki")]
-transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.025449991, -20.40974)
-
-[node name="Locker_2_1" parent="." instance=ExtResource("13_m0xki")]
-transform = Transform3D(-0.65, 0, -5.6824803e-08, 0, 0.65, 0, 5.6824803e-08, 0, -0.65, 5.179789, 0.02851516, -20.423203)
 
 [node name="Tables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0380461, -1.0719706, -21.960152)
@@ -256,8 +283,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20494175, -0.00706923, -19.
 [node name="Table10" parent="Tables" instance=ExtResource("14_p6oy6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.036116, -0.022622585, -19.20399)
 
+[node name="Locker_2_0" parent="." instance=ExtResource("13_m0xki")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.025449991, -20.40974)
+
+[node name="Locker_2_1" parent="." instance=ExtResource("13_m0xki")]
+transform = Transform3D(-0.65, 0, -5.6824803e-08, 0, 0.65, 0, 5.6824803e-08, 0, -0.65, 5.179789, 0.02851516, -20.423203)
+
+[node name="Book_2_4" parent="." instance=ExtResource("13_xe3hh")]
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 9.58113, 1.515626, 118.44527)
+
+[node name="Book_2_2" parent="." instance=ExtResource("13_xe3hh")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 8.571517, 1.5327679, 111.80261)
+
+[node name="Book_2_3" parent="." instance=ExtResource("13_xe3hh")]
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 10.278327, 1.515626, 115.08229)
+
 [node name="Book_2_0" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -2.0399761, 1.4207317, -21.649977)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 6.507588, 1.5327679, 115.01777)
+
+[node name="Book_2_1" parent="." instance=ExtResource("13_xe3hh")]
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 4.7891564, 1.515626, 110.97995)
+
+[node name="WoodenChair" parent="." instance=ExtResource("9_2eouu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -274,6 +322,7 @@ theme_override_font_sizes/font_size = 40
 text = "Books: 0 / 5"
 
 [node name="HoldPrompt" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -284,22 +333,23 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="UI/HoldPrompt"]
+[node name="Label_enter" type="Label" parent="UI/HoldPrompt"]
 layout_mode = 0
-offset_left = -54.0
+offset_left = -70.0
 offset_top = 27.0
-offset_right = 62.0
-offset_bottom = 50.0
+offset_right = 76.0
+offset_bottom = 51.0
 theme_override_fonts/font = ExtResource("13_opqd1")
 theme_override_font_sizes/font_size = 22
 text = "Hold E to Enter"
+horizontal_alignment = 1
 
 [node name="Progress" type="ProgressBar" parent="UI/HoldPrompt"]
 layout_mode = 0
-offset_left = -54.0
-offset_top = 54.0
-offset_right = 102.0
-offset_bottom = 60.0
+offset_left = -74.0
+offset_top = 55.0
+offset_right = 82.0
+offset_bottom = 61.0
 max_value = 1.0
 show_percentage = false
 
@@ -319,13 +369,63 @@ scale = Vector2(0.075, 0.075)
 pivot_offset = Vector2(257.265, 258.19)
 texture = ExtResource("13_xyj84")
 
-[node name="Book_2_1" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 1.730756, 1.4035897, -21.585457)
+[node name="HoldPrompt2" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="WoodenChair" parent="." instance=ExtResource("9_2eouu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24)
+[node name="Progress" type="ProgressBar" parent="UI/HoldPrompt2"]
+layout_mode = 0
+offset_left = -74.0
+offset_top = 55.0
+offset_right = 82.0
+offset_bottom = 61.0
+max_value = 1.0
+show_percentage = false
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_rccsh")]
+[node name="Label_exit" type="Label" parent="UI/HoldPrompt2"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = 26.0
+offset_right = 69.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 23
+text = "Hold E to Exit"
+horizontal_alignment = 1
+
+[node name="CollectPrompt" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.0
+offset_top = -325.0
+offset_right = -538.0
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label_collect" type="Label" parent="UI/CollectPrompt"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 352.0
+offset_right = 709.0
+offset_bottom = 377.0
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 23
+text = "Collect 0 / 5 Books to Exit"
+horizontal_alignment = 1
 
 [node name="Stamina" type="CanvasLayer" parent="."]
 
@@ -362,20 +462,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="teleport" type="Node3D" parent="."]
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_rccsh")]
 
-[node name="DoorTrigger" type="Area3D" parent="teleport"]
-transform = Transform3D(-2.1200023e-08, 0, 0.485, 0, 0.485, 0, -0.485, 0, -2.1200023e-08, -0.40443045, 3.6437225, 28.872478)
-script = ExtResource("16_opqd1")
-teleport_target_path = NodePath("../TeleportMarker")
-ui_hold_prompt_path = NodePath("../../UI/HoldPrompt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="teleport/DoorTrigger"]
-transform = Transform3D(1, 0, -6.039613e-14, 0, 1, 0, 6.039613e-14, 0, 1, -1.9019508, 0.15526247, 0.031196594)
-shape = SubResource("BoxShape3D_opqd1")
-
-[node name="TeleportMarker" type="Marker3D" parent="teleport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.303783, 0.20393848, 104.99082)
-
-[connection signal="body_entered" from="teleport/DoorTrigger" to="teleport/DoorTrigger" method="_on_body_entered"]
-[connection signal="body_exited" from="teleport/DoorTrigger" to="teleport/DoorTrigger" method="_on_body_exited"]
+[connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
+[connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]
+[connection signal="body_entered" from="teleport/DoorTrigger2" to="teleport/DoorTrigger2" method="_on_body_entered"]
+[connection signal="body_exited" from="teleport/DoorTrigger2" to="teleport/DoorTrigger2" method="_on_body_exited"]
