@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=42 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
@@ -14,11 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://c2uwp8i55m063" path="res://scenes/audio_stream_player_2d.tscn" id="10_rccsh"]
 [ext_resource type="PackedScene" uid="uid://cccn2iai2m5cn" path="res://assets/ChalkBoard.glb" id="10_vs87s"]
 [ext_resource type="Shader" uid="uid://co5mrwx5cpfkx" path="res://shaders/vhs_shader.gdshader" id="11_ax7ne"]
+[ext_resource type="PackedScene" uid="uid://b5wp1e04ihb82" path="res://assets/LongTable.glb" id="13_kflc5"]
 [ext_resource type="PackedScene" uid="uid://p0rts1quxqfe" path="res://assets/locker_object/Locker_2.0.glb" id="13_m0xki"]
 [ext_resource type="FontFile" uid="uid://c0mmods3fkcwu" path="res://font/lycanthrope.ttf" id="13_opqd1"]
 [ext_resource type="PackedScene" uid="uid://dyk7fgdhpx3lw" path="res://scenes/book_2_1.tscn" id="13_xe3hh"]
 [ext_resource type="Texture2D" uid="uid://dsfqivph7t3km" path="res://assets/crosshair.png" id="13_xyj84"]
+[ext_resource type="PackedScene" uid="uid://dyagb2p4dl61x" path="res://assets/wheelyChair.glb" id="14_itu0t"]
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
+[ext_resource type="PackedScene" uid="uid://dgstp5n26tjr0" path="res://assets/computer.glb" id="15_4no8g"]
 [ext_resource type="Script" uid="uid://ckryll5jgn3y2" path="res://scenes/door_trigger.gd" id="16_opqd1"]
 [ext_resource type="AudioStream" uid="uid://bf3bhbfxwupop" path="res://music/Corridor in B Minor (Calm).wav" id="20_40jy2"]
 [ext_resource type="Script" uid="uid://ce52g3f1o4doe" path="res://scenes/menu.gd" id="20_iw3v5"]
@@ -311,6 +314,48 @@ transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0
 
 [node name="WoodenChair20" parent="map" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 31.377071, -0.2524848, 167.30183)
+
+[node name="LongTable" parent="map" instance=ExtResource("13_kflc5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.9999999, 0, -1, 0, -4.371139e-08, 17.057186, -0.54579556, 167.25215)
+
+[node name="wheelyChair" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 14.40171, -0.2524848, 168.88731)
+
+[node name="wheelyChair2" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 17.103909, -0.2524848, 168.88081)
+
+[node name="wheelyChair3" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 19.842228, -0.2524848, 168.85834)
+
+[node name="computer" parent="map" instance=ExtResource("15_4no8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.329, 2.057, 168.287)
+
+[node name="computer2" parent="map" instance=ExtResource("15_4no8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.025507, 2.057, 168.287)
+
+[node name="computer3" parent="map" instance=ExtResource("15_4no8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.764406, 2.057, 168.287)
+
+[node name="LongTable" parent="map/computer3" instance=ExtResource("13_kflc5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.9999999, 0, -1, 0, -4.371139e-08, -2.7317142, -2.5457954, -6.198059)
+
+[node name="wheelyChair" parent="map/computer3" instance=ExtResource("14_itu0t")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -5.3871937, -2.2524848, -4.5628967)
+
+[node name="wheelyChair2" parent="map/computer3" instance=ExtResource("14_itu0t")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -2.6849918, -2.2524848, -4.569397)
+
+[node name="wheelyChair3" parent="map/computer3" instance=ExtResource("14_itu0t")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0.05332756, -2.2524848, -4.5918884)
+
+[node name="computer" parent="map/computer3" instance=ExtResource("15_4no8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.459902, 0.05699992, -5.163208)
+
+[node name="computer2" parent="map/computer3" instance=ExtResource("15_4no8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7633953, 0.05699992, -5.163208)
+
+[node name="computer3" parent="map/computer3" instance=ExtResource("15_4no8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024496078, 0.05699992, -5.163208)
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -2.419732, -0.0446198, 11.072449)
