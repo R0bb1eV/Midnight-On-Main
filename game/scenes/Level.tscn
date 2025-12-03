@@ -337,25 +337,25 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17, 1.373, 168.05)
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 18.99672, 1.373, 168.05)
 
 [node name="LongTable2" parent="map" instance=ExtResource("13_kflc5")]
-transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 17, -0.546, 163.653)
+transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e-08, 17, -0.546, 163.15372)
 
 [node name="computer4" parent="map" instance=ExtResource("15_4no8g")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 14.973, 1.373, 164.45)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 14.973, 1.373, 163.95071)
 
 [node name="computer5" parent="map" instance=ExtResource("15_4no8g")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17, 1.373, 164.45)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17, 1.373, 163.95071)
 
 [node name="computer6" parent="map" instance=ExtResource("15_4no8g")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 18.997, 1.373, 164.45)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 18.997, 1.373, 163.95071)
 
 [node name="wheelyChair4" parent="map" instance=ExtResource("14_itu0t")]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 15.047539, -0.2524848, 164.8)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 15.047539, -0.2524848, 164.30072)
 
 [node name="wheelyChair5" parent="map" instance=ExtResource("14_itu0t")]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 17.083313, -0.2524848, 164.8)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 17.083313, -0.2524848, 164.30072)
 
 [node name="wheelyChair6" parent="map" instance=ExtResource("14_itu0t")]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 19.082607, -0.2524848, 164.8)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 19.082607, -0.2524848, 164.30072)
 
 [node name="ChalkBoard2" parent="map" instance=ExtResource("10_vs87s")]
 transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 18.778236, 0.482244, 156.30786)
