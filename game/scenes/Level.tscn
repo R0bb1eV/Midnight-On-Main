@@ -906,6 +906,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.493954, -1.3387461, 161.80
 [node name="Table3" parent="." instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.590843, -1.3320096, 155.42508)
 
+[node name="LongTable" parent="." instance=ExtResource("13_kflc5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1.4, -48.33597, -0.546, 140.83702)
+
+[node name="LongTable2" parent="." instance=ExtResource("13_kflc5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1.4, -44.063004, -0.546, 140.83704)
+
+[node name="ChalkBoard" parent="." instance=ExtResource("10_vs87s")]
+transform = Transform3D(-0.8, 0, -6.9938224e-08, 0, 0.8, 0, 6.9938224e-08, 0, -0.8, -36.630886, 0.76344264, 140.10469)
+
+[node name="wheelyChair" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.55738, -2.0049512e-05, 136.7)
+
+[node name="wheelyChair2" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9818544e-05, 138.75)
+
+[node name="wheelyChair3" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9580126e-05, 140.837)
+
+[node name="wheelyChair4" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9337982e-05, 143.01494)
+
+[node name="wheelyChair5" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9099563e-05, 145.13377)
+
+[node name="wheelyChair6" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246765, -0.00041231513, 136.7)
+
+[node name="wheelyChair7" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, -1.9516796e-05, 138.75)
+
+[node name="wheelyChair8" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, -1.930818e-05, 140.837)
+
+[node name="wheelyChair9" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, 0, 143.015)
+
+[node name="wheelyChair10" parent="." instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, 0, 145.134)
+
 [connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]
 [connection signal="body_entered" from="teleport/DoorTrigger2" to="teleport/DoorTrigger2" method="_on_body_entered"]
