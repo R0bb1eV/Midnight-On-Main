@@ -579,6 +579,72 @@ transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.23
 [node name="wheelyChair28" parent="map" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -42.458714, -0.252, 165.48027)
 
+[node name="Table6" parent="map" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.128044, -1.389, 160.92558)
+
+[node name="Table7" parent="map" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.965, -1.389, 160.926)
+
+[node name="Table8" parent="map" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.128, -1.389, 166.943)
+
+[node name="Table9" parent="map" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.965, -1.389, 166.943)
+
+[node name="WoodenChair21" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -11.569621, -0.252, 167.05)
+
+[node name="WoodenChair22" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10, -0.252, 165.5598)
+
+[node name="WoodenChair23" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -8.516931, -0.252, 167.05)
+
+[node name="WoodenChair24" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -10, -0.252, 168.57176)
+
+[node name="WoodenChair25" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -10, -0.252, 162.617)
+
+[node name="WoodenChair26" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -11.57, -0.252, 161.05)
+
+[node name="WoodenChair27" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10, -0.252, 159.53297)
+
+[node name="WoodenChair28" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -8.47461, -0.252, 161.05)
+
+[node name="WoodenChair29" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -6.4179053, -0.252, 161.05)
+
+[node name="WoodenChair30" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.869629, -0.252, 159.61237)
+
+[node name="WoodenChair31" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -3.3254395, -0.252, 161.05)
+
+[node name="WoodenChair32" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -4.87, -0.252, 162.6016)
+
+[node name="WoodenChair33" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -6.4242325, -0.252, 167.05)
+
+[node name="WoodenChair34" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.87, -0.252, 165.52849)
+
+[node name="WoodenChair35" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -3.273269, -0.252, 167.05)
+
+[node name="WoodenChair36" parent="map" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -4.87, -0.252, 168.64156)
+
+[node name="ChalkBoard" parent="map" instance=ExtResource("10_vs87s")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -14.1594925, 0.47481155, 167.45529)
+
+[node name="ChalkBoard2" parent="map" instance=ExtResource("10_vs87s")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -14.159481, 0.4952435, 160.6814)
+
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -1.2019811, -0.0446198, 109.58734)
 
