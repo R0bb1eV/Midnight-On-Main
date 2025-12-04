@@ -507,6 +507,78 @@ transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0
 [node name="WoodenChair20" parent="map" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 18.24904, -0.252, 111.667)
 
+[node name="LongTable" parent="map" instance=ExtResource("13_kflc5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, -48.631687, -0.546, 153.9631)
+
+[node name="LongTable2" parent="map" instance=ExtResource("13_kflc5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, -44.843815, -0.546, 153.92485)
+
+[node name="LongTable5" parent="map" instance=ExtResource("13_kflc5")]
+transform = Transform3D(0.53033006, 0, 0.70710677, 0, 0.75, 0, -0.53033006, 0, 0.70710677, -47.09624, -0.546, 166.4392)
+
+[node name="LongTable6" parent="map" instance=ExtResource("13_kflc5")]
+transform = Transform3D(0.53033006, 0, 0.70710677, 0, 0.75, 0, -0.53033006, 0, 0.70710677, -43.53683, -0.546, 162.72844)
+
+[node name="LongTable7" parent="map" instance=ExtResource("13_kflc5")]
+transform = Transform3D(-3.278354e-08, 0, 1, 0, 0.75, 0, -0.75, 0, -4.371139e-08, -34.91592, -0.546, 168.65276)
+
+[node name="LongTable8" parent="map" instance=ExtResource("13_kflc5")]
+transform = Transform3D(-3.278354e-08, 0, 1, 0, 0.75, 0, -0.75, 0, -4.371139e-08, -34.916325, -0.546, 164.99179)
+
+[node name="wheelyChair" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.858837, -0.252, 151.66928)
+
+[node name="wheelyChair2" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.859, -0.252, 153.96292)
+
+[node name="wheelyChair3" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.859, -0.252, 156.39893)
+
+[node name="wheelyChair4" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.0193, -0.252, 151.66893)
+
+[node name="wheelyChair5" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.019108, -0.252, 153.96292)
+
+[node name="wheelyChair6" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.019108, -0.252, 156.39893)
+
+[node name="wheelyChair17" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -32.160675, -0.252, 166.17178)
+
+[node name="wheelyChair18" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -34.916325, -0.252, 166.17178)
+
+[node name="wheelyChair19" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -37.585655, -0.252, 166.17229)
+
+[node name="wheelyChair20" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -37.585327, -0.252, 169.7897)
+
+[node name="wheelyChair21" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -34.916325, -0.252, 169.7897)
+
+[node name="wheelyChair22" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -32.160324, -0.252, 169.7897)
+
+[node name="wheelyChair23" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -49.84084, -0.252, 165.40396)
+
+[node name="wheelyChair24" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -47.966568, -0.252, 167.26979)
+
+[node name="wheelyChair25" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -46.078907, -0.252, 169.16835)
+
+[node name="wheelyChair26" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -46.286148, -0.252, 161.69408)
+
+[node name="wheelyChair27" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -44.209385, -0.252, 163.67627)
+
+[node name="wheelyChair28" parent="map" instance=ExtResource("14_itu0t")]
+transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -42.458714, -0.252, 165.48027)
+
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -1.2019811, -0.0446198, 109.58734)
 
