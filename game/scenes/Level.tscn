@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cu7ofdrqj67tj" path="res://assets/swearingen_ext/blindness.png" id="6_opqd1"]
 [ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="7_4qegb"]
 [ext_resource type="PackedScene" uid="uid://de6qiq7iv1eq2" path="res://scenes/barbs.tscn" id="7_xyj84"]
-[ext_resource type="PackedScene" uid="uid://dgi2c2j4h53dx" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
+[ext_resource type="PackedScene" uid="uid://dd20mrs7kurc0" path="res://scenes/swearingen_int.tscn" id="8_2eouu"]
 [ext_resource type="PackedScene" uid="uid://bfevsxyulkj0u" path="res://scenes/swearingen_front.tscn" id="8_faw0r"]
 [ext_resource type="PackedScene" uid="uid://lg62ores86w" path="res://assets/WoodenChair.glb" id="9_2eouu"]
 [ext_resource type="PackedScene" uid="uid://c2uwp8i55m063" path="res://scenes/audio_stream_player_2d.tscn" id="10_rccsh"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dwd371bk7g7b2" path="res://scenes/table1.tscn" id="14_p6oy6"]
 [ext_resource type="PackedScene" uid="uid://dgstp5n26tjr0" path="res://assets/computer.glb" id="15_4no8g"]
 [ext_resource type="Script" uid="uid://ckryll5jgn3y2" path="res://scenes/door_trigger.gd" id="16_opqd1"]
-[ext_resource type="PackedScene" uid="uid://vsukft23gujm" path="res://scenes/swearingen_int_floor.tscn" id="19_4no8g"]
+[ext_resource type="PackedScene" path="res://scenes/swearingen_int_floor.tscn" id="19_4no8g"]
 [ext_resource type="AudioStream" uid="uid://bf3bhbfxwupop" path="res://music/Corridor in B Minor (Calm).wav" id="20_40jy2"]
 [ext_resource type="Script" uid="uid://ce52g3f1o4doe" path="res://scenes/menu.gd" id="20_iw3v5"]
 [ext_resource type="AudioStream" uid="uid://dcsktnyyorm2w" path="res://music/Corridor in B minor.wav" id="22_0akr6"]
@@ -47,8 +47,9 @@ background_mode = 2
 sky = SubResource("Sky_a202f")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.8627451, 0.7411765, 0.7019608, 1)
+fog_light_color = Color(0.91566664, 0.65724564, 0.6944651, 1)
 fog_light_energy = 0.32
 fog_density = 1.0
 volumetric_fog_density = 0.0819
@@ -136,7 +137,7 @@ shader_parameter/glitch_chance = 0.0
 shader_parameter/glitch_intensity = 0.0
 shader_parameter/glitch_speed = 0.0
 shader_parameter/frame_jitter_intensity = 0.0
-shader_parameter/bleed_strength = 0.0
+shader_parameter/bleed_strength = 0.0210000009975
 shader_parameter/barrel_amount = 0.0
 shader_parameter/roll_intensity = 0.0
 shader_parameter/roll_speed = 0.0
