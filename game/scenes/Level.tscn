@@ -913,7 +913,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55639076, 1.8990247, -0.128
 shape = SubResource("BoxShape3D_kja0s")
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 8.3647, -0.0446198, 108.35497)
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -0.03957939, -0.0446198, 6.233492)
 
 [node name="HW_Enf_TEST_NOT WORKING" type="Node3D" parent="."]
 
