@@ -739,19 +739,19 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -5.139769, 0.0254499
 transform = Transform3D(-0.65, 0, -5.6824803e-08, 0, 0.65, 0, 5.6824803e-08, 0, -0.65, 5.179789, 0.02851516, -20.423203)
 
 [node name="Book_2_4" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 9.58113, 1.515626, 118.44527)
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 17.063658, 1.1172624, 118.812454)
 
 [node name="Book_2_2" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 8.571517, 1.5327679, 111.80261)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -43.815536, 1.5458332, 135.98201)
 
 [node name="Book_2_3" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 10.278327, 1.515626, 115.08229)
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, -5.0490904, 1.1576443, 160.6189)
 
 [node name="Book_2_0" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 6.507588, 1.5327679, 115.01777)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 7.7321205, 1.5327679, 163.04797)
 
 [node name="Book_2_1" parent="." instance=ExtResource("13_xe3hh")]
-transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 4.7891564, 1.515626, 110.97995)
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 30.332462, 1.1229812, 160.45274)
 
 [node name="WoodenChair" parent="." instance=ExtResource("9_2eouu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24)
