@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=45 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
@@ -80,6 +80,13 @@ is_hemisphere = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6oy6"]
 size = Vector3(1.3184204, 1.5766602, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_itu0t"]
+vertices = PackedVector3Array(-3.325, -0.245, 37.6075, 3.325, -0.245, -37.6075, 3.325, -0.245, 37.6075, -3.325, -0.245, -37.6075, -3.325, 0.245, 37.6075, 3.325, 0.245, -37.6075, 3.325, 0.245, 37.6075, -3.325, 0.245, -37.6075, 3.325, -0.245, 37.6075, -3.325, -0.245, -37.6075, 3.325, -0.245, -37.6075, -3.325, -0.245, 37.6075, 3.325, 0.245, 37.6075, -3.325, 0.245, -37.6075, 3.325, 0.245, -37.6075, -3.325, 0.245, 37.6075, 3.325, -0.245, 37.6075, -3.325, 0.245, 37.6075, -3.325, -0.245, 37.6075, 3.325, 0.245, 37.6075, 3.325, -0.245, -37.6075, -3.325, 0.245, -37.6075, -3.325, -0.245, -37.6075, 3.325, 0.245, -37.6075)
+polygons = [PackedInt32Array(0, 2, 4), PackedInt32Array(2, 6, 4), PackedInt32Array(1, 3, 5), PackedInt32Array(3, 7, 5), PackedInt32Array(8, 10, 12), PackedInt32Array(10, 14, 12), PackedInt32Array(9, 11, 13), PackedInt32Array(11, 15, 13), PackedInt32Array(16, 18, 20), PackedInt32Array(18, 22, 20), PackedInt32Array(17, 19, 21), PackedInt32Array(19, 23, 21)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4no8g"]
+size = Vector3(6.65, -0.49, 75.215)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sv41r"]
 shader = ExtResource("11_ax7ne")
@@ -363,308 +370,308 @@ transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 19.082607, -0.252484
 [node name="ChalkBoard2" parent="map/Node3D" instance=ExtResource("10_vs87s")]
 transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 18.778236, 0.482244, 156.30786)
 
-[node name="LongTable3" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable3" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(-3.278354e-08, 0, 1.3, 0, 0.75, 0, -0.75, 0, -5.6824803e-08, 4.746338, -0.546, 167.25)
 
-[node name="wheelyChair7" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair7" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 2.7518592, -0.2524848, 168.4)
 
-[node name="wheelyChair8" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair8" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 4.7966995, -0.25247824, 168.4)
 
-[node name="wheelyChair9" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair9" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 6.765452, -0.25249135, 168.4)
 
-[node name="computer7" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer7" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.6861567, 1.373, 168.05)
 
-[node name="computer8" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer8" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.713178, 1.373, 168.05)
 
-[node name="computer9" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer9" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.709291, 1.373, 168.05)
 
-[node name="computer10" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer10" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 8.730965, 1.373, 168.05)
 
-[node name="computer11" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer11" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.7222605, 1.373, 168.05)
 
-[node name="wheelyChair10" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair10" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 8.882462, -0.2524848, 168.4)
 
-[node name="wheelyChair11" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair11" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0.74199486, -0.2524848, 168.4)
 
-[node name="LongTable4" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable4" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(-3.278354e-08, 0, 1.3, 0, 0.75, 0, -0.75, 0, -5.6824803e-08, 4.746, -0.546, 163.15)
 
-[node name="wheelyChair12" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair12" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0.742, -0.252, 164.3)
 
-[node name="wheelyChair13" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair13" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 2.752, -0.252, 164.3)
 
-[node name="wheelyChair14" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair14" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 4.797, -0.252, 164.3)
 
-[node name="wheelyChair15" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair15" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 6.765, -0.252, 164.3)
 
-[node name="wheelyChair16" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair16" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 8.882, -0.252, 164.3)
 
-[node name="computer12" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer12" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.7171619, 1.373, 163.95)
 
-[node name="computer13" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer13" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.6981008, 1.373, 163.95)
 
-[node name="computer14" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer14" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.724794, 1.373, 163.95)
 
-[node name="computer15" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer15" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.69612, 1.373, 163.95)
 
-[node name="computer16" parent="map" instance=ExtResource("15_4no8g")]
+[node name="computer16" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 8.825111, 1.373, 163.95)
 
-[node name="ChalkBoard3" parent="map" instance=ExtResource("10_vs87s")]
+[node name="ChalkBoard3" parent="map/Node3D" instance=ExtResource("10_vs87s")]
 transform = Transform3D(-2.7975288e-08, 0, -0.8, 0, 0.8, 0, 0.64, 0, -3.4969112e-08, 2.8930247, 0.482, 156.394)
 
-[node name="Table" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table3" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.41213, -1.389, 108.6717)
 
-[node name="Table2" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table4" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.858133, -1.389, 112.73811)
 
-[node name="Table3" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table5" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.599155, -1.389, 111.51613)
 
-[node name="Table4" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table6" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.817646, -1.389, 115.96324)
 
-[node name="Table5" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table7" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.49337, -1.389, 119.16152)
 
-[node name="WoodenChair" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair21" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 17.594975, -0.252, 117.80329)
 
-[node name="WoodenChair2" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair22" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, 16.05077, -0.252, 119.33796)
 
-[node name="WoodenChair3" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair23" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 17.595, -0.252, 120.832)
 
-[node name="WoodenChair4" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair24" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 19.135, -0.252, 119.338)
 
-[node name="WoodenChair5" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair25" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 20.940735, -0.252, 117.64001)
 
-[node name="WoodenChair6" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair26" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, 19.368355, -0.252, 116.1161)
 
-[node name="WoodenChair7" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair27" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 20.941, -0.252, 114.57705)
 
-[node name="WoodenChair8" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair28" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 22.450932, -0.252, 116.116)
 
-[node name="WoodenChair9" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair29" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, 22.411594, -0.252, 112.87282)
 
-[node name="WoodenChair10" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair30" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 23.972948, -0.252, 111.3246)
 
-[node name="WoodenChair11" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair31" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 25.508, -0.252, 112.873)
 
-[node name="WoodenChair12" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair32" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 23.973, -0.252, 114.391)
 
-[node name="WoodenChair13" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair33" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 19.514122, -0.252, 107.287025)
 
-[node name="WoodenChair14" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair34" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, 17.97, -0.252, 108.809)
 
-[node name="WoodenChair15" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair35" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 19.514, -0.252, 110.350945)
 
-[node name="WoodenChair16" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair36" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 21.073109, -0.252, 108.80948)
 
-[node name="WoodenChair17" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair37" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 16.67011, -0.252, 110.249146)
 
-[node name="WoodenChair18" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair38" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, 15.159033, -0.252, 111.666985)
 
-[node name="WoodenChair19" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair39" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 16.67, -0.252, 113.20445)
 
-[node name="WoodenChair20" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair40" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 18.24904, -0.252, 111.667)
 
-[node name="LongTable" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable5" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, -48.631687, -0.546, 153.9631)
 
-[node name="LongTable2" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable6" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, -44.843815, -0.546, 153.92485)
 
-[node name="LongTable5" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable7" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(0.53033006, 0, 0.70710677, 0, 0.75, 0, -0.53033006, 0, 0.70710677, -47.09624, -0.546, 166.4392)
 
-[node name="LongTable6" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable8" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(0.53033006, 0, 0.70710677, 0, 0.75, 0, -0.53033006, 0, 0.70710677, -43.53683, -0.546, 162.72844)
 
-[node name="LongTable7" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable9" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(-3.278354e-08, 0, 1, 0, 0.75, 0, -0.75, 0, -4.371139e-08, -34.91592, -0.546, 168.65276)
 
-[node name="LongTable8" parent="map" instance=ExtResource("13_kflc5")]
+[node name="LongTable10" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(-3.278354e-08, 0, 1, 0, 0.75, 0, -0.75, 0, -4.371139e-08, -34.916325, -0.546, 164.99179)
 
-[node name="wheelyChair" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair17" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.858837, -0.252, 151.66928)
 
-[node name="wheelyChair2" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair18" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.859, -0.252, 153.96292)
 
-[node name="wheelyChair3" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair19" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.859, -0.252, 156.39893)
 
-[node name="wheelyChair4" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair20" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.0193, -0.252, 151.66893)
 
-[node name="wheelyChair5" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair21" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.019108, -0.252, 153.96292)
 
-[node name="wheelyChair6" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair22" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.019108, -0.252, 156.39893)
 
-[node name="wheelyChair17" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair23" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -32.160675, -0.252, 166.17178)
 
-[node name="wheelyChair18" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair24" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -34.916325, -0.252, 166.17178)
 
-[node name="wheelyChair19" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair25" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -37.585655, -0.252, 166.17229)
 
-[node name="wheelyChair20" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair26" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -37.585327, -0.252, 169.7897)
 
-[node name="wheelyChair21" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair27" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -34.916325, -0.252, 169.7897)
 
-[node name="wheelyChair22" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair28" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -32.160324, -0.252, 169.7897)
 
-[node name="wheelyChair23" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair29" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -49.84084, -0.252, 165.40396)
 
-[node name="wheelyChair24" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair30" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -47.966568, -0.252, 167.26979)
 
-[node name="wheelyChair25" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair31" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -46.078907, -0.252, 169.16835)
 
-[node name="wheelyChair26" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair32" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -46.286148, -0.252, 161.69408)
 
-[node name="wheelyChair27" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair33" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -44.209385, -0.252, 163.67627)
 
-[node name="wheelyChair28" parent="map" instance=ExtResource("14_itu0t")]
+[node name="wheelyChair34" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -42.458714, -0.252, 165.48027)
 
-[node name="Table6" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table8" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.128044, -1.389, 160.92558)
 
-[node name="Table7" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table9" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.965, -1.389, 160.926)
 
-[node name="Table8" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table10" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.128, -1.389, 166.943)
 
-[node name="Table9" parent="map" instance=ExtResource("24_sv6t6")]
+[node name="Table11" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.965, -1.389, 166.943)
 
-[node name="WoodenChair21" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair41" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -11.569621, -0.252, 167.05)
 
-[node name="WoodenChair22" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair42" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10, -0.252, 165.5598)
 
-[node name="WoodenChair23" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair43" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -8.516931, -0.252, 167.05)
 
-[node name="WoodenChair24" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair44" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -10, -0.252, 168.57176)
 
-[node name="WoodenChair25" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair45" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -10, -0.252, 162.617)
 
-[node name="WoodenChair26" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair46" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -11.57, -0.252, 161.05)
 
-[node name="WoodenChair27" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair47" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10, -0.252, 159.53297)
 
-[node name="WoodenChair28" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair48" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -8.47461, -0.252, 161.05)
 
-[node name="WoodenChair29" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair49" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -6.4179053, -0.252, 161.05)
 
-[node name="WoodenChair30" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair50" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.869629, -0.252, 159.61237)
 
-[node name="WoodenChair31" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair51" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -3.3254395, -0.252, 161.05)
 
-[node name="WoodenChair32" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair52" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -4.87, -0.252, 162.6016)
 
-[node name="WoodenChair33" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair53" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -6.4242325, -0.252, 167.05)
 
-[node name="WoodenChair34" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair54" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.87, -0.252, 165.52849)
 
-[node name="WoodenChair35" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair55" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -3.273269, -0.252, 167.05)
 
-[node name="WoodenChair36" parent="map" instance=ExtResource("9_2eouu")]
+[node name="WoodenChair56" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -4.87, -0.252, 168.64156)
 
-[node name="ChalkBoard" parent="map" instance=ExtResource("10_vs87s")]
+[node name="ChalkBoard4" parent="map/Node3D" instance=ExtResource("10_vs87s")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -14.1594925, 0.47481155, 167.45529)
 
-[node name="ChalkBoard2" parent="map" instance=ExtResource("10_vs87s")]
+[node name="ChalkBoard5" parent="map/Node3D" instance=ExtResource("10_vs87s")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -14.159481, 0.4952435, 160.6814)
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
-transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -1.2019811, -0.0446198, 109.58734)
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 8.3647, -0.0446198, 108.35497)
 
 [node name="HW_Enf_TEST_NOT WORKING" type="Node3D" parent="."]
 
 [node name="HomeworkEnforcer" parent="HW_Enf_TEST_NOT WORKING" instance=ExtResource("7_4qegb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.554502, 0, 91.03178)
-patrol_points = Array[NodePath]([NodePath("../patrol1"), NodePath("../patrol2"), NodePath("../patrol3"), NodePath("../patrol4"), NodePath("../patrol5"), NodePath("../patrol6"), NodePath("../patrol7"), NodePath("../patrol8"), NodePath("../patrol9")])
+patrol_points = Array[NodePath]([NodePath("../patrol1"), NodePath("../patrol2"), NodePath("../patrol3")])
 
 [node name="swearingen_int_floor2" parent="HW_Enf_TEST_NOT WORKING" instance=ExtResource("19_4no8g")]
 transform = Transform3D(0.31536964, 0, -0.31536964, 0, 0.402, 0, 0.31536964, 0, 0.31536964, -9.927, 0, 126.521)
 
 [node name="patrol1" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8302155, 0, 107.49423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.997004, 0, 93.37825)
 
 [node name="patrol2" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.17448, 0, 109.36978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0759163, 0, 113.998024)
 
 [node name="patrol3" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.154572, 0, 121.1219)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.823452, 0, 137.54416)
 
 [node name="patrol4" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.537643, 0, 143.17302)
@@ -683,6 +690,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.54353, 0, 141.98601)
 
 [node name="patrol9" type="Node3D" parent="HW_Enf_TEST_NOT WORKING"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.71189, 0, 81.308655)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="HW_Enf_TEST_NOT WORKING"]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 3.8442006, 0, 114.94995)
+navigation_mesh = SubResource("NavigationMesh_itu0t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HW_Enf_TEST_NOT WORKING"]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 3.8442006, 0, 114.94995)
+visible = false
+mesh = SubResource("BoxMesh_4no8g")
 
 [node name="Tables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0380461, -1.0719706, -21.960152)
