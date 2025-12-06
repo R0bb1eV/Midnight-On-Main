@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=53 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
@@ -99,6 +99,12 @@ size = Vector3(2.0354004, 0.23937988, 7.8912354)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4no8g"]
 size = Vector3(0.44763184, 1.9020996, 0.44396973)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_baq46"]
+size = Vector3(0.60894775, 0.6887512, 0.5463257)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nbaxu"]
+size = Vector3(0.57250977, 0.5209961, 0.15214539)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_itu0t"]
 vertices = PackedVector3Array(-3.325, -0.245, 37.6075, 3.325, -0.245, -37.6075, 3.325, -0.245, 37.6075, -3.325, -0.245, -37.6075, -3.325, 0.245, 37.6075, 3.325, 0.245, -37.6075, 3.325, 0.245, 37.6075, -3.325, 0.245, -37.6075, 3.325, -0.245, 37.6075, -3.325, -0.245, -37.6075, 3.325, -0.245, -37.6075, -3.325, -0.245, 37.6075, 3.325, 0.245, 37.6075, -3.325, 0.245, -37.6075, 3.325, 0.245, -37.6075, -3.325, 0.245, 37.6075, 3.325, -0.245, 37.6075, -3.325, 0.245, 37.6075, -3.325, -0.245, 37.6075, 3.325, 0.245, 37.6075, 3.325, -0.245, -37.6075, -3.325, 0.245, -37.6075, -3.325, -0.245, -37.6075, 3.325, 0.245, -37.6075)
@@ -584,13 +590,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7380829, 1.34498, -3.676641
 shape = SubResource("BoxShape3D_4no8g")
 
 [node name="wheelyChair" parent="map/Node3D" instance=ExtResource("14_itu0t")]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 15.034039, -0.252, 168.4)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 15.034039, -0.252, 168.40205)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair2" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 17.05668, -0.252, 168.4)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair3" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 19.072319, -0.252, 168.4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="computer" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 14.972786, 1.373, 168.05)
@@ -638,11 +674,41 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 18.997, 1.373, 163.9507
 [node name="wheelyChair4" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 15.047539, -0.2524848, 164.30072)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair5" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 17.083313, -0.2524848, 164.30072)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair6" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 19.082607, -0.2524848, 164.30072)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="ChalkBoard2" parent="map/Node3D" instance=ExtResource("10_vs87s")]
 transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 18.778236, 0.482244, 156.30786)
@@ -681,11 +747,41 @@ shape = SubResource("BoxShape3D_4no8g")
 [node name="wheelyChair7" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 2.7518592, -0.2524848, 168.4)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair8" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 4.7966995, -0.25247824, 168.4)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair9" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 6.765452, -0.25249135, 168.4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="computer7" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.6861567, 1.373, 168.05)
@@ -705,8 +801,28 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.7222605, 1.373, 168.0
 [node name="wheelyChair10" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 8.882462, -0.2524848, 168.4)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair11" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0.74199486, -0.2524848, 168.4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="LongTable4" parent="map/Node3D" instance=ExtResource("13_kflc5")]
 transform = Transform3D(-3.278354e-08, 0, 1.3, 0, 0.75, 0, -0.75, 0, -5.6824803e-08, 4.746, -0.546, 163.15)
@@ -736,17 +852,67 @@ shape = SubResource("BoxShape3D_4no8g")
 [node name="wheelyChair12" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0.742, -0.252, 164.3)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair13" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 2.752, -0.252, 164.3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair13/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair13/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair14" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 4.797, -0.252, 164.3)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair15" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 6.765, -0.252, 164.3)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair15/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair15/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair16" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 8.882, -0.252, 164.3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair16/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair16/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="computer12" parent="map/Node3D" instance=ExtResource("15_4no8g")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.7171619, 1.373, 163.95)
@@ -1220,56 +1386,236 @@ shape = SubResource("BoxShape3D_4no8g")
 [node name="wheelyChair17" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.858837, -0.252, 151.66928)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair17/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair17/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair18" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.859, -0.252, 153.96292)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair18/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair18/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair19" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.859, -0.252, 156.39893)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair19/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair19/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair20" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.0193, -0.252, 151.66893)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair20/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair20/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair21" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.019108, -0.252, 153.96292)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair22" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -46.019108, -0.252, 156.39893)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair23" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -32.160675, -0.252, 166.17178)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair23/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair23/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair24" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -34.916325, -0.252, 166.17178)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair24/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair24/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair25" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -37.585655, -0.252, 166.17229)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair25/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair25/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair26" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -37.585327, -0.252, 169.7897)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair26/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair26/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair27" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -34.916325, -0.252, 169.7897)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair27/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair27/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair28" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -32.160324, -0.252, 169.7897)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair28/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair28/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair29" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -49.84084, -0.252, 165.40396)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair29/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair29/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair30" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -47.966568, -0.252, 167.26979)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair30/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair30/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair31" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -46.078907, -0.252, 169.16835)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair31/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair31/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair32" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -46.286148, -0.252, 161.69408)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair32/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair32/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair33" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -44.209385, -0.252, 163.67627)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair33/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair33/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair34" parent="map/Node3D" instance=ExtResource("14_itu0t")]
 transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.2374369, -42.458714, -0.252, 165.48027)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/wheelyChair34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/wheelyChair34/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/wheelyChair34/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="Table8" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.128044, -1.389, 160.92558)
@@ -1939,32 +2285,132 @@ transform = Transform3D(-0.8, 0, -6.9938224e-08, 0, 0.8, 0, 6.9938224e-08, 0, -0
 [node name="wheelyChair" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.55738, -2.0049512e-05, 136.7)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair2" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9818544e-05, 138.75)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair3" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9580126e-05, 140.837)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair4" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9337982e-05, 143.01494)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair5" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -49.557, -1.9099563e-05, 145.13377)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair6" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246765, -0.00041231513, 136.7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair7" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, -1.9516796e-05, 138.75)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair8" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, -1.930818e-05, 140.837)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="wheelyChair9" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, 0, 143.015)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
+
 [node name="wheelyChair10" parent="." instance=ExtResource("14_itu0t")]
 transform = Transform3D(-7.649493e-08, 0, -1.75, 0, 1.75, 0, 1.75, 0, -7.649493e-08, -45.246956, 0, 145.134)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wheelyChair10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wheelyChair10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008026123, 0.34945655, -0.01612854)
+shape = SubResource("BoxShape3D_baq46")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wheelyChair10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3061142)
+shape = SubResource("BoxShape3D_nbaxu")
 
 [connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]
