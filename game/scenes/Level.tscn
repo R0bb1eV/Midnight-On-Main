@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=51 format=3 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
 [ext_resource type="Script" uid="uid://ehm1ax8yt6ft" path="res://scenes/door_trigger_2.gd" id="2_wsd7d"]
@@ -90,6 +90,9 @@ size = Vector3(1.9711304, 1.421875, 2.0037842)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p3doa"]
 size = Vector3(2.0058289, 1.7241821, 0.27319336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sboe"]
+size = Vector3(1.996582, 1.2197266, 1.9780273)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_itu0t"]
 size = Vector3(2.0354004, 0.23937988, 7.8912354)
@@ -438,10 +441,18 @@ transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.
 shape = SubResource("BoxShape3D_p3doa")
 
 [node name="Table" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.667204, -1.3892764, 160.74661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.668896, -1.3892764, 160.73814)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
 
 [node name="Table2" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.667452, -1.3505684, 167.20515)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
 
 [node name="WoodenChair13" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 29.745451, -0.2524848, 159.34036)
@@ -764,17 +775,37 @@ shape = SubResource("BoxShape3D_kja0s")
 [node name="Table3" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.41213, -1.389, 108.6717)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
 [node name="Table4" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.858133, -1.389, 112.73811)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
 
 [node name="Table5" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.599155, -1.389, 111.51613)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
 [node name="Table6" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.817646, -1.389, 115.96324)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
 [node name="Table7" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.49337, -1.389, 119.16152)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
 
 [node name="WoodenChair21" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 17.594975, -0.252, 117.80329)
@@ -1243,14 +1274,30 @@ transform = Transform3D(1.2374369, 0, -1.2374369, 0, 1.75, 0, 1.2374369, 0, 1.23
 [node name="Table8" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.128044, -1.389, 160.92558)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
 [node name="Table9" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.965, -1.389, 160.926)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
 
 [node name="Table10" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.128, -1.389, 166.943)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
 [node name="Table11" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.965, -1.389, 166.943)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
 
 [node name="WoodenChair41" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -11.569621, -0.252, 167.05)
@@ -1818,11 +1865,23 @@ volume_db = -15.0
 [node name="Table" parent="." instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.442837, -1.3562332, 168.36807)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
 [node name="Table2" parent="." instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.493954, -1.3387461, 161.8007)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
 [node name="Table3" parent="." instance=ExtResource("24_sv6t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.590843, -1.3320096, 155.42508)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
 
 [node name="LongTable" parent="." instance=ExtResource("13_kflc5")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1.4, -48.33597, -0.546, 140.83702)
