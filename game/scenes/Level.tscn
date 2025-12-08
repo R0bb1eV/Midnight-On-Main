@@ -1697,6 +1697,1113 @@ shape = SubResource("BoxShape3D_48r4s")
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
 shape = SubResource("BoxShape3D_p3doa")
 
+[node name="Table12" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.412292, -1.389, 166.943)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair57" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -26.853914, -0.252, 167.05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair57"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair57/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair57/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair58" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -25.284294, -0.252, 165.5598)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair58"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair58/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair58/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair59" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -23.801224, -0.252, 167.05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair59"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair59/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair59/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair60" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -25.284294, -0.252, 168.57176)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair60"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair60/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair60/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table13" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.901157, -1.389, 166.943)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair61" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -20.342781, -0.252, 167.05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair61"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair61/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair61/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair62" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -18.773159, -0.252, 165.5598)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair62"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair62/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair62/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair63" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -17.290089, -0.252, 167.05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair63"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair63/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair63/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair64" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -18.773159, -0.252, 168.57176)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair64"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair64/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair64/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table14" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.901157, -1.389, 160.63664)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair65" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -20.342781, -0.252, 160.74365)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair65"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair65/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair65/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair66" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -18.773159, -0.252, 159.25345)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair66"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair66/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair66/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair67" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -17.290089, -0.252, 160.74365)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair67"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair67/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair67/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair68" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -18.773159, -0.252, 162.26541)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair68"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair68/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair68/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table15" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.46553, -1.389, 160.63664)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair69" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -26.907154, -0.252, 160.74365)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair69"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair69/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair69/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair70" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -25.337532, -0.252, 159.25345)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair70"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair70/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair70/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair71" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -23.854462, -0.252, 160.74365)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair71"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair71/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair71/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair72" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -25.337532, -0.252, 162.26541)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair72"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair72/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair72/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table16" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.056072, -1.389, 128.1462)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair73" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -49.497696, -0.252, 128.2532)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair73"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair73/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair73/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair74" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -47.928074, -0.252, 126.763)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair74"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair74/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair74/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair75" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -46.445004, -0.252, 128.2532)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair75"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair75/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair75/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair76" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -47.928074, -0.252, 129.77496)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair76"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair76/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair76/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table17" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.05792, -1.389, 128.1462)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair77" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -43.499542, -0.252, 128.2532)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair77"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair77/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair77/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair78" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -41.92992, -0.252, 126.763)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair78"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair78/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair78/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair79" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -40.44685, -0.252, 128.2532)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair79"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair79/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair79/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair80" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -41.92992, -0.252, 129.77496)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair80"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair80/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair80/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table18" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.05792, -1.389, 120.042366)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair81" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -43.499542, -0.252, 120.149376)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair81"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair81/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair81/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair82" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -41.92992, -0.252, 118.65917)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair82"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair82/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair82/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair83" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -40.44685, -0.252, 120.149376)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair83"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair83/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair83/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair84" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -41.92992, -0.252, 121.671135)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair84"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair84/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair84/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table19" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.19595, -1.389, 120.042366)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair85" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -49.637573, -0.252, 120.149376)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair85"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair85/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair85/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair86" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -48.06795, -0.252, 118.65917)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair86"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair86/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair86/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair87" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -46.58488, -0.252, 120.149376)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair87"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair87/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair87/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair88" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -48.06795, -0.252, 121.671135)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair88"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair88/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair88/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table20" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.339897, -1.389, 108.15035)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair89" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -19.78152, -0.252, 108.25736)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair89"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair89/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair89/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair90" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -18.211899, -0.252, 106.76716)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair90"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair90/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair90/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair91" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -16.728828, -0.252, 108.25736)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair91"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair91/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair91/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair92" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -18.211899, -0.252, 109.77912)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair92"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair92/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair92/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table21" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7832, -1.389, 115.42294)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair93" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -22.224823, -0.252, 115.52995)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair93"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair93/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair93/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair94" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -20.655201, -0.252, 114.03975)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair94"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair94/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair94/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair95" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -19.17213, -0.252, 115.52995)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair95"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair95/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair95/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair96" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -20.655201, -0.252, 117.05171)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair96"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair96/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair96/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table22" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.239092, -1.389, 115.42294)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair97" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -12.680716, -0.252, 115.52995)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair97"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair97/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair97/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair98" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -11.1110935, -0.252, 114.03975)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair98"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair98/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair98/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair99" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -9.628023, -0.252, 115.52995)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair99"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair99/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair99/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair100" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -11.1110935, -0.252, 117.05171)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair100"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair100/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair100/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table23" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.239092, -1.389, 123.21077)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair101" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -12.680716, -0.252, 123.31778)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair101"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair101/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair101/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair102" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -11.1110935, -0.252, 121.827576)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair102"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair102/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair102/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair103" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -9.628023, -0.252, 123.31778)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair103"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair103/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair103/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair104" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -11.1110935, -0.252, 124.83954)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair104"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair104/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair104/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table24" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.076574, -1.389, 123.21077)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair105" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -22.518198, -0.252, 123.31778)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair105"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair105/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair105/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair106" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -20.948576, -0.252, 121.827576)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair106"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair106/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair106/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair107" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -19.465506, -0.252, 123.31778)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair107"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair107/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair107/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair108" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -20.948576, -0.252, 124.83954)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair108"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair108/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair108/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table25" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 1.5018864, -1.389, 130.37263)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair109" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -0.80296755, -0.252, 130.47964)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair109"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair109/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair109/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair110" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.8557992, -0.252, 128.97876)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair110"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair110/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair110/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair114" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.5892143, -0.252, 128.97876)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair114"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair114/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair114/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair111" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 4.229892, -0.252, 130.47964)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair111"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair111/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair111/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair112" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 0.8244488, -0.252, 132.043)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair112"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair112/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair112/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair113" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 2.6153233, -0.252, 132.043)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair113"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair113/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair113/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table26" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -10.472631, -1.389, 130.37263)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair115" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -12.777485, -0.252, 130.47964)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair115"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair115/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair115/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair116" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -11.118719, -0.252, 128.97876)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair116"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair116/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair116/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair117" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -9.3853035, -0.252, 128.97876)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair117"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair117/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair117/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair118" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -7.744626, -0.252, 130.47964)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair118"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair118/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair118/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair119" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -11.150069, -0.252, 132.043)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair119"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair119/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair119/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair120" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -9.359195, -0.252, 132.043)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair120"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair120/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair120/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table27" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -3.2706995, -1.389, 138.75299)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair121" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -5.575553, -0.252, 138.86)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair121"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair121/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair121/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair122" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3.9167871, -0.252, 137.35912)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair122"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair122/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair122/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair123" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.1833715, -0.252, 137.35912)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair123"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair123/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair123/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair124" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, -0.5426941, -0.252, 138.86)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair124"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair124/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair124/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair125" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -3.9481373, -0.252, 140.42336)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair125"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair125/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair125/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair126" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -2.1572628, -0.252, 140.42336)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair126"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair126/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair126/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="Table28" parent="map/Node3D" instance=ExtResource("24_sv6t6")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 10.945287, -1.389, 137.20013)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/Table28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10990906, 1.7370305, 0.14952087)
+shape = SubResource("BoxShape3D_2sboe")
+
+[node name="WoodenChair127" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, 8.640433, -0.252, 137.30714)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair127"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair127/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair127/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair128" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 10.299199, -0.252, 135.80626)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair128"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair128/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair128/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair129" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 12.032615, -0.252, 135.80626)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair129"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair129/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair129/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair130" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-2.6226834e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.6226834e-08, 13.673292, -0.252, 137.30714)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair130"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair130/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair130/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair131" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 10.267849, -0.252, 138.8705)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair131"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair131/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair131/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
+[node name="WoodenChair132" parent="map/Node3D" instance=ExtResource("9_2eouu")]
+transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, 12.058723, -0.252, 138.8705)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/WoodenChair132"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/WoodenChair132/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.019874573, 0.74804664, 0.014099121)
+shape = SubResource("BoxShape3D_48r4s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="map/Node3D/WoodenChair132/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00434494, 2.4318242, -0.87854004)
+shape = SubResource("BoxShape3D_p3doa")
+
 [node name="WoodenChair45" parent="map/Node3D" instance=ExtResource("9_2eouu")]
 transform = Transform3D(-0.6, 0, -5.2453668e-08, 0, 0.6, 0, 5.2453668e-08, 0, -0.6, -10, -0.252, 162.617)
 
@@ -1868,6 +2975,33 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -14.159481, 0.4952435, 
 [node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/ChalkBoard5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/ChalkBoard5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55639076, 1.8990247, -0.12878418)
+shape = SubResource("BoxShape3D_kja0s")
+
+[node name="ChalkBoard6" parent="map/Node3D" instance=ExtResource("10_vs87s")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -29.743649, 0.47481155, 167.45529)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/ChalkBoard6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/ChalkBoard6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55639076, 1.8990247, -0.12878418)
+shape = SubResource("BoxShape3D_kja0s")
+
+[node name="ChalkBoard7" parent="map/Node3D" instance=ExtResource("10_vs87s")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -29.743637, 0.4952435, 160.6814)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/ChalkBoard7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/ChalkBoard7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55639076, 1.8990247, -0.12878418)
+shape = SubResource("BoxShape3D_kja0s")
+
+[node name="ChalkBoard8" parent="map/Node3D" instance=ExtResource("10_vs87s")]
+transform = Transform3D(-0.8, 0, -6.9938224e-08, 0, 0.8, 0, 6.9938224e-08, 0, -0.8, -36.605614, 0.4952435, 124.51703)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Node3D/ChalkBoard8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Node3D/ChalkBoard8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55639076, 1.8990247, -0.12878418)
 shape = SubResource("BoxShape3D_kja0s")
 
