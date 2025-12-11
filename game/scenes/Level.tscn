@@ -170,9 +170,8 @@ shader_parameter/effect_mix = 1.0
 
 [sub_resource type="GDScript" id="GDScript_0akr6"]
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("interior_root")]
+[node name="World" type="Node3D"]
 script = ExtResource("1_4no8g")
-interior_root = NodePath("map/InteriorDesign")
 
 [node name="teleport" type="Node3D" parent="."]
 

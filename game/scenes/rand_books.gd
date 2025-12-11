@@ -5,6 +5,16 @@ extends Node3D
 var TABLE_TOP_Y := -0.74636995792389
 var BOOK_HEIGHT := 3.8
 var RANDOM_OFFSET := 0.15
+var MAX_BOOKS_PER_ROOM := 2
+
+var rooms := [
+	["Table1", "Table2", "Table29", "Table30", "Table31"],  # Room A
+	["Table3", "Table4", "Table5", "Table6", "Table7"],    # Room B
+	["Table9", "Table10", "Table11"],                       # Room C
+	["Table12", "Table13", "Table14", "Table15"],          # Room D
+	["Table16", "Table17", "Table18", "Table19"],          # Room E
+	["Table20", "Table21", "Table22", "Table23", "Table24", "Table25", "Table26", "Table27"]  # Room F
+]
 
 func _ready():
 	if interior_root == null:
@@ -13,17 +23,11 @@ func _ready():
 			push_error("InteriorDesign not found")
 			return
 
-	place_books_on_first_five_tables()
+	place_books_with_room_limits()
 
 
-func place_books_on_first_five_tables():
-	var tables: Array = []
-	get_specific_tables(interior_root, tables)
-	tables.shuffle()
-
-	print("Tables found: ", tables)
-
-	var books: Array = []
+func place_books_with_room_limits():
+	var books: Array[Node3D] = []
 	find_books(interior_root, books)
 	books.shuffle()
 
@@ -31,40 +35,46 @@ func place_books_on_first_five_tables():
 		print("No books found")
 		return
 
-	var count = min(books.size(), tables.size())
+	var room_book_count: Array[int] = []
+	for i in range(rooms.size()):
+		room_book_count.append(0)
 
-	for i in range(count):
-		var table: Node3D = tables[i]
-		var book: Node3D = books[i]
+	for book in books:
+		var candidates: Array[Dictionary] = []
+		for room_index in range(rooms.size()):
+			if room_book_count[room_index] < MAX_BOOKS_PER_ROOM:
+				for table_name in rooms[room_index]:
+					var table_node = interior_root.get_node_or_null(table_name)
+					if table_node:
+						candidates.append({"table": table_node, "room_index": room_index})
+		
+		if candidates.size() == 0:
+			print("No valid tables left for book ", book.name)
+			break
 
-		var table_pos = table.global_transform.origin
+		var choice: Dictionary = candidates[randi() % candidates.size()]
+		var table: Node3D = choice["table"]
+		var room_index: int = choice["room_index"]
 
-		var final_y = TABLE_TOP_Y + (BOOK_HEIGHT / 2.0)
-
-		var final_pos = Vector3(
+		# Compute final position
+		var table_pos: Vector3 = table.global_transform.origin
+		var final_y: float = TABLE_TOP_Y + (BOOK_HEIGHT / 2.0)
+		var final_pos: Vector3 = Vector3(
 			table_pos.x + randf_range(-RANDOM_OFFSET, RANDOM_OFFSET),
 			final_y,
 			table_pos.z + randf_range(-RANDOM_OFFSET, RANDOM_OFFSET)
 		)
-
+		
 		table.add_child(book)
 		book.global_transform = Transform3D(book.global_transform.basis, final_pos)
 
-		print("Placed ", book.name, " on ", table.name, " at ", final_pos)
+		print("Placed ", book.name, " on ", table.name, " in room ", room_index, " at ", final_pos)
+
+		room_book_count[room_index] += 1
 
 
-func get_specific_tables(node: Node, out: Array):
-	for child in node.get_children():
-		if child.name.begins_with("Table"):
-			var num_str := child.name.substr(5)
-			if num_str.is_valid_int():
-				var num := int(num_str)
-				if num >= 1 and num <= 31:
-					out.append(child)
-		get_specific_tables(child, out)
 
-
-func find_books(node: Node, out: Array):
+func find_books(node: Node, out: Array[Node3D]) -> void:
 	for child in node.get_children():
 		if child.name.begins_with("Book_2_"):
 			out.append(child)
