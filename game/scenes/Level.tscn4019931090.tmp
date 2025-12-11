@@ -190,6 +190,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.303783, 0.20393848, 104.99
 [node name="DoorTrigger2" type="Area3D" parent="teleport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.171986, 1.4997392, 101.58657)
 script = ExtResource("2_wsd7d")
+hold_time_required = null
+required_books = null
 teleport_target_path = NodePath("../TeleportMarker2")
 ui_exit_hold_prompt_path = NodePath("../../UI/HoldPrompt2")
 ui_collect_prompt_path = NodePath("../../UI/CollectPrompt")
@@ -3548,13 +3550,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008296967, 0.93286926, 0.3
 shape = SubResource("BoxShape3D_nbaxu")
 
 [node name="Endscreen" parent="." instance=ExtResource("29_kja0s")]
-anchors_preset = -1
-anchor_bottom = 0.998
-offset_right = 3.0
-offset_bottom = 0.29595947
 
 [node name="Camera3D" type="Camera3D" parent="Endscreen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7506447, 7.4418287, 18.062609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5940428, 7.5829773, 16.703144)
 
 [connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]

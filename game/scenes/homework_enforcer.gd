@@ -89,4 +89,5 @@ func _move_with_agent(delta: float, speed: float) -> void:
 func _on_Hitbox_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		print("Player caught! Restarting scene...")
+		Global.books_collected = 0
 		get_tree().reload_current_scene()
