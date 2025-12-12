@@ -3,16 +3,15 @@ extends CharacterBody3D
 # --- Node references ---
 @onready var armature: Node3D = $Armature
 @onready var anim_tree: AnimationTree = $AnimationTree
-
-# --- UI (absolute path from scene root) ---
 @onready var stamina_bar: ProgressBar = $"/root/World/UI/Stam/ProgressBar"
+@onready var pause_screen: Control = $"/root/World/Pausescreen"
+@onready var crosshair: TextureRect = $"/root/World/UI/crosshair"
 
 # --- Footsteps ---
 @export var step_interval_walk: float = 0.50
 @export var step_interval_sprint: float = 0.34
 @export var step_interval_crouch: float = 0.70
 @export var footsteps_min_speed: float = 0.25
-
 @onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
 @onready var footstep_timer: Timer = $FootstepTimer
 
@@ -51,21 +50,23 @@ var fov_lerp_speed: float = 5.0
 
 # --- Stamina bar state ---
 var stamina_bar_empty: bool = false
+var stamina_empty_locked: bool = false  # red until fully recovered
 
 # --- Gameplay active flag ---
-var gameplay_active: bool = false
-
+var gameplay_active: bool = true
 
 func _ready() -> void:
-	# Only capture mouse if gameplay is active
-	if gameplay_active:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Hide pause menu initially
+	pause_screen.visible = false
 
-	# --- Initialize camera ---
+	# Capture mouse at start
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+	# --- Find camera ---
 	var candidates = [
 		"PivotPitch/Camera3D",
 		"Camera3D",
-        "Armature/PivotPitch/Camera3D"
+		"Armature/PivotPitch/Camera3D"
 	]
 	for path in candidates:
 		var c = get_node_or_null(path)
@@ -82,93 +83,125 @@ func _ready() -> void:
 	if camera:
 		camera.current = true
 		camera.fov = default_fov
-		if pivot_pitch:
-			pivot_pitch.rotation_degrees.x = 0
 	else:
 		push_error("Camera3D not found. Update script with correct path.")
 
-	# --- Initialize UI ---
+	# --- UI init ---
 	if stamina_bar:
 		stamina_bar.min_value = 0
 		stamina_bar.max_value = 100
 		stamina_bar.value = 100
 		_update_stamina_bar_style()
-		
-		# --- Footsteps init ---
+
+	# --- Footsteps init ---
 	if footstep_timer:
 		footstep_timer.stop()
 		footstep_timer.timeout.connect(_on_FootstepTimer_timeout)
 
+	# --- Connect Pause Menu Buttons ---
+	$"/root/World/Pausescreen/Resume".pressed.connect(_on_resume_pressed)
+	$"/root/World/Pausescreen/Quit".pressed.connect(_on_quit_pressed)
+
+# PAUSE SYSTEM
+func pause_game():
+	gameplay_active = false
+	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	pause_screen.visible = true
+	pause_screen.process_mode = Node.ProcessMode.PROCESS_MODE_ALWAYS
+	for button in pause_screen.get_children():
+		if button is Button:
+			button.process_mode = Node.ProcessMode.PROCESS_MODE_ALWAYS
+
+func resume_game():
+	gameplay_active = true
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pause_screen.visible = false
+	pause_screen.process_mode = Node.ProcessMode.PROCESS_MODE_INHERIT
+	for button in pause_screen.get_children():
+		if button is Button:
+			button.process_mode = Node.ProcessMode.PROCESS_MODE_INHERIT
+
+func _on_resume_pressed():
+	crosshair.visible = true
+	resume_game()
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+
+# INPUT / CAMERA LOOK
 func _unhandled_input(event):
+	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
+		if get_tree().paused:
+			resume_game()
+		else:
+			crosshair.visible = false
+			pause_game()
+		return
+
 	if not gameplay_active:
-		return  # ignore all input until gameplay starts
+		return  # ignore look if paused
 
 	if event is InputEventMouseMotion:
-		# Yaw
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
-
-		# Pitch
 		if pivot_pitch:
 			var sign = 1.0 if invert_y else -1.0
-			var delta_pitch = sign * event.relative.y * mouse_sensitivity
-			var new_pitch = pivot_pitch.rotation_degrees.x + delta_pitch
+			var new_pitch = pivot_pitch.rotation_degrees.x + sign * event.relative.y * mouse_sensitivity
 			new_pitch = clamp(new_pitch, pitch_min_deg, pitch_max_deg)
 			pivot_pitch.rotation_degrees.x = new_pitch
 
-	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			get_tree().quit()
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-
+# MOVEMENT / PHYSICS
 func _physics_process(delta: float) -> void:
 	if not gameplay_active:
-		return  # don't move or process physics until gameplay starts
+		return
 
-	# --- Gravity ---
+	# Gravity
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
 
-	# --- Jump ---
+	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# --- Movement input ---
+	# Movement input
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var raw = Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (global_transform.basis * raw).normalized()
 
-	# --- Sprint logic ---
+	# Sprint logic
 	if sprint_stamina <= 0:
 		sprint_stamina = 0
 		is_sprinting = false
 		sprint_on_cooldown = true
+		stamina_empty_locked = true  # lock red bar
 
 	# Always recover stamina
 	sprint_stamina += sprint_recovery_rate * delta
 	if sprint_stamina >= sprint_stamina_max:
 		sprint_stamina = sprint_stamina_max
 		sprint_on_cooldown = false
+		stamina_empty_locked = false  # unlocked, can turn green
 
-	# Allow sprint only if not on cooldown
+	# Sprint input
 	if Input.is_action_pressed("run") and not sprint_on_cooldown and sprint_stamina > 0:
 		is_sprinting = true
 		sprint_stamina -= sprint_drain_rate * delta
 	else:
 		is_sprinting = false
 
-	# --- Crouch ---
+	# Crouch
 	is_crouching = Input.is_action_pressed("crouch")
 
-	# --- Final movement speed ---
+	# Movement speed
 	var speed := BASE_SPEED
 	if is_sprinting:
 		speed *= sprint_mult
 	elif is_crouching:
 		speed *= crouch_mult
 
-	# --- Apply movement ---
+	# Apply movement
 	if direction.length() > 0.01:
 		velocity.x = lerp(velocity.x, direction.x * speed, LERP_VAL)
 		velocity.z = lerp(velocity.z, direction.z * speed, LERP_VAL)
@@ -176,16 +209,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)
 		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)
 
-	# --- Footsteps update ---
+	# Footsteps
 	_update_footsteps()
 
 	move_and_slide()
 
-	# --- Animation ---
+	# Animation
 	if anim_tree:
 		anim_tree.set("parameters/BlendSpace1D/blend_position", velocity.length() / (BASE_SPEED * sprint_mult))
 
-	# --- FOV ---
+	# FOV
 	var target_fov := default_fov
 	if is_sprinting:
 		target_fov = sprint_fov
@@ -195,21 +228,14 @@ func _physics_process(delta: float) -> void:
 	if camera:
 		camera.fov = lerp(camera.fov, target_fov, fov_lerp_speed * delta)
 
-	# --- UI Update ---
+	# UI Update
 	if stamina_bar:
 		var percent = (sprint_stamina / sprint_stamina_max) * 100.0
 		stamina_bar.value = percent
-
-		# Track empty state
-		if sprint_stamina <= 0.05:
-			stamina_bar_empty = true
-		elif sprint_stamina >= sprint_stamina_max:
-			stamina_bar_empty = false
-
-		# Update bar color
+		stamina_bar_empty = stamina_empty_locked or sprint_stamina <= 0.05
 		_update_stamina_bar_style()
 
-
+# STAMINA BAR STYLE
 func _update_stamina_bar_style():
 	if not stamina_bar:
 		return
@@ -220,16 +246,46 @@ func _update_stamina_bar_style():
 	style.corner_radius_bottom_left = 4
 	style.corner_radius_bottom_right = 4
 
-	if stamina_bar_empty:
-		style.bg_color = Color(0.5, 0, 0) 
-	else:
-		style.bg_color = Color(0, 0.5, 0)
+	style.bg_color = Color(0.5,0,0) if stamina_bar_empty else Color(0,0.5,0)
 
 	var theme := Theme.new()
 	theme.set_stylebox("fill", "ProgressBar", style)
 	stamina_bar.theme = theme
 
+# FOOTSTEPS
+func _update_footsteps() -> void:
+	if not gameplay_active or not is_on_floor():
+		if footstep_timer and not footstep_timer.is_stopped():
+			footstep_timer.stop()
+		return
 
+	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
+	var moving: bool = horizontal_speed > footsteps_min_speed
+	if not moving:
+		if not footstep_timer.is_stopped():
+			footstep_timer.stop()
+		return
+
+	var interval: float = step_interval_walk
+	if is_sprinting:
+		interval = step_interval_walk
+	elif is_crouching:
+		interval = step_interval_crouch
+	interval = max(interval, 0.05)
+
+	if absf(footstep_timer.wait_time - interval) > 0.001:
+		footstep_timer.wait_time = interval
+	if footstep_timer.is_stopped():
+		footstep_timer.start()
+
+func _on_FootstepTimer_timeout() -> void:
+	if not gameplay_active or not is_on_floor():
+		return
+	if Vector2(velocity.x, velocity.z).length() <= footsteps_min_speed:
+		return
+	footstep_player.play()
+
+# CAMERA FINDER
 func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Camera3D:
 	if depth > max_depth:
 		return null
@@ -240,55 +296,3 @@ func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Came
 		if found:
 			return found
 	return null
-	
-func _update_footsteps() -> void:
-	# Only while gameplay is active
-	if not gameplay_active:
-		if footstep_timer and not footstep_timer.is_stopped():
-			footstep_timer.stop()
-		return
-
-	# Must be on floor to step
-	if not is_on_floor():
-		if footstep_timer and not footstep_timer.is_stopped():
-			footstep_timer.stop()
-		return
-
-	# Need horizontal movement
-	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
-	var moving: bool = horizontal_speed > footsteps_min_speed
-
-	if not moving:
-		if not footstep_timer.is_stopped():
-			footstep_timer.stop()
-		return
-
-	# Choose cadence
-	var interval: float = step_interval_walk
-	if is_sprinting:
-		interval = step_interval_walk
-	elif is_crouching:
-		interval = step_interval_crouch
-
-	# Timer requires > 0
-	interval = max(interval, 0.05)
-
-	# Update timer and start if needed
-	if absf(footstep_timer.wait_time - interval) > 0.001:
-		footstep_timer.wait_time = interval
-
-	if footstep_timer.is_stopped():
-		footstep_timer.start()
-
-func _on_FootstepTimer_timeout() -> void:
-	# Re-check so we don't play while stopped
-	if not gameplay_active:
-		return
-	if not is_on_floor():
-		return
-
-	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
-	if horizontal_speed <= footsteps_min_speed:
-		return
-
-	footstep_player.play()
