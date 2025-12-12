@@ -7,6 +7,15 @@ extends CharacterBody3D
 # --- UI (absolute path from scene root) ---
 @onready var stamina_bar: ProgressBar = $"/root/World/UI/Stam/ProgressBar"
 
+# --- Footsteps ---
+@export var step_interval_walk: float = 0.50
+@export var step_interval_sprint: float = 0.34
+@export var step_interval_crouch: float = 0.70
+@export var footsteps_min_speed: float = 0.25
+
+@onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
+@onready var footstep_timer: Timer = $FootstepTimer
+
 # Camera pivot + camera (assigned at runtime)
 var pivot_pitch: Node3D = null
 var camera: Camera3D = null
@@ -84,7 +93,11 @@ func _ready() -> void:
 		stamina_bar.max_value = 100
 		stamina_bar.value = 100
 		_update_stamina_bar_style()
-
+		
+		# --- Footsteps init ---
+	if footstep_timer:
+		footstep_timer.stop()
+		footstep_timer.timeout.connect(_on_FootstepTimer_timeout)
 
 func _unhandled_input(event):
 	if not gameplay_active:
@@ -163,6 +176,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)
 		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)
 
+	# --- Footsteps update ---
+	_update_footsteps()
+
 	move_and_slide()
 
 	# --- Animation ---
@@ -224,3 +240,55 @@ func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Came
 		if found:
 			return found
 	return null
+	
+func _update_footsteps() -> void:
+	# Only while gameplay is active
+	if not gameplay_active:
+		if footstep_timer and not footstep_timer.is_stopped():
+			footstep_timer.stop()
+		return
+
+	# Must be on floor to step
+	if not is_on_floor():
+		if footstep_timer and not footstep_timer.is_stopped():
+			footstep_timer.stop()
+		return
+
+	# Need horizontal movement
+	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
+	var moving: bool = horizontal_speed > footsteps_min_speed
+
+	if not moving:
+		if not footstep_timer.is_stopped():
+			footstep_timer.stop()
+		return
+
+	# Choose cadence
+	var interval: float = step_interval_walk
+	if is_sprinting:
+		interval = step_interval_walk
+	elif is_crouching:
+		interval = step_interval_crouch
+
+	# Timer requires > 0
+	interval = max(interval, 0.05)
+
+	# Update timer and start if needed
+	if absf(footstep_timer.wait_time - interval) > 0.001:
+		footstep_timer.wait_time = interval
+
+	if footstep_timer.is_stopped():
+		footstep_timer.start()
+
+func _on_FootstepTimer_timeout() -> void:
+	# Re-check so we don't play while stopped
+	if not gameplay_active:
+		return
+	if not is_on_floor():
+		return
+
+	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
+	if horizontal_speed <= footsteps_min_speed:
+		return
+
+	footstep_player.play()

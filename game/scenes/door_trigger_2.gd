@@ -38,6 +38,13 @@ var is_holding: bool = false
 @onready var collect_prompt: Control = get_node(ui_collect_prompt_path) as Control
 @onready var collect_label: Label = collect_prompt.get_node("Label_collect") as Label
 
+# --- SFX ---
+@onready var door_confirm_sfx: AudioStreamPlayer = $"/root/World/DoorConfirmSFX"
+
+func _play_confirm_sfx() -> void:
+	if door_confirm_sfx:
+		door_confirm_sfx.stop()
+		door_confirm_sfx.play()
 
 func _ready() -> void:
 	# Initial UI state
@@ -102,13 +109,14 @@ func _process(delta: float) -> void:
 		exit_progress_bar.value = clamp(hold_timer / hold_time_required, 0.0, 1.0)
 
 		if hold_timer >= hold_time_required:
+			_play_confirm_sfx()
 			_teleport_player()
+
 	else:
 		if is_holding:
 			is_holding = false
 			hold_timer = 0.0
 			exit_progress_bar.value = 0.0
-
 
 func _teleport_player() -> void:
 	_show_endscreen()

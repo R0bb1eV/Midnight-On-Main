@@ -17,6 +17,13 @@ var is_holding: bool = false
 @onready var progress_bar: ProgressBar = hold_prompt.get_node("Progress") as ProgressBar
 @onready var label: Label = hold_prompt.get_node("Label_enter") as Label
 
+# --- SFX ---
+@onready var door_confirm_sfx: AudioStreamPlayer = $"/root/World/DoorConfirmSFX"
+
+func _play_confirm_sfx() -> void:
+	if door_confirm_sfx:
+		door_confirm_sfx.stop()
+		door_confirm_sfx.play()
 
 func _ready() -> void:
 	hold_prompt.visible = false
@@ -50,13 +57,14 @@ func _process(delta: float) -> void:
 		progress_bar.value = clamp(hold_timer / hold_time_required, 0.0, 1.0)
 
 		if hold_timer >= hold_time_required:
+			_play_confirm_sfx()
 			_teleport_player()
+			
 	else:
 		if is_holding:
 			is_holding = false
 			hold_timer = 0.0
 			progress_bar.value = 0.0
-
 
 func _teleport_player() -> void:
 	if player == null or teleport_target == null:

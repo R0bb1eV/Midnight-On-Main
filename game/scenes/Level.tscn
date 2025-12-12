@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=94 format=4 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Script" uid="uid://8xfku7ipjlk3" path="res://scenes/rand_books.gd" id="1_4no8g"]
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
@@ -27,12 +27,18 @@
 [ext_resource type="AudioStream" uid="uid://bf3bhbfxwupop" path="res://music/Corridor in B Minor (Calm).wav" id="20_40jy2"]
 [ext_resource type="Texture2D" uid="uid://danld2yhv746q" path="res://assets/swearingen_int/dark_rough_plaster.png" id="20_48r4s"]
 [ext_resource type="Script" uid="uid://ce52g3f1o4doe" path="res://scenes/menu.gd" id="20_iw3v5"]
+[ext_resource type="AudioStream" uid="uid://4j3ogubc2git" path="res://assets/sounds/step.mp3" id="21_nu2gi"]
 [ext_resource type="Texture2D" uid="uid://do0m5cijgu3rv" path="res://assets/swearingen_int/plaster.png" id="21_p3doa"]
 [ext_resource type="AudioStream" uid="uid://dcsktnyyorm2w" path="res://music/Corridor in B minor.wav" id="22_0akr6"]
 [ext_resource type="Texture2D" uid="uid://dneuxt40kso3h" path="res://assets/swearingen_int/damage_plaster.png" id="22_2sboe"]
+[ext_resource type="AudioStream" uid="uid://dy786c5grfkxu" path="res://assets/sounds/monster_attack.mp3" id="22_70b58"]
 [ext_resource type="PackedScene" uid="uid://de1skci113m8a" path="res://assets/Table.glb" id="24_sv6t6"]
 [ext_resource type="Texture2D" uid="uid://clugvs1qnwvlr" path="res://assets/HTP menu.png" id="29_2sboe"]
 [ext_resource type="PackedScene" uid="uid://bmueq0sl8ff0y" path="res://scenes/EndScreen.tscn" id="29_kja0s"]
+[ext_resource type="Texture2D" uid="uid://itbmg14f5a0u" path="res://assets/credits.png" id="30_baq46"]
+[ext_resource type="Script" uid="uid://ddci6quhihtrf" path="res://scenes/audio_stream_manager.gd" id="37_0dkw0"]
+[ext_resource type="AudioStream" uid="uid://dhrl1ef6lsgqp" path="res://assets/sounds/monster_ambient.mp3" id="38_ycrer"]
+[ext_resource type="AudioStream" uid="uid://7idw23a67bmp" path="res://assets/sounds/opening_door.mp3" id="39_ycrer"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
 size = Vector3(3.3787537, 7.4921417, 8.122391)
@@ -6126,6 +6132,12 @@ transform = Transform3D(0.79804254, 0, 0.055930346, 0, 0.79999965, 0, -0.0559303
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -0.03957939, -0.0446198, 6.233492)
 
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="Character_Rigging"]
+stream = ExtResource("21_nu2gi")
+volume_db = -32.359
+
+[node name="FootstepTimer" type="Timer" parent="Character_Rigging"]
+
 [node name="patrol_points" type="Node3D" parent="."]
 
 [node name="patrol1" type="Node3D" parent="patrol_points"]
@@ -6162,6 +6174,18 @@ navigation_mesh = SubResource("NavigationMesh_baq46")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.554502, 0, 91.03178)
 detection_radius = 7.0
 patrol_points = Array[NodePath]([NodePath("../../patrol_points/patrol1"), NodePath("../../patrol_points/patrol2"), NodePath("../../patrol_points/patrol3"), NodePath("../../patrol_points/patrol4"), NodePath("../../patrol_points/patrol5"), NodePath("../../patrol_points/patrol6"), NodePath("../../patrol_points/patrol7"), NodePath("../../patrol_points/patrol8"), NodePath("../../patrol_points/patrol9")])
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="NavigationRegion3D/HomeworkEnforcer"]
+stream = ExtResource("21_nu2gi")
+volume_db = -11.686
+max_distance = 20.0
+
+[node name="FootstepTimer" type="Timer" parent="NavigationRegion3D/HomeworkEnforcer"]
+
+[node name="AttackPlayer" type="AudioStreamPlayer3D" parent="NavigationRegion3D/HomeworkEnforcer"]
+stream = ExtResource("22_70b58")
+max_db = 2.16
+max_distance = 3.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.613579, -0.65478325, 122.5818)
@@ -6440,13 +6464,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -223.00003
-offset_top = -216.00003
-offset_right = 777.0
-offset_bottom = 784.0
+offset_left = -499.395
+offset_top = -462.2
+offset_right = 500.6051
+offset_bottom = 537.8
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.445, 0.445)
+scale = Vector2(0.505, 0.505)
+pivot_offset = Vector2(500, 500)
 texture = ExtResource("29_2sboe")
 
 [node name="CreditsImage" type="TextureRect" parent="Menu/CanvasLayer/Overlay"]
@@ -6456,17 +6481,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -462.19
+offset_right = 500.0
+offset_bottom = 537.81
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Menu/CanvasLayer/Overlay"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.64705884)
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(500, 500)
+texture = ExtResource("30_baq46")
 
 [node name="Label" type="Label" parent="Menu/CanvasLayer"]
 anchors_preset = -1
@@ -6545,6 +6568,20 @@ offset_bottom = 0.29595947
 
 [node name="Camera3D" type="Camera3D" parent="Endscreen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7506447, 7.4418287, 18.062609)
+
+[node name="AudioStreamManager" type="Node" parent="."]
+script = ExtResource("37_0dkw0")
+scare_sounds = Array[AudioStream]([ExtResource("38_ycrer")])
+min_delay = 30.0
+max_delay = 60.0
+
+[node name="ScareStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_ycrer")
+volume_db = -10.765
+
+[node name="DoorConfirmSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_ycrer")
+volume_db = -19.427
 
 [connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]

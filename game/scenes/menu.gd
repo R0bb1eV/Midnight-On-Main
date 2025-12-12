@@ -17,6 +17,7 @@ var menu_active: bool = true
 @onready var overlay: Control = $CanvasLayer/Overlay
 @onready var htp_image: TextureRect = $CanvasLayer/Overlay/HTPImage
 @onready var credits_image: TextureRect = $CanvasLayer/Overlay/CreditsImage
+@onready var filter: ColorRect = $"../filter/ColorRect"
 
 var camera_base_transform: Transform3D
 @export var camera_move_radius: Vector2 = Vector2(0.25, 0.15)
@@ -141,6 +142,7 @@ func _show_overlay(which: String) -> void:
 	if not overlay:
 		return
 	overlay.visible = true
+	filter.visible = false
 
 	if htp_image: htp_image.visible = (which == "htp")
 	if credits_image: credits_image.visible = (which == "credits")
@@ -149,10 +151,13 @@ func _show_overlay(which: String) -> void:
 func _hide_overlay() -> void:
 	if overlay:
 		overlay.visible = false
+		filter.visible = true
 	if htp_image:
 		htp_image.visible = false
+		filter.visible = true
 	if credits_image:
 		credits_image.visible = false
+		filter.visible = true
 
 
 func _on_htp_pressed() -> void:
