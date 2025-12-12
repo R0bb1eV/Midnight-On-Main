@@ -10,6 +10,8 @@ var SECOND_BOOK_PROB := 0.2  # 20% chance to allow 2nd book in same room
 
 # Offset for long tables
 var LONG_TABLE_BOOK_OFFSET := 2.26
+var LONG_TABLE_X_OFFSET_SMALL := 1.12
+var LONG_TABLE_X_OFFSET_LARGE := 3
 
 var rooms := [
 	["Table", "Table2", "Table29", "Table30", "Table31"],  # Room A
@@ -21,9 +23,9 @@ var rooms := [
 ]
 
 var long_tables := [
-	"LongTable", "LongTable2", "LongTable3", "LongTable4",
-	"LongTable5", "LongTable6", "LongTable7", "LongTable8",
-	"LongTable9", "LongTable10", "LongTable11", "LongTable12"
+	"LongTable", "LongTable2","LongTable3", "LongTable4",
+	"LongTable5", "LongTable6","LongTable7", "LongTable8",
+	"LongTable9", "LongTable10","LongTable11", "LongTable12"
 ]
 
 func _ready():
@@ -37,7 +39,7 @@ func _ready():
 	place_one_book_on_long_table()
 
 
-# ---------- Regular Tables ----------
+# Regular Tables
 
 func place_books_with_room_limits():
 	var books: Array[Node3D] = []
@@ -73,7 +75,6 @@ func place_books_with_room_limits():
 		var table: Node3D = choice["table"]
 		var room_index: int = choice["room_index"]
 
-		# Compute final position
 		var table_pos: Vector3 = table.global_transform.origin
 		var final_y: float = TABLE_TOP_Y + (BOOK_HEIGHT / 2.0)
 		var final_pos: Vector3 = Vector3(
@@ -90,7 +91,6 @@ func place_books_with_room_limits():
 		room_book_count[room_index] += 1
 
 
-# ---------- Long Tables (1 book only) ----------
 
 func place_one_book_on_long_table():
 	var books: Array[Node3D] = []
@@ -112,13 +112,23 @@ func place_one_book_on_long_table():
 	var table_node: Node3D = interior_root.get_node_or_null(table_name)
 	if table_node:
 		var table_pos: Vector3 = table_node.global_transform.origin
-		var final_pos: Vector3 = Vector3(
-			table_pos.x + randf_range(-RANDOM_OFFSET, RANDOM_OFFSET),
-			TABLE_TOP_Y + LONG_TABLE_BOOK_OFFSET,
-			table_pos.z + randf_range(-RANDOM_OFFSET, RANDOM_OFFSET)
-		)
+
+		var final_x := table_pos.x + randf_range(-RANDOM_OFFSET, RANDOM_OFFSET)
+		var final_z := table_pos.z + randf_range(-RANDOM_OFFSET, RANDOM_OFFSET)
+
+		# Extra X offset for LongTable1-4
+		if table_name in ["LongTable", "LongTable2"]:
+			final_x += LONG_TABLE_X_OFFSET_SMALL
+		if table_name in ["LongTable3", "LongTable4"]:
+			final_x += LONG_TABLE_X_OFFSET_LARGE
+
+		var final_y := TABLE_TOP_Y + LONG_TABLE_BOOK_OFFSET
+
+		var final_pos: Vector3 = Vector3(final_x, final_y, final_z)
+
 		table_node.add_child(book)
 		book.global_transform = Transform3D(book.global_transform.basis, final_pos)
+
 		print("Placed ", book.name, " on long table ", table_name, " at ", final_pos)
 
 	long_tables.remove_at(index)
