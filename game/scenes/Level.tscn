@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=4 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=88 format=4 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Script" uid="uid://8xfku7ipjlk3" path="res://scenes/rand_books.gd" id="1_4no8g"]
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://dcsktnyyorm2w" path="res://music/Corridor in B minor.wav" id="22_0akr6"]
 [ext_resource type="Texture2D" uid="uid://dneuxt40kso3h" path="res://assets/swearingen_int/damage_plaster.png" id="22_2sboe"]
 [ext_resource type="PackedScene" uid="uid://de1skci113m8a" path="res://assets/Table.glb" id="24_sv6t6"]
+[ext_resource type="Texture2D" uid="uid://clugvs1qnwvlr" path="res://assets/HTP menu.png" id="29_2sboe"]
 [ext_resource type="PackedScene" uid="uid://bmueq0sl8ff0y" path="res://scenes/EndScreen.tscn" id="29_kja0s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
@@ -51,7 +52,6 @@ background_mode = 2
 sky = SubResource("Sky_a202f")
 tonemap_mode = 2
 glow_enabled = true
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.91566664, 0.65724564, 0.6944651, 1)
 fog_light_energy = 0.32
@@ -3799,6 +3799,7 @@ patrol_points = Array[NodePath]([NodePath("../../patrol_points/patrol1"), NodePa
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.613579, -0.65478325, 122.5818)
+visible = false
 size = Vector3(117.80377, 1, 107.33511)
 
 [node name="Node3D" type="Node3D" parent="NavigationRegion3D"]
@@ -4055,6 +4056,52 @@ transform = Transform3D(-0.9999198, 0, 0.012670806, 0.003899717, 0.95146024, 0.3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Menu"]
 
+[node name="Overlay" type="Control" parent="Menu/CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HTPImage" type="TextureRect" parent="Menu/CanvasLayer/Overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.00003
+offset_top = -216.00003
+offset_right = 777.0
+offset_bottom = 784.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("29_2sboe")
+
+[node name="CreditsImage" type="TextureRect" parent="Menu/CanvasLayer/Overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Menu/CanvasLayer/Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.64705884)
+
 [node name="Label" type="Label" parent="Menu/CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.224
@@ -4082,9 +4129,9 @@ anchor_top = 0.68100005
 anchor_right = 0.62600005
 anchor_bottom = 0.952
 offset_left = 0.5289917
-offset_top = -0.20202637
+offset_top = -91.20203
 offset_right = -0.27404785
-offset_bottom = 13.815979
+offset_bottom = 18.815979
 theme_override_constants/separation = 42
 
 [node name="StartButton" type="Button" parent="Menu/VBoxContainer"]
@@ -4098,6 +4145,18 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("13_opqd1")
 theme_override_font_sizes/font_size = 29
 text = "Quit"
+
+[node name="HTP" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 29
+text = "How to Play"
+
+[node name="Credits" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 29
+text = "Credits"
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("20_40jy2")
@@ -4127,3 +4186,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7506447, 7.4418287, 18.062
 [connection signal="body_exited" from="teleport/DoorTrigger2" to="teleport/DoorTrigger2" method="_on_body_exited"]
 [connection signal="pressed" from="Menu/VBoxContainer/StartButton" to="Menu" method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/QuitButton" to="Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/HTP" to="Menu" method="_on_htp_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Credits" to="Menu" method="_on_credits_pressed"]
