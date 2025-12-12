@@ -3,7 +3,7 @@ extends CharacterBody3D
 # --- Movement settings ---
 @export var move_speed: float = 2.5
 @export var chase_speed: float = 4.0
-@export var detection_radius: float = 50.0
+@export var detection_radius: float = 75.0
 @export var patrol_points: Array[NodePath] = []
 @export var chase_predict_time: float = 0.5  # seconds ahead to predict player movement
 

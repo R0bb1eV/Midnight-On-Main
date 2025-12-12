@@ -9,7 +9,7 @@ extends Area3D
 
 # --- Music nodes ---
 @onready var ambient_music: AudioStreamPlayer2D = $"/root/World/AmbientMusic"
-@onready var building_music: AudioStreamPlayer = $"/root/World/ThemeMusic"
+@onready var building_music: AudioStreamPlayer2D = $"/root/World/ThemeMusic"
 
 # --- Endscreen nodes ---
 @onready var endscreen: Control = $"/root/World/Endscreen"

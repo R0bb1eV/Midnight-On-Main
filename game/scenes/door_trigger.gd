@@ -5,7 +5,7 @@ extends Area3D
 @export var ui_hold_prompt_path: NodePath            # assign UI/HoldPrompt in inspector
 
 # --- Music nodes ---
-@onready var building_music: AudioStreamPlayer = $"/root/World/ThemeMusic"
+@onready var building_music: AudioStreamPlayer2D = $"/root/World/ThemeMusic"
 @onready var ambient_music: AudioStreamPlayer2D = $"/root/World/AmbientMusic"
 
 var player: CharacterBody3D = null

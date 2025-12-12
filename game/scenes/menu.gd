@@ -10,7 +10,7 @@ var menu_active: bool = true
 @onready var ui_label: Node = $"/root/World/UI"
 @onready var menu_canvas: CanvasLayer = $CanvasLayer
 
-@onready var menu_music: AudioStreamPlayer = $MenuMusic
+@onready var menu_music: AudioStreamPlayer2D = $MenuMusic
 @onready var gameplay_music: AudioStreamPlayer2D = $"/root/World/AmbientMusic"
 
 # --- NEW: overlay UI ---

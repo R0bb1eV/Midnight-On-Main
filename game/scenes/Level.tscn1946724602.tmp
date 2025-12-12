@@ -421,6 +421,7 @@ script = ExtResource("1_4no8g")
 [node name="DoorTrigger1" type="Area3D" parent="teleport"]
 transform = Transform3D(-2.1200023e-08, 0, 0.485, 0, 0.485, 0, -0.485, 0, -2.1200023e-08, -0.40443045, 3.6437225, 28.872478)
 script = ExtResource("16_opqd1")
+hold_time_required = null
 teleport_target_path = NodePath("../TeleportMarker1")
 ui_hold_prompt_path = NodePath("../../UI/HoldPrompt")
 
@@ -6135,7 +6136,7 @@ transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -0.03957939, -0.0446
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="Character_Rigging"]
 stream = ExtResource("21_nu2gi")
-volume_db = -40.679
+volume_db = -32.359
 
 [node name="FootstepTimer" type="Timer" parent="Character_Rigging"]
 
@@ -6178,7 +6179,7 @@ patrol_points = Array[NodePath]([NodePath("../../patrol_points/patrol1"), NodePa
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="NavigationRegion3D/HomeworkEnforcer"]
 stream = ExtResource("21_nu2gi")
-volume_db = -15.0
+volume_db = -11.686
 max_distance = 20.0
 
 [node name="FootstepTimer" type="Timer" parent="NavigationRegion3D/HomeworkEnforcer"]
@@ -6548,7 +6549,7 @@ theme_override_fonts/font = ExtResource("13_opqd1")
 theme_override_font_sizes/font_size = 29
 text = "Credits"
 
-[node name="MenuMusic" type="AudioStreamPlayer2D" parent="Menu"]
+[node name="MenuMusic" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("20_40jy2")
 
 [node name="AmbientMusic" parent="." instance=ExtResource("10_rccsh")]
@@ -6557,7 +6558,7 @@ volume_db = 10.0
 pitch_scale = 0.22
 autoplay = false
 
-[node name="ThemeMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="ThemeMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_0akr6")
 volume_db = -15.0
 
