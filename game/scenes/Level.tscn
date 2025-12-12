@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://clugvs1qnwvlr" path="res://assets/HTP menu.png" id="29_2sboe"]
 [ext_resource type="PackedScene" uid="uid://bmueq0sl8ff0y" path="res://scenes/EndScreen.tscn" id="29_kja0s"]
 [ext_resource type="Texture2D" uid="uid://itbmg14f5a0u" path="res://assets/credits.png" id="30_baq46"]
-[ext_resource type="Script" uid="uid://ddci6quhihtrf" path="res://scenes/audio_stream_manager.gd" id="37_0dkw0"]
+[ext_resource type="Script" uid="uid://r3wo83ye0fnm" path="res://scenes/audio_stream_manager.gd" id="37_0dkw0"]
 [ext_resource type="AudioStream" uid="uid://dhrl1ef6lsgqp" path="res://assets/sounds/monster_ambient.mp3" id="38_ycrer"]
 [ext_resource type="AudioStream" uid="uid://7idw23a67bmp" path="res://assets/sounds/opening_door.mp3" id="39_ycrer"]
 
@@ -6571,13 +6571,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7506447, 7.4418287, 18.062
 
 [node name="AudioStreamManager" type="Node" parent="."]
 script = ExtResource("37_0dkw0")
-scare_sounds = Array[AudioStream]([ExtResource("38_ycrer")])
+sounds = Array[AudioStream]([ExtResource("38_ycrer")])
 min_delay = 30.0
 max_delay = 60.0
 
-[node name="ScareStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="AudioStreamManager"]
 stream = ExtResource("38_ycrer")
-volume_db = -10.765
+volume_db = -13.686
+
+[node name="RandomTimer" type="Timer" parent="AudioStreamManager"]
 
 [node name="DoorConfirmSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("39_ycrer")
