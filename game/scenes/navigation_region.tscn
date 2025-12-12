@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cswjy1tgkcyyl"]
+
+[ext_resource type="PackedScene" uid="uid://bd4ubu1u4soyx" path="res://scenes/homework_enforcer.tscn" id="1_5g260"]
+[ext_resource type="PackedScene" uid="uid://b27x3ts1xg551" path="res://assets/Character_Rigging.glb" id="2_8mrhq"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_j0xn6"]
+vertices = PackedVector3Array(-41.595703, 1, -20.528809, -41.595703, 1, 62.47119, 22.404297, 1, 62.47119, 22.404297, 1, -20.528809)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D"]
+navigation_mesh = SubResource("NavigationMesh_j0xn6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.533905, 0, 20.90979)
+size = Vector3(65.1236, 1, 83.8772)
+
+[node name="HomeworkEnforcer" parent="." instance=ExtResource("1_5g260")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565207, 0)
+
+[node name="Character_Rigging" parent="." instance=ExtResource("2_8mrhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0786324, 0.7005825, 31.585989)
