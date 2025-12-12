@@ -16,16 +16,25 @@ var LONG_TABLE_X_OFFSET_LARGE := 3
 var rooms := [
 	["Table", "Table2", "Table29", "Table30", "Table31"],  # Room A
 	["Table3", "Table4", "Table5", "Table6", "Table7"],    # Room B
-	["Table9", "Table10", "Table11"],                       # Room C
+	["Table8", "Table9", "Table10", "Table11"],            # Room C
 	["Table12", "Table13", "Table14", "Table15"],          # Room D
 	["Table16", "Table17", "Table18", "Table19"],          # Room E
-	["Table20", "Table21", "Table22", "Table23", "Table24", "Table25", "Table26", "Table27"]  # Room F
+	["Table20", "Table21", "Table22", "Table23", "Table24", "Table25", "Table26", "Table27", "Table28"],  # Room F
+	["Table32", "Table34", "Table35"],                     # Room G
+	["Table36", "Table37"],                                # Room H
+	["Table38", "Table33", "Table44", "Table45", "Table46"], # (offices with one table)
+	["Table39", "Table40", "Table41", "Table42", "Table43"], # Room J
+	["Table47", "Table48", "Table49", "Table50"],          # Room K
+	["Table51", "Table52", "Table53", "Table54", "Table55", "Table 56"]  #Room L
 ]
 
 var long_tables := [
 	"LongTable", "LongTable2","LongTable3", "LongTable4",
 	"LongTable5", "LongTable6","LongTable7", "LongTable8",
-	"LongTable9", "LongTable10","LongTable11", "LongTable12"
+	"LongTable9", "LongTable10","LongTable11", "LongTable12",
+	"LongTable13", "LongTable14","LongTable15", "LongTable16",
+	"LongTable17", "LongTable18","LongTable19", "LongTable20",
+	"LongTable21"
 ]
 
 func _ready():
