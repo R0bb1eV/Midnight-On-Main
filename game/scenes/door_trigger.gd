@@ -83,9 +83,10 @@ func _teleport_player() -> void:
 
 	# --- Music switch ---
 	if building_music:
+		# Stop ambient music only
 		if ambient_music and ambient_music.playing:
 			ambient_music.stop()
 
+		# Restart building music from top
 		building_music.stop()
-		building_music.loop = true
 		building_music.play()
