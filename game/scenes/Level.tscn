@@ -6558,6 +6558,7 @@ text = "Credits"
 stream = ExtResource("20_40jy2")
 
 [node name="Saves" type="Control" parent="Menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -6581,6 +6582,11 @@ grow_vertical = 2
 theme = SubResource("Theme_jua6w")
 theme_override_constants/separation = 22
 alignment = 1
+
+[node name="Label" type="Label" parent="Menu/Saves/SaveSlots"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Press ESC to Go Back"
 
 [node name="Slot1" type="HBoxContainer" parent="Menu/Saves/SaveSlots"]
 layout_mode = 2
@@ -6725,6 +6731,15 @@ theme_override_font_sizes/font_size = 30
 text = "Quit"
 
 [node name="Caughtscreen" parent="." instance=ExtResource("41_gooay")]
+
+[node name="ColorRect" type="ColorRect" parent="Caughtscreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="CaughtText" type="Label" parent="Caughtscreen"]
 layout_mode = 1

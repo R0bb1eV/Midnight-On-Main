@@ -10,6 +10,8 @@ extends CharacterBody3D
 @onready var caught_menu_button: Button = $"/root/World/Caughtscreen/menu"
 @onready var caught_quit_button: Button = $"/root/World/Caughtscreen/quit"
 @onready var main_menu: Control = $"/root/World/Menu"
+@onready var caught_menu: Control = $"/root/World/Caughtscreen"
+@onready var end_menu: Control = $"/root/World/Endscreen"
 
 # --- Footsteps ---
 @export var step_interval_walk: float = 0.50
@@ -192,6 +194,12 @@ func _unhandled_input(event):
 	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
  
 		if main_menu.visible:
+			return
+			
+		if caught_menu.visible:
+			return
+			
+		if end_menu.visible:
 			return
 	
 		if get_tree().paused:
