@@ -111,11 +111,10 @@ func _update_footsteps() -> void:
 		if not footstep_timer.is_stopped():
 			footstep_timer.stop()
 		return
-
+		
 	var interval: float = patrol_step_interval
 	if chasing:
-		interval = chase_step_interval
-
+		interval = patrol_step_interval
 	footstep_timer.wait_time = interval
 	if footstep_timer.is_stopped():
 		footstep_timer.start()

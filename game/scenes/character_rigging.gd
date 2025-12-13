@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var caught_screen: Control = $"/root/World/Caughtscreen"
 @onready var caught_menu_button: Button = $"/root/World/Caughtscreen/menu"
 @onready var caught_quit_button: Button = $"/root/World/Caughtscreen/quit"
+@onready var main_menu: Control = $"/root/World/Menu"
 
 # --- Footsteps ---
 @export var step_interval_walk: float = 0.50
@@ -17,6 +18,7 @@ extends CharacterBody3D
 @export var footsteps_min_speed: float = 0.25
 @onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
 @onready var footstep_timer: Timer = $FootstepTimer
+var was_moving: bool = false
 
 # Camera pivot + camera (assigned at runtime)
 var pivot_pitch: Node3D = null
@@ -188,12 +190,17 @@ func _on_menu_pressed() -> void:
 # -----------------
 func _unhandled_input(event):
 	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
+ 
+		if main_menu.visible:
+			return
+	
 		if get_tree().paused:
 			resume_game()
 		else:
-			if crosshair: crosshair.visible = false
+			crosshair.visible = false
 			pause_game()
-		return
+		return 
+
 
 	if not gameplay_active:
 		return  # ignore look if paused or caught
@@ -321,26 +328,41 @@ func _update_stamina_bar_style():
 # -----------------
 func _update_footsteps() -> void:
 	if not gameplay_active or not is_on_floor():
+		was_moving = false
 		if footstep_timer and not footstep_timer.is_stopped():
 			footstep_timer.stop()
 		return
 
 	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
 	var moving: bool = horizontal_speed > footsteps_min_speed
+
 	if not moving:
-		if not footstep_timer.is_stopped():
+		was_moving = false
+		if footstep_timer and not footstep_timer.is_stopped():
 			footstep_timer.stop()
 		return
 
-	var interval: float = step_interval_walk
+	var interval: float = step_interval_crouch
 	if is_sprinting:
-		interval = step_interval_walk
+		interval = step_interval_crouch
 	elif is_crouching:
 		interval = step_interval_crouch
+
 	interval = max(interval, 0.05)
 
+	# If we just started moving, play a step immediately
+	if not was_moving:
+		was_moving = true
+		footstep_player.play()
+		footstep_timer.stop()
+		footstep_timer.wait_time = interval
+		footstep_timer.start()
+		return
+
+	# Keep timer interval updated while moving
 	if absf(footstep_timer.wait_time - interval) > 0.001:
 		footstep_timer.wait_time = interval
+
 	if footstep_timer.is_stopped():
 		footstep_timer.start()
 
