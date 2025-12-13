@@ -12,6 +12,8 @@ The player explores a university engineering building after hours, collects miss
 - Robbie Vann  
 
 ---
+[View Trailer](https://youtu.be/HrtUYzqLZ4Q)
+---
 
 ## How to Play
 
