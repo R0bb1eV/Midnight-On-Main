@@ -19,6 +19,22 @@ var menu_active: bool = true
 @onready var credits_image: TextureRect = $CanvasLayer/Overlay/CreditsImage
 @onready var filter: ColorRect = $"../filter/ColorRect"
 
+# --- NEW: saves UI ---
+@onready var saves_panel: Control = $Saves
+@onready var save_slots: VBoxContainer = $Saves/SaveSlots
+
+@onready var slot1_label: Label = $Saves/SaveSlots/Slot1/Label
+@onready var slot1_play: Button = $Saves/SaveSlots/Slot1/Button
+@onready var slot1_delete: Button = $Saves/SaveSlots/Slot1/Button2
+
+@onready var slot2_label: Label = $Saves/SaveSlots/Slot2/Label
+@onready var slot2_play: Button = $Saves/SaveSlots/Slot2/Button
+@onready var slot2_delete: Button = $Saves/SaveSlots/Slot2/Button2
+
+@onready var slot3_label: Label = $Saves/SaveSlots/Slot3/Label
+@onready var slot3_play: Button = $Saves/SaveSlots/Slot3/Button
+@onready var slot3_delete: Button = $Saves/SaveSlots/Slot3/Button2
+
 var camera_base_transform: Transform3D
 @export var camera_move_radius: Vector2 = Vector2(0.25, 0.15)
 @export var camera_tilt_angle: float = 2.0
@@ -50,6 +66,15 @@ func _ready() -> void:
 	# Make sure your Credits button path matches your scene:
 	$VBoxContainer/Credits.pressed.connect(_on_credits_pressed)
 
+	# --- NEW: save slot buttons ---
+	slot1_play.pressed.connect(func(): _on_slot_play(1))
+	slot2_play.pressed.connect(func(): _on_slot_play(2))
+	slot3_play.pressed.connect(func(): _on_slot_play(3))
+
+	slot1_delete.pressed.connect(func(): _on_slot_delete(1))
+	slot2_delete.pressed.connect(func(): _on_slot_delete(2))
+	slot3_delete.pressed.connect(func(): _on_slot_delete(3))
+
 	call_deferred("_activate_menu_camera")
 
 	if gameplay_ui: gameplay_ui.visible = false
@@ -58,6 +83,9 @@ func _ready() -> void:
 
 	# Hide overlays at start
 	_hide_overlay()
+
+	# --- NEW: hide saves at start ---
+	_hide_saves_menu()
 
 	if menu_music:
 		menu_music.play()
@@ -86,6 +114,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		if overlay and overlay.visible:
 			_hide_overlay()
 			get_viewport().set_input_as_handled()
+			return
+
+		# --- NEW: close saves menu with Esc ---
+		if saves_panel and saves_panel.visible:
+			_hide_saves_menu()
+			get_viewport().set_input_as_handled()
+			return
 
 
 func _activate_menu_camera() -> void:
@@ -94,8 +129,15 @@ func _activate_menu_camera() -> void:
 
 
 func _on_start_pressed() -> void:
+	# --- NEW: Start opens SaveSlots instead of instantly starting ---
+	_show_saves_menu()
+
+
+func _start_gameplay_now() -> void:
+	# This is your original start behavior, moved into its own function.
 	menu_active = false
 	_hide_overlay() # ensure overlays are gone
+	_hide_saves_menu()
 
 	_freeze_player(false)
 	player.gameplay_active = true
@@ -166,3 +208,70 @@ func _on_htp_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	_show_overlay("credits")
+
+
+# --- NEW: saves menu helpers ---
+func _show_saves_menu() -> void:
+	_hide_overlay()
+
+	$VBoxContainer.visible = false
+	saves_panel.visible = true
+	save_slots.visible = true
+
+	_refresh_save_slots()
+
+
+func _hide_saves_menu() -> void:
+	saves_panel.visible = false
+	save_slots.visible = false
+	$VBoxContainer.visible = true
+
+
+func _refresh_save_slots() -> void:
+	_apply_slot_ui(1, slot1_label, slot1_play, slot1_delete)
+	_apply_slot_ui(2, slot2_label, slot2_play, slot2_delete)
+	_apply_slot_ui(3, slot3_label, slot3_play, slot3_delete)
+
+func show_menu() -> void:
+	menu_active = true
+	visible = true
+	if menu_canvas:
+		menu_canvas.visible = true
+	if gameplay_ui: gameplay_ui.visible = false
+	if ui_label: ui_label.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if menu_music and not menu_music.playing:
+		menu_music.play()
+	call_deferred("_activate_menu_camera")
+
+func _apply_slot_ui(slot: int, info_label: Label, play_btn: Button, del_btn: Button) -> void:
+	var exists: bool = SaveManager.slot_exists(slot)
+
+	if exists:
+		var meta: Dictionary = SaveManager.get_slot_meta(slot)
+		var books: int = int(meta.get("books_collected", 0))
+		info_label.text = "Slot %d — Books: %d / 5" % [slot, books]
+		play_btn.text = "Continue"
+		del_btn.disabled = false
+	else:
+		info_label.text = "Slot %d — Empty" % [slot]
+		play_btn.text = "New Game"
+		del_btn.disabled = true
+
+
+func _on_slot_play(slot: int) -> void:
+	SaveManager.set_active_slot(slot)
+
+	if SaveManager.slot_exists(slot):
+		await SaveManager.load_from_slot(slot)
+	else:
+		Global.books_collected = 0
+		Global.collected_book_ids = []
+		SaveManager.save_to_slot(slot)
+
+	_start_gameplay_now()
+
+
+func _on_slot_delete(slot: int) -> void:
+	SaveManager.delete_slot(slot)
+	_refresh_save_slots()

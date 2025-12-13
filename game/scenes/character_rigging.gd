@@ -7,6 +7,8 @@ extends CharacterBody3D
 @onready var pause_screen: Control = $"/root/World/Pausescreen"
 @onready var crosshair: TextureRect = $"/root/World/UI/crosshair"
 
+@onready var main_menu: Control = $"/root/World/Menu"
+
 # --- Footsteps ---
 @export var step_interval_walk: float = 0.50
 @export var step_interval_sprint: float = 0.34
@@ -128,19 +130,43 @@ func _on_resume_pressed():
 	resume_game()
 
 func _on_quit_pressed():
-	get_tree().quit()
 
+	get_tree().paused = false
+	gameplay_active = false
+	pause_screen.visible = false
+
+	# Show main menu
+	if main_menu:
+		main_menu.visible = true
+		# If your menu script has a function to re-enable menu mode, call it here:
+		main_menu.call("show_menu")
+
+	# Lock player
+	set_process_input(false)
+	set_process(false)
+	set_physics_process(false)
+
+	# Show mouse cursor
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	# (Optional) hide gameplay UI bits
+	if crosshair:
+		crosshair.visible = false
 
 # INPUT / CAMERA LOOK
 func _unhandled_input(event):
 	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
+	 
+		if main_menu.visible:
+			return
+	
 		if get_tree().paused:
 			resume_game()
 		else:
 			crosshair.visible = false
 			pause_game()
-		return
-
+		return 
+	
 	if not gameplay_active:
 		return  # ignore look if paused
 

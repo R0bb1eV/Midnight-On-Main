@@ -43,11 +43,19 @@ func _ready():
 		if interior_root == null:
 			push_error("InteriorDesign not found")
 			return
-
+			
 	place_books_with_room_limits()
 	place_one_book_on_long_table()
 
-
+func _is_collected(book: Node3D) -> bool:
+	# Use exported book_id if present, otherwise use name
+	var id: String = ""
+	if "book_id" in book and typeof(book.book_id) == TYPE_STRING and book.book_id != "":
+		id = book.book_id
+	else:
+		id = book.name
+	return Global.collected_book_ids.has(id)
+	
 # Regular Tables
 
 func place_books_with_room_limits():
@@ -64,6 +72,9 @@ func place_books_with_room_limits():
 		room_book_count.append(0)
 
 	for book in books:
+		if _is_collected(book):
+			book.queue_free() # remove it entirely so it can’t appear
+			continue
 		var candidates: Array[Dictionary] = []
 		for room_index in range(rooms.size()):
 			if room_book_count[room_index] == 1 and randf() > SECOND_BOOK_PROB:
@@ -110,7 +121,13 @@ func place_one_book_on_long_table():
 		return
 
 	# Pick a single book to go on a long table
-	var book: Node3D = books[0]
+	var book: Node3D = null
+	for b in books:
+		if not _is_collected(b):
+			book = b
+			break
+	if book == null:
+		return
 
 	if long_tables.size() == 0:
 		return
@@ -145,6 +162,6 @@ func place_one_book_on_long_table():
 
 func find_books(node: Node, out: Array[Node3D]) -> void:
 	for child in node.get_children():
-		if child.name.begins_with("Book_2_"):
+		if child is Node3D and child.name.begins_with("Book_2_"):
 			out.append(child)
 		find_books(child, out)

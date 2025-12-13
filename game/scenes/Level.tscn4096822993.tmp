@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=95 format=4 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Script" uid="uid://8xfku7ipjlk3" path="res://scenes/rand_books.gd" id="1_4no8g"]
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
@@ -59,7 +59,6 @@ background_mode = 2
 sky = SubResource("Sky_a202f")
 tonemap_mode = 2
 glow_enabled = true
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.91566664, 0.65724564, 0.6944651, 1)
 fog_light_energy = 0.32
@@ -413,10 +412,6 @@ shader_parameter/effect_mix = 1.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0akr6"]
 
 [sub_resource type="GDScript" id="GDScript_0akr6"]
-
-[sub_resource type="Theme" id="Theme_jua6w"]
-default_font = ExtResource("13_opqd1")
-default_font_size = 42
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_4no8g")
@@ -6137,11 +6132,10 @@ transform = Transform3D(0.79804254, 0, 0.055930346, 0, 0.79999965, 0, -0.0559303
 
 [node name="Character_Rigging" parent="." groups=["player"] instance=ExtResource("6_dke22")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -0.03957939, -0.0446198, 6.233492)
-step_interval_walk = 0.07
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="Character_Rigging"]
 stream = ExtResource("21_nu2gi")
-volume_db = -40.679
+volume_db = -32.359
 
 [node name="FootstepTimer" type="Timer" parent="Character_Rigging"]
 
@@ -6184,7 +6178,7 @@ patrol_points = Array[NodePath]([NodePath("../../patrol_points/patrol1"), NodePa
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="NavigationRegion3D/HomeworkEnforcer"]
 stream = ExtResource("21_nu2gi")
-volume_db = -15.0
+volume_db = -11.686
 max_distance = 20.0
 
 [node name="FootstepTimer" type="Timer" parent="NavigationRegion3D/HomeworkEnforcer"]
@@ -6555,40 +6549,32 @@ theme_override_fonts/font = ExtResource("13_opqd1")
 theme_override_font_sizes/font_size = 29
 text = "Credits"
 
-[node name="MenuMusic" type="AudioStreamPlayer2D" parent="Menu"]
+[node name="MenuMusic" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("20_40jy2")
 
 [node name="Saves" type="Control" parent="Menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SaveSlots" type="VBoxContainer" parent="Menu/Saves"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -178.5
-offset_top = 13.0
-offset_right = 204.5
-offset_bottom = 216.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_jua6w")
-theme_override_constants/separation = 22
-alignment = 1
+
+[node name="SaveSlots" type="VBoxContainer" parent="Menu/Saves"]
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 121.0
+theme_override_constants/separation = 14
 
 [node name="Slot1" type="HBoxContainer" parent="Menu/Saves/SaveSlots"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 19
-alignment = 1
 
 [node name="Label" type="Label" parent="Menu/Saves/SaveSlots/Slot1"]
 layout_mode = 2
@@ -6604,8 +6590,6 @@ text = "Delete"
 
 [node name="Slot2" type="HBoxContainer" parent="Menu/Saves/SaveSlots"]
 layout_mode = 2
-theme_override_constants/separation = 19
-alignment = 1
 
 [node name="Label" type="Label" parent="Menu/Saves/SaveSlots/Slot2"]
 layout_mode = 2
@@ -6621,8 +6605,6 @@ text = "Delete"
 
 [node name="Slot3" type="HBoxContainer" parent="Menu/Saves/SaveSlots"]
 layout_mode = 2
-theme_override_constants/separation = 19
-alignment = 1
 
 [node name="Label" type="Label" parent="Menu/Saves/SaveSlots/Slot3"]
 layout_mode = 2
@@ -6642,7 +6624,7 @@ volume_db = 10.0
 pitch_scale = 0.22
 autoplay = false
 
-[node name="ThemeMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="ThemeMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_0akr6")
 volume_db = -15.0
 
