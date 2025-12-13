@@ -6,8 +6,9 @@ extends CharacterBody3D
 @onready var stamina_bar: ProgressBar = $"/root/World/UI/Stam/ProgressBar"
 @onready var pause_screen: Control = $"/root/World/Pausescreen"
 @onready var crosshair: TextureRect = $"/root/World/UI/crosshair"
-
-@onready var main_menu: Control = $"/root/World/Menu"
+@onready var caught_screen: Control = $"/root/World/Caughtscreen"
+@onready var caught_menu_button: Button = $"/root/World/Caughtscreen/menu"
+@onready var caught_quit_button: Button = $"/root/World/Caughtscreen/quit"
 
 # --- Footsteps ---
 @export var step_interval_walk: float = 0.50
@@ -57,9 +58,18 @@ var stamina_empty_locked: bool = false  # red until fully recovered
 # --- Gameplay active flag ---
 var gameplay_active: bool = true
 
+# --- Caught state ---
+var caught: bool = false
+
+# --- Save player start position for reset ---
+var start_position: Vector3
+
 func _ready() -> void:
-	# Hide pause menu initially
-	pause_screen.visible = false
+	start_position = global_position
+
+	# Hide pause and caught screens initially
+	if pause_screen: pause_screen.visible = false
+	if caught_screen: caught_screen.visible = false
 
 	# Capture mouse at start
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -101,74 +111,92 @@ func _ready() -> void:
 		footstep_timer.timeout.connect(_on_FootstepTimer_timeout)
 
 	# --- Connect Pause Menu Buttons ---
-	$"/root/World/Pausescreen/Resume".pressed.connect(_on_resume_pressed)
-	$"/root/World/Pausescreen/Quit".pressed.connect(_on_quit_pressed)
+	if pause_screen:
+		var resume_btn = pause_screen.get_node_or_null("Resume")
+		var quit_btn = pause_screen.get_node_or_null("Quit")
+		if resume_btn: resume_btn.pressed.connect(_on_resume_pressed)
+		if quit_btn: quit_btn.pressed.connect(_on_quit_pressed)
 
-# PAUSE SYSTEM
+	# --- Connect Caught Screen Buttons ---
+	if caught_menu_button: caught_menu_button.pressed.connect(_on_menu_pressed)
+	if caught_quit_button: caught_quit_button.pressed.connect(_on_quit_pressed)
+
+
+# -----------------
+# --- PAUSE SYSTEM
+# -----------------
 func pause_game():
 	gameplay_active = false
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	pause_screen.visible = true
-	pause_screen.process_mode = Node.ProcessMode.PROCESS_MODE_ALWAYS
-	for button in pause_screen.get_children():
-		if button is Button:
-			button.process_mode = Node.ProcessMode.PROCESS_MODE_ALWAYS
+	if pause_screen:
+		pause_screen.visible = true
+		pause_screen.process_mode = Node.ProcessMode.PROCESS_MODE_ALWAYS
+		for button in pause_screen.get_children():
+			if button is Button:
+				button.process_mode = Node.ProcessMode.PROCESS_MODE_ALWAYS
 
 func resume_game():
 	gameplay_active = true
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	pause_screen.visible = false
-	pause_screen.process_mode = Node.ProcessMode.PROCESS_MODE_INHERIT
-	for button in pause_screen.get_children():
-		if button is Button:
-			button.process_mode = Node.ProcessMode.PROCESS_MODE_INHERIT
+	if pause_screen:
+		pause_screen.visible = false
+		pause_screen.process_mode = Node.ProcessMode.PROCESS_MODE_INHERIT
+		for button in pause_screen.get_children():
+			if button is Button:
+				button.process_mode = Node.ProcessMode.PROCESS_MODE_INHERIT
 
 func _on_resume_pressed():
-	crosshair.visible = true
+	if crosshair: crosshair.visible = true
 	resume_game()
 
 func _on_quit_pressed():
+	# Reset player before quitting
+	global_position = start_position
+	get_tree().quit()
 
-	get_tree().paused = false
+
+# -----------------
+# --- CAUGHT SCREEN
+# -----------------
+func on_caught() -> void:
+	caught = true
 	gameplay_active = false
-	pause_screen.visible = false
-
-	# Show main menu
-	if main_menu:
-		main_menu.visible = true
-		# If your menu script has a function to re-enable menu mode, call it here:
-		main_menu.call("show_menu")
-
-	# Lock player
-	set_process_input(false)
-	set_process(false)
-	set_physics_process(false)
-
-	# Show mouse cursor
+	if crosshair: crosshair.visible = false
+	if caught_screen:
+		caught_screen.visible = true
+		caught_screen.process_mode = Node.ProcessMode.PROCESS_MODE_ALWAYS
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	# (Optional) hide gameplay UI bits
-	if crosshair:
-		crosshair.visible = false
+func _on_menu_pressed() -> void:
+	print("Resetting scene...")
+	# Reset global variables
+	Global.books_collected = 0
+	# Reset player position
+	global_position = start_position
+	# Hide caught screen
+	if caught_screen: caught_screen.visible = false
+	caught = false
+	gameplay_active = true
+	# Reload scene
+	get_tree().reload_current_scene()
 
-# INPUT / CAMERA LOOK
+
+# -----------------
+# --- INPUT / CAMERA LOOK
+# -----------------
 func _unhandled_input(event):
 	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_ESCAPE:
-	 
-		if main_menu.visible:
-			return
-	
 		if get_tree().paused:
 			resume_game()
 		else:
-			crosshair.visible = false
+			if crosshair: crosshair.visible = false
 			pause_game()
-		return 
-	
+		return
+
 	if not gameplay_active:
-		return  # ignore look if paused
+		return  # ignore look if paused or caught
 
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
@@ -178,9 +206,17 @@ func _unhandled_input(event):
 			new_pitch = clamp(new_pitch, pitch_min_deg, pitch_max_deg)
 			pivot_pitch.rotation_degrees.x = new_pitch
 
-# MOVEMENT / PHYSICS
+
+# -----------------
+# --- MOVEMENT / PHYSICS
+# -----------------
 func _physics_process(delta: float) -> void:
 	if not gameplay_active:
+		return
+
+	if caught:
+		# Stop player completely when caught
+		velocity = Vector3.ZERO
 		return
 
 	# Gravity
@@ -201,16 +237,14 @@ func _physics_process(delta: float) -> void:
 		sprint_stamina = 0
 		is_sprinting = false
 		sprint_on_cooldown = true
-		stamina_empty_locked = true  # lock red bar
+		stamina_empty_locked = true
 
-	# Always recover stamina
 	sprint_stamina += sprint_recovery_rate * delta
 	if sprint_stamina >= sprint_stamina_max:
 		sprint_stamina = sprint_stamina_max
 		sprint_on_cooldown = false
-		stamina_empty_locked = false  # unlocked, can turn green
+		stamina_empty_locked = false
 
-	# Sprint input
 	if Input.is_action_pressed("run") and not sprint_on_cooldown and sprint_stamina > 0:
 		is_sprinting = true
 		sprint_stamina -= sprint_drain_rate * delta
@@ -261,7 +295,10 @@ func _physics_process(delta: float) -> void:
 		stamina_bar_empty = stamina_empty_locked or sprint_stamina <= 0.05
 		_update_stamina_bar_style()
 
-# STAMINA BAR STYLE
+
+# -----------------
+# --- STAMINA BAR STYLE
+# -----------------
 func _update_stamina_bar_style():
 	if not stamina_bar:
 		return
@@ -278,7 +315,10 @@ func _update_stamina_bar_style():
 	theme.set_stylebox("fill", "ProgressBar", style)
 	stamina_bar.theme = theme
 
-# FOOTSTEPS
+
+# -----------------
+# --- FOOTSTEPS
+# -----------------
 func _update_footsteps() -> void:
 	if not gameplay_active or not is_on_floor():
 		if footstep_timer and not footstep_timer.is_stopped():
@@ -304,6 +344,7 @@ func _update_footsteps() -> void:
 	if footstep_timer.is_stopped():
 		footstep_timer.start()
 
+
 func _on_FootstepTimer_timeout() -> void:
 	if not gameplay_active or not is_on_floor():
 		return
@@ -311,7 +352,10 @@ func _on_FootstepTimer_timeout() -> void:
 		return
 	footstep_player.play()
 
-# CAMERA FINDER
+
+# -----------------
+# --- CAMERA FINDER
+# -----------------
 func _find_camera_in_subtree(root: Node, max_depth: int, depth: int = 0) -> Camera3D:
 	if depth > max_depth:
 		return null

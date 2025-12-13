@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://dtq4vcdvnm7wq"]
+[gd_scene load_steps=97 format=4 uid="uid://dtq4vcdvnm7wq"]
 
 [ext_resource type="Script" uid="uid://8xfku7ipjlk3" path="res://scenes/rand_books.gd" id="1_4no8g"]
 [ext_resource type="Texture2D" uid="uid://d15sxfldby5cc" path="res://assets/swearingen_ext/grass.png" id="2_dke22"]
@@ -40,6 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://dhrl1ef6lsgqp" path="res://assets/sounds/monster_ambient.mp3" id="38_ycrer"]
 [ext_resource type="AudioStream" uid="uid://7idw23a67bmp" path="res://assets/sounds/opening_door.mp3" id="39_ycrer"]
 [ext_resource type="PackedScene" uid="uid://b1rm2vdphnt3" path="res://scenes/PauseScreen.tscn" id="40_jua6w"]
+[ext_resource type="PackedScene" uid="uid://2hbwidiobixs" path="res://scenes/CaughtScreen.tscn" id="41_gooay"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_opqd1"]
 size = Vector3(3.3787537, 7.4921417, 8.122391)
@@ -6179,8 +6180,6 @@ navigation_mesh = SubResource("NavigationMesh_baq46")
 
 [node name="HomeworkEnforcer" parent="NavigationRegion3D" instance=ExtResource("7_4qegb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.554502, 0, 91.03178)
-detection_radius = 7.0
-patrol_points = Array[NodePath]([NodePath("../../patrol_points/patrol1"), NodePath("../../patrol_points/patrol2"), NodePath("../../patrol_points/patrol3"), NodePath("../../patrol_points/patrol4"), NodePath("../../patrol_points/patrol5"), NodePath("../../patrol_points/patrol6"), NodePath("../../patrol_points/patrol7"), NodePath("../../patrol_points/patrol8"), NodePath("../../patrol_points/patrol9")])
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="NavigationRegion3D/HomeworkEnforcer"]
 stream = ExtResource("21_nu2gi")
@@ -6725,6 +6724,59 @@ theme_override_fonts/font = ExtResource("13_opqd1")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
+[node name="Caughtscreen" parent="." instance=ExtResource("41_gooay")]
+
+[node name="CaughtText" type="Label" parent="Caughtscreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_right = 0.96700007
+anchor_bottom = 0.448
+offset_left = 7.7679977
+offset_right = 0.01586914
+offset_bottom = -27.304016
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 115
+text = "You have been caught!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Button" parent="Caughtscreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33900002
+anchor_top = 0.59000003
+anchor_right = 0.65500003
+anchor_bottom = 0.62700003
+offset_left = 25.471985
+offset_top = -118.32001
+offset_right = 24.439941
+offset_bottom = -101.29602
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="Caughtscreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33800003
+anchor_top = 0.71500003
+anchor_right = 0.65400004
+anchor_bottom = 0.74600005
+offset_left = 24.623962
+offset_top = -122.32001
+offset_right = 24.591919
+offset_bottom = -101.40802
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_opqd1")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
 [connection signal="body_entered" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_entered"]
 [connection signal="body_exited" from="teleport/DoorTrigger1" to="teleport/DoorTrigger1" method="_on_body_exited"]
 [connection signal="body_entered" from="teleport/DoorTrigger2" to="teleport/DoorTrigger2" method="_on_body_entered"]
@@ -6735,3 +6787,6 @@ text = "Quit"
 [connection signal="pressed" from="Menu/VBoxContainer/Credits" to="Menu" method="_on_credits_pressed"]
 [connection signal="pressed" from="Pausescreen/Resume" to="Character_Rigging" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pausescreen/Quit" to="Character_Rigging" method="_on_quit_pressed"]
+[connection signal="pressed" from="Caughtscreen/Menu" to="Character_Rigging" method="_on_menu_pressed"]
+[connection signal="pressed" from="Caughtscreen/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Caughtscreen/Quit" to="Character_Rigging" method="_on_quit_pressed"]

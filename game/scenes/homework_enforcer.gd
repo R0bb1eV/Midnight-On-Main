@@ -102,10 +102,7 @@ func _move_with_agent(_delta: float, speed: float) -> void:
 	velocity = velocity_smooth
 	move_and_slide()
 
-# --------------------------
-# --- Footsteps (3D) ---
-# --------------------------
-
+#Footsteps (3D)
 func _update_footsteps() -> void:
 	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
 	var moving: bool = horizontal_speed > footsteps_min_speed
@@ -117,7 +114,7 @@ func _update_footsteps() -> void:
 
 	var interval: float = patrol_step_interval
 	if chasing:
-		interval = patrol_step_interval
+		interval = chase_step_interval
 
 	footstep_timer.wait_time = interval
 	if footstep_timer.is_stopped():
@@ -129,10 +126,7 @@ func _on_FootstepTimer_timeout() -> void:
 		return
 	footstep_player.play()
 
-# --------------------------
-# --- Attack / Game end ---
-# --------------------------
-
+#Attack / Caught Player
 func _on_Hitbox_body_entered(body: Node) -> void:
 	if has_attacked:
 		return
@@ -148,10 +142,6 @@ func _on_Hitbox_body_entered(body: Node) -> void:
 		if attack_player:
 			attack_player.play()
 
-		# Give the sound a moment if you want (optional). If you reload instantly you may cut it off.
-		# Easiest: small delay before reload.
-		await get_tree().create_timer(1).timeout
-
-		print("Player caught! Restarting scene...")
-		Global.books_collected = 0
-		get_tree().reload_current_scene()
+		# Trigger caught screen on player
+		if body.has_method("on_caught"):
+			body.on_caught()
