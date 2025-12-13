@@ -6197,10 +6197,12 @@ max_distance = 3.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.613579, -0.65478325, 122.5818)
+visible = false
 size = Vector3(117.80377, 1, 107.33511)
 
 [node name="Node3D" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(3.44, 0, 0, 0, 3.44, 0, 0, 0, 3.44, -2.4597387, -0.2153244, 107.478645)
+visible = false
 
 [node name="wall_14_83_stone_smooth" type="MeshInstance3D" parent="NavigationRegion3D/Node3D"]
 transform = Transform3D(0.0050311587, 0, 0, 0, 0, -0.0050311587, 0, 0.0050311587, 0, -15.219521, 7.6293945e-06, -13.628414)
